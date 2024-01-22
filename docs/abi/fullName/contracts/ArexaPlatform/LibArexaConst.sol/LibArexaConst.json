@@ -1,0 +1,20 @@
+[
+  "function AREXA_ADMIN_ROLE() view returns (bytes32)",
+  "function AREXA_TOKEN() view returns (bytes32)",
+  "function AREXA_TOKEN_ID() view returns (uint256)",
+  "function AREXA_TOKEN_POOL_AREXAINC() view returns (uint8)",
+  "function AREXA_TOKEN_POOL_DEVELOPMENT() view returns (uint8)",
+  "function AREXA_TOKEN_POOL_INVESTOR() view returns (uint8)",
+  "function AREXA_TOKEN_POOL_MARKETING() view returns (uint8)",
+  "function AREXA_TOKEN_POOL_RESERVED() view returns (uint8)",
+  "function FULL() view returns (bytes32)",
+  "function MAGIC100_FIRST_BUYER() view returns (bytes32)",
+  "function MAGIC_TOKEN() view returns (bytes32)",
+  "function MAGIC_TOKEN_ID() view returns (uint256)",
+  "function SUBSCR1_TOKEN() view returns (bytes32)",
+  "function SUBSCR1_TOKEN_TYPE() view returns (uint256)",
+  "function SUBSCR2_TOKEN() view returns (bytes32)",
+  "function SUBSCR2_TOKEN_TYPE() view returns (uint256)",
+  "function TRADER_TOKEN() view returns (bytes32)",
+  "function TRADER_TOKEN_ID() view returns (uint256)"
+]

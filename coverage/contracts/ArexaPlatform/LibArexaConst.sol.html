@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\ArexaPlatform\LibArexaConst.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/ArexaPlatform/</a> LibArexaConst.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: UNLICENCED
+/**
+ * Copyright (C) 2023 AREXA
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+library LibArexaConst {
+	//
+	//Pausable
+	bytes32 public constant FULL = 0x00;
+	bytes32 public constant SUBSCR1_TOKEN = keccak256(abi.encode("TOKEN", LibArexaConst.SUBSCR1_TOKEN_TYPE));
+	bytes32 public constant SUBSCR2_TOKEN = keccak256(abi.encode("TOKEN", LibArexaConst.SUBSCR2_TOKEN_TYPE));
+	bytes32 public constant TRADER_TOKEN = keccak256(abi.encode("TOKEN", LibArexaConst.TRADER_TOKEN_ID));
+	bytes32 public constant AREXA_TOKEN = keccak256(abi.encode("TOKEN", LibArexaConst.AREXA_TOKEN_ID));
+	bytes32 public constant MAGIC_TOKEN = keccak256(abi.encode("TOKEN", LibArexaConst.MAGIC_TOKEN_ID));
+&nbsp;
+	//Roles
+	bytes32 public constant AREXA_ADMIN_ROLE = keccak256("AREXA_ADMIN_ROLE");
+	//bytes32 public constant TOKEN_ADMIN_ROLE = keccak256("AREXA_TOKEN_ADMIN_ROLE");
+	//bytes32 public constant TREASURY_ROLE = keccak256("AREXA_TREASURY_ROLE");
+&nbsp;
+	//BlackWhite lists
+	bytes32 public constant MAGIC100_FIRST_BUYER = keccak256("MAGIC100_FIRST_BUYER"); //WhiteList
+&nbsp;
+	//TokenIDs:
+	uint256 public constant SUBSCR1_TOKEN_TYPE = 100000000; //Tier 1, every month
+	uint256 public constant SUBSCR2_TOKEN_TYPE = 200000000; //Tier 2, every month
+	uint256 public constant TRADER_TOKEN_ID = 300000000; //Tier 3, unlimited, always mint
+	uint256 public constant AREXA_TOKEN_ID = 400000000; //Tier 4, 100000000 piece
+	uint256 public constant MAGIC_TOKEN_ID = 500000000; //Tier 5, 100 piece
+&nbsp;
+	//AREXA TOKEN POOL TYPES:
+	uint8 public constant AREXA_TOKEN_POOL_INVESTOR = 1; //35M
+	uint8 public constant AREXA_TOKEN_POOL_AREXAINC = 2; //5M
+	uint8 public constant AREXA_TOKEN_POOL_MARKETING = 3; //5M
+	uint8 public constant AREXA_TOKEN_POOL_DEVELOPMENT = 4; //5M
+	uint8 public constant AREXA_TOKEN_POOL_RESERVED = 5; //50M
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[
+  "function burnFrom(address,uint256)",
+  "function mint(address,uint256)"
+]

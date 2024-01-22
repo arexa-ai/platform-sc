@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\base\AccessControl\LibAccessControl.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/base/AccessControl/</a> LibAccessControl.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.23% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52×</span>
+<span class="cline-any cline-yes">52×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">169×</span>
+<span class="cline-any cline-yes">169×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 uSmart
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+import "./LibAccessControlStorage.sol";
+&nbsp;
+import { IERC173 } from "../../interfaces/IERC173.sol";
+&nbsp;
+import { EnumerableSet } from "../../utils/EnumerableSet.sol";
+import { UintUtils } from "../../utils/UintUtils.sol";
+import { AddressUtils } from "../../utils/AddressUtils.sol";
+&nbsp;
+library LibAccessControl {
+	using EnumerableSet for EnumerableSet.AddressSet;
+	using UintUtils for uint256;
+	using AddressUtils for address;
+&nbsp;
+	error Ownable__NotOwner();
+	error Ownable__NotTransitiveOwner();
+&nbsp;
+	error AccessDenied(bytes32 role, address account);
+&nbsp;
+	event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+&nbsp;
+	event RoleAdminChanged(address indexed owner, bytes32 role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);
+	event RoleGranted(address indexed owner, bytes32 role, address indexed account, address indexed sender);
+	event RoleRevoked(address indexed owner, bytes32 role, address indexed account, address indexed sender);
+&nbsp;
+	bytes32 internal constant DEFAULT_ADMIN_ROLE = 0x00;
+&nbsp;
+	function _setOwner(address _newOwner) internal {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		address previousOwner = acls.owner;
+		acls.owner = _newOwner;
+&nbsp;
+		//Init DEFAULT_ADMIN_ROLE to _newOwner
+		LibAccessControl._grantRole(LibAccessControl.DEFAULT_ADMIN_ROLE, _newOwner);
+&nbsp;
+		emit OwnershipTransferred(previousOwner, _newOwner);
+	}
+&nbsp;
+	function _owner() internal view returns (address owner_) {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		owner_ = acls.owner;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function _transitiveOwner() internal view returns (address owner_) {</span>
+		owner_ = LibAccessControl._owner();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		while (owner_.isContract()) {</span>
+<span class="cstat-no" title="statement not covered" >			try IERC173(owner_).owner() returns (address transitiveOwner) {</span>
+				owner_ = transitiveOwner;
+			} catch {
+				break;
+			}
+		}
+	}
+&nbsp;
+	function _enforceIsOwner() internal view {
+		//require(msg.sender == _owner(), "Not owner!");
+		if (msg.sender != _owner()) {
+			revert Ownable__NotOwner();
+		}
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function _enforceIsTransitiveOwner() internal view {</span>
+		//require(msg.sender == _transitiveOwner(), "Not transitive owner!");
+<span class="cstat-no" title="statement not covered" >		if (msg.sender != _transitiveOwner()) {</span>
+			revert Ownable__NotTransitiveOwner();
+		}
+	}
+&nbsp;
+	/**
+	 * @notice assign role to given account
+	 * @param _role role to assign
+	 * @param _account recipient of role assignment
+	 */
+	function _grantRole(bytes32 _role, address _account) internal {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (!_hasRole(_role, _account)) {
+			acls.roles[acls.owner][_role].members.add(_account);
+			emit RoleGranted(acls.owner, _role, _account, msg.sender);
+		}
+	}
+&nbsp;
+	/**
+	 * @notice unassign role from given account
+	 * @param _role role to unassign
+	 * @param _account account to revokeAccessControlStorage
+	 */
+	function _revokeRole(bytes32 _role, address _account) internal {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		// require(_role != LibAccessControl.DEFAULT_ADMIN_ROLE &amp;&amp; _account != acls.owner);
+		acls.roles[acls.owner][_role].members.remove(_account);
+		emit RoleRevoked(acls.owner, _role, _account, msg.sender);
+	}
+&nbsp;
+	/**
+	 * @notice relinquish role
+	 * @param _role role to relinquish
+	 */
+<span class="fstat-no" title="function not covered" >	function _renounceRole(bytes32 _role) internal {</span>
+<span class="cstat-no" title="statement not covered" >		_revokeRole(_role, msg.sender)</span>;
+	}
+&nbsp;
+	/**
+	 * @notice Query one of the accounts that have role of the project
+	 * @dev WARNING: When using _getProjectRoleMember and _getProjectRoleMemberCount, make sure you perform all queries on the same block.
+	 * @param _role role to query
+	 * @param _index index of role member
+	 */
+<span class="fstat-no" title="function not covered" >	function _getRoleMember(bytes32 _role, uint256 _index) internal view returns (address) {</span>
+<span class="cstat-no" title="statement not covered" >		AccessControllStorage storage acls = LibAccessControlStorage.layout();</span>
+<span class="cstat-no" title="statement not covered" >		return acls.roles[acls.owner][_role].members.at(_index);</span>
+	}
+&nbsp;
+	/**
+	 * @notice Query the number of accounts that have role.
+	 * @dev WARNING: When using _getRoleMember and _getRoleMemberCount, make sure you perform all queries on the same block.
+	 * @param _role role to query
+	 */
+<span class="fstat-no" title="function not covered" >	function _getRoleMemberCount(address, bytes32 _role) internal view returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >		AccessControllStorage storage acls = LibAccessControlStorage.layout();</span>
+<span class="cstat-no" title="statement not covered" >		return acls.roles[acls.owner][_role].members.length();</span>
+	}
+&nbsp;
+	/**
+	 * @notice query whether role is assigned to account
+	 * @param _role role to query
+	 * @param _account account to query
+	 * @return bool whether role is assigned to account
+	 */
+	function _hasRole(bytes32 _role, address _account) internal view returns (bool) {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		return acls.roles[acls.owner][_role].members.contains(_account);
+	}
+&nbsp;
+	/**
+	 * @notice revert if sender does not have given role
+	 * @param _role role to query
+	 */
+	function _checkRole(bytes32 _role) internal view {
+		_checkRole(_role, msg.sender);
+	}
+&nbsp;
+	/**
+	 * @notice revert if given account does not have given role
+	 * @param _role role to query
+	 * @param _account to query
+	 */
+	function _checkRole(bytes32 _role, address _account) internal view {
+		if (!_hasRole(_role, _account)) {
+			revert AccessDenied({ role: _role, account: _account });
+		}
+	}
+&nbsp;
+	/**
+	 * @notice query admin role for given role
+	 * @param _role role to query
+	 * @return admin role
+	 */
+	function _getRoleAdmin(bytes32 _role) internal view returns (bytes32) {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		return acls.roles[acls.owner][_role].adminRole;
+	}
+&nbsp;
+	/**
+	 * @notice set role as admin role
+	 * @param _role role to set
+	 * @param _adminRole admin role to set
+	 */
+	function _setRoleAdmin(bytes32 _role, bytes32 _adminRole) internal {
+		AccessControllStorage storage acls = LibAccessControlStorage.layout();
+		bytes32 previousAdminRole = _getRoleAdmin(_role);
+		acls.roles[acls.owner][_role].adminRole = _adminRole;
+		emit RoleAdminChanged(acls.owner, _role, previousAdminRole, _adminRole);
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

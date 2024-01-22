@@ -1,0 +1,13 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__TargetedPaused()",
+  "function calcDivident(address) view returns (int256)",
+  "function getArexaIncomeParameter(uint256) view returns (uint32, uint32)",
+  "function getInventory() view returns (bool, int256, int256, int256)",
+  "function getInventoryItem(address) view returns (tuple(int256,int256,int256))",
+  "function payoutArexaDivident(address,uint256)",
+  "function payoutArexaIncome(address,uint256)",
+  "function payoutDivident(uint256)",
+  "function setArexaIncomeParameter(uint256,uint32,uint32)"
+]

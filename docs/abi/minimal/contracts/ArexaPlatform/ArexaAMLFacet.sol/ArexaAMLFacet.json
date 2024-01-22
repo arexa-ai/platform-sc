@@ -1,0 +1,11 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__TargetedPaused()",
+  "function MAGIC100_FIRST_BUYER() view returns (bytes32)",
+  "function getAccountBlackWhiteList(bytes32,address) view returns (bool)",
+  "function getMagic100FirstBuyerWL(address) view returns (bool)",
+  "function setAccountBlackWhiteList(bytes32,address,bool)",
+  "function setBatchMagic100FirstBuyerWL(address[],bool)",
+  "function setMagic100FirstBuyerWL(address,bool)"
+]

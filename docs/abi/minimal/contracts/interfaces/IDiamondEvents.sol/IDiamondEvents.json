@@ -1,0 +1,11 @@
+[
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "event RoleAdminChanged(address indexed,bytes32,bytes32 indexed,bytes32 indexed)",
+  "event RoleGranted(address indexed,bytes32,address indexed,address indexed)",
+  "event RoleRevoked(address indexed,bytes32,address indexed,address indexed)",
+  "event TargetedPaused(bytes32 indexed,address indexed)",
+  "event TargetedUnpaused(bytes32 indexed,address indexed)"
+]

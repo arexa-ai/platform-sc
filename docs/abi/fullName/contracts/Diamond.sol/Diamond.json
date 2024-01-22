@@ -1,0 +1,4 @@
+[
+  "constructor(address _contractOwner, address _diamondCutFacet) payable",
+  "error InitializationFunctionReverted(address _initializationContractAddress, bytes _calldata)"
+]

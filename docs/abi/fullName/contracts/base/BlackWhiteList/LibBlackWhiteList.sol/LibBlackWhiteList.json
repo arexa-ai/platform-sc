@@ -1,0 +1,3 @@
+[
+  "event AccountBlackWhiteList(bytes32 indexed _target, address indexed _account, bool _lockValue)"
+]

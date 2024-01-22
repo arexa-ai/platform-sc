@@ -1,0 +1,10 @@
+[
+  "event AllTokenPaused(address indexed account)",
+  "event AllTokenUnpaused(address indexed account)",
+  "event TokenPaused(address indexed account, uint256 indexed tokenId)",
+  "event TokenUnpaused(address indexed account, uint256 indexed tokenId)",
+  "function pauseAllToken()",
+  "function pauseToken(uint256 tokenId)",
+  "function unpauseAllToken()",
+  "function unpauseToken(uint256 tokenId)"
+]

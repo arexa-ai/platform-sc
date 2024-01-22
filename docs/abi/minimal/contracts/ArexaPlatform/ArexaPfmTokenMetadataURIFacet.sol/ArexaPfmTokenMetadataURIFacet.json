@@ -1,0 +1,12 @@
+[
+  "constructor()",
+  "error Ownable__NotOwner()",
+  "error TargetedPausable__TargetedPaused()",
+  "function getTokenBaseUri() view returns (string)",
+  "function getTokenUri(uint256) view returns (string)",
+  "function getUri() view returns (string)",
+  "function setTokenBaseURI(string)",
+  "function setTokenURI(uint256,string)",
+  "function setURI(string)",
+  "function uri(uint256) view returns (string)"
+]

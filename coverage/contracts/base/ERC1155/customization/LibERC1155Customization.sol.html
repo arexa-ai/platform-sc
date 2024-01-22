@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\base\ERC1155\customization\LibERC1155Customization.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">contracts/base/ERC1155/customization/</a> LibERC1155Customization.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/10</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 uSmart
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+import "../../TokenRestriction/LibTokenRestriction.sol";
+import "../../TokenPNL/LibTokenPNL.sol";
+&nbsp;
+import "../../../ArexaPlatform/Platform/LibArexaPlatform.sol";
+&nbsp;
+library LibERC1155Customization {
+	/**
+	 * @notice ERC1155 hook, called before all transfers including mint and burn
+	 * The same hook is called on both single and batched variants. For single
+	 * transfers, the length of the `ids` and `amounts` arrays will be 1.
+	 * Calling conditions (for each `id` and `amount` pair):
+	 * - When `from` and `to` are both non-zero, `amount` of ``from``'s tokens of token type `id` will be  transferred to `to`.
+	 * - When `from` is zero, `amount` tokens of token type `id` will be minted for `to`.
+	 * - when `to` is zero, `amount` of ``from``'s tokens of token type `id` will be burned.
+	 * - `from` and `to` are never both zero.
+	 * - `ids` and `amounts` have the same, non-zero length.
+	 *  param_operator executor of transfer
+	 * @param _fromAccount sender of tokens
+	 *  param_toAccount receiver of tokens
+	 * @param _tokenIds token IDs
+	 * @param _amounts quantities of tokens to transfer
+	 *  param _data data payload
+	 */
+	function _beforeTokenTransfer(
+		address, //_operator,
+		address _fromAccount,
+		address, //_toAccount,
+		uint256[] memory _tokenIds,
+		uint256[] memory _amounts,
+		bytes memory //_data
+	) internal view {
+		if (_fromAccount != address(0)) {
+			LibTokenRestriction.checkRestrictions(_fromAccount, _tokenIds, _amounts);
+		}
+	}
+&nbsp;
+	/**
+	 * @notice ERC1155 hook, called after all transfers including mint and burn
+	 * The same hook is called on both single and batched variants. For single
+	 * transfers, the length of the `id` and `amount` arrays will be 1.
+	 * Calling conditions (for each `id` and `amount` pair):
+	 * - When `from` and `to` are both non-zero, `amount` of ``from``'s tokens of token type `id` will be  transferred to `to`.
+	 * - When `from` is zero, `amount` tokens of token type `id` will be minted for `to`.
+	 * - when `to` is zero, `amount` of ``from``'s tokens of token type `id` will be burned.
+	 * - `from` and `to` are never both zero.
+	 * - `ids` and `amounts` have the same, non-zero length.
+	 * _operator executor of transfer
+	 * @param _fromAccount sender of tokens
+	 * @param _toAccount receiver of tokens
+	 * @param _tokenIds token IDs
+	 * @param _amounts quantities of tokens to transfer
+	 * _data data payload
+	 */
+	function _afterTokenTransfer(
+		address, //_operator
+		address _fromAccount,
+		address _toAccount,
+		uint256[] memory _tokenIds,
+		uint256[] memory _amounts,
+		bytes memory //_data
+	) internal {
+		if (_fromAccount != address(0)) {
+			LibTokenRestriction.recalcRestrictions(_fromAccount, _tokenIds, _amounts, 0);
+		}
+&nbsp;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (_toAccount != address(0)) {
+			LibTokenRestriction.recalcRestrictions(_toAccount, _tokenIds, _amounts, 1);
+		}
+&nbsp;
+		for (uint256 i; i &lt; _tokenIds.length; ) {
+			LibTokenPNL.refreshDivident(address(LibArexaPlatform.getPayingToken()), _tokenIds[i], _fromAccount, _toAccount, _amounts[i]);
+&nbsp;
+			unchecked {
+				i++;
+			}
+		}
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\base\ERC20\base\LibERC20Base.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">contracts/base/ERC20/base/</a> LibERC20Base.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.77% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 uSmart
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+import { LibERC20BaseStorage, ERC20BaseStorage } from "./LibERC20Storage.sol";
+&nbsp;
+library LibERC20Base {
+	//Come from IERC20
+	event Transfer(address indexed from, address indexed to, uint256 value);
+	event Approval(address indexed owner, address indexed spender, uint256 value);
+&nbsp;
+	//Come from IERC20Base
+	// error ERC20Base__ApproveFromZeroAddress();
+	// error ERC20Base__ApproveToZeroAddress();
+	// error ERC20Base__BurnExceedsBalance();
+	// error ERC20Base__BurnFromZeroAddress();
+	// error ERC20Base__InsufficientAllowance();
+	// error ERC20Base__MintToZeroAddress();
+	// error ERC20Base__TransferExceedsBalance();
+	// error ERC20Base__TransferFromZeroAddress();
+	// error ERC20Base__TransferToZeroAddress();
+&nbsp;
+	//
+	/**
+	 * @notice query the total minted token supply
+	 * @return token supply
+	 */
+<span class="fstat-no" title="function not covered" >	function _totalSupply() internal view returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >		return LibERC20BaseStorage.layout().totalSupply;</span>
+	}
+&nbsp;
+	/**
+	 * @notice query the token balance of given account
+	 * @param account address to query
+	 * @return balanceOf_ token balance
+	 */
+	function _balanceOf(address account) internal view returns (uint256 balanceOf_) {
+		return LibERC20BaseStorage.layout().balances[account];
+	}
+&nbsp;
+	/**
+	 * @notice query the allowance granted from given holder to given spender
+	 * @param holder approver of allowance
+	 * @param spender recipient of allowance
+	 * @return allowance_ token allowance
+	 */
+	function _allowance(address holder, address spender) internal view returns (uint256 allowance_) {
+		return LibERC20BaseStorage.layout().allowances[holder][spender];
+	}
+&nbsp;
+	/**
+	 * @notice enable spender to spend tokens on behalf of holder
+	 * @param holder address on whose behalf tokens may be spent
+	 * @param spender recipient of allowance
+	 * @param amount quantity of tokens approved for spending
+	 * @return status_ success status (always true; otherwise function should revert)
+	 */
+	function _approve(address holder, address spender, uint256 amount) internal returns (bool status_) {
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(holder != address(0), "ApproveFromZeroAddress");
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(spender != address(0), "ApproveToZeroAddress");
+&nbsp;
+		LibERC20BaseStorage.layout().allowances[holder][spender] = amount;
+&nbsp;
+		emit Approval(holder, spender, amount);
+&nbsp;
+		return true;
+	}
+&nbsp;
+	/**
+	 * @notice decrease spend amount granted by holder to spender
+	 * @param holder address on whose behalf tokens may be spent
+	 * @param spender address whose allowance to decrease
+	 * @param amount quantity by which to decrease allowance
+	 */
+	function _decreaseAllowance(address holder, address spender, uint256 amount) internal {
+		uint256 allowance = _allowance(holder, spender);
+&nbsp;
+		require(amount &lt;= allowance, "InsufficientAllowance");
+&nbsp;
+		unchecked {
+			_approve(holder, spender, allowance - amount);
+		}
+	}
+&nbsp;
+	/**
+	 * @notice mint tokens for given account
+	 * @param account recipient of minted tokens
+	 * @param amount quantity of tokens minted
+	 */
+	function _mint(address account, uint256 amount) internal {
+		//WARNING always check this before calling _mint:
+		//if (account == address(0)) revert ERC20Base__MintToZeroAddress();
+&nbsp;
+		ERC20BaseStorage storage e20s = LibERC20BaseStorage.layout();
+		e20s.totalSupply += amount;
+		e20s.balances[account] += amount;
+&nbsp;
+		emit Transfer(address(0), account, amount);
+	}
+&nbsp;
+	/**
+	 * @notice burn tokens held by given account
+	 * @param account holder of burned tokens
+	 * @param amount quantity of tokens burned
+	 */
+	function _burn(address account, uint256 amount) internal {
+		//WARNING always check this before calling _burn:
+		//if (account == address(0)) revert ERC20Base__BurnFromZeroAddress();
+&nbsp;
+		ERC20BaseStorage storage e20s = LibERC20BaseStorage.layout();
+&nbsp;
+		uint256 balance = e20s.balances[account];
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(amount &lt;= balance, "BurnExceedsBalance");
+		unchecked {
+			e20s.balances[account] = balance - amount;
+		}
+		e20s.totalSupply -= amount;
+&nbsp;
+		emit Transfer(account, address(0), amount);
+	}
+&nbsp;
+	/**
+	 * @notice transfer tokens from holder to recipient
+	 * @param holder owner of tokens to be transferred
+	 * @param recipient beneficiary of transfer
+	 * @param amount quantity of tokens transferred
+	 * @return status_ success status (always true; otherwise function should revert)
+	 */
+	function _transfer(address holder, address recipient, uint256 amount) internal returns (bool status_) {
+		ERC20BaseStorage storage e20s = LibERC20BaseStorage.layout();
+&nbsp;
+		uint256 holderBalance = e20s.balances[holder];
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(amount &lt;= holderBalance, "TransferExceedsBalance");
+		unchecked {
+			e20s.balances[holder] = holderBalance - amount;
+		}
+		e20s.balances[recipient] += amount;
+&nbsp;
+		emit Transfer(holder, recipient, amount);
+&nbsp;
+		return true;
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

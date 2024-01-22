@@ -1,0 +1,207 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "AccessDenied",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TargetedPausable__TargetedPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "calcDivident",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getArexaIncomeParameter",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "pool_",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "arexa_",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getInventory",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "isEnabled",
+        "type": "bool"
+      },
+      {
+        "internalType": "int256",
+        "name": "sumQuantity",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "sumAmount",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "sumPnl",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "getInventoryItem",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "int256",
+            "name": "quantity",
+            "type": "int256"
+          },
+          {
+            "internalType": "int256",
+            "name": "deltaPnl",
+            "type": "int256"
+          },
+          {
+            "internalType": "int256",
+            "name": "payedPnl",
+            "type": "int256"
+          }
+        ],
+        "internalType": "struct InventoryItem",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "payoutArexaDivident",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "payoutArexaIncome",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "payoutDivident",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "pool",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "arexa",
+        "type": "uint32"
+      }
+    ],
+    "name": "setArexaIncomeParameter",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

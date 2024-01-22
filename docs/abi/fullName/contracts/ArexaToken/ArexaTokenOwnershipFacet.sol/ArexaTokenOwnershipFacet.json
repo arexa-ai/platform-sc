@@ -1,0 +1,8 @@
+[
+  "constructor()",
+  "error Ownable__NotOwner()",
+  "error TargetedPausable__TargetedPaused()",
+  "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+  "function owner() view returns (address)",
+  "function transferOwnership(address _newOwner)"
+]

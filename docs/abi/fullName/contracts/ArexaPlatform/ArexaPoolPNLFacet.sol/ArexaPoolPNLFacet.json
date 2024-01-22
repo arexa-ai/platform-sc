@@ -1,0 +1,13 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32 role, address account)",
+  "error TargetedPausable__TargetedPaused()",
+  "function calcDivident(address account) view returns (int256)",
+  "function getArexaIncomeParameter(uint256 tokenId) view returns (uint32 pool_, uint32 arexa_)",
+  "function getInventory() view returns (bool isEnabled, int256 sumQuantity, int256 sumAmount, int256 sumPnl)",
+  "function getInventoryItem(address account) view returns (tuple(int256 quantity, int256 deltaPnl, int256 payedPnl))",
+  "function payoutArexaDivident(address toAccount, uint256 value)",
+  "function payoutArexaIncome(address toAccount, uint256 value)",
+  "function payoutDivident(uint256 value)",
+  "function setArexaIncomeParameter(uint256 tokenId, uint32 pool, uint32 arexa)"
+]

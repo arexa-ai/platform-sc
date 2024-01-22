@@ -1,0 +1,17 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__TargetedPaused()",
+  "function getGeneralFee() view returns (uint16)",
+  "function getGeneralFeeAddress() view returns (address)",
+  "function getPoolFee() view returns (uint16)",
+  "function getPoolFeeAddress() view returns (address)",
+  "function getTreasuryAddress() view returns (address)",
+  "function getURL() view returns (string)",
+  "function setGeneralFee(uint16)",
+  "function setGeneralFeeAddress(address)",
+  "function setPoolFee(uint16)",
+  "function setPoolFeeAddress(address)",
+  "function setTreasuryAddress(address)",
+  "function setURL(string)"
+]

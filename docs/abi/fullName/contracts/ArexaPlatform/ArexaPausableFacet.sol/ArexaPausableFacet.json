@@ -1,0 +1,23 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32 role, address account)",
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "event AllTokenPaused(address indexed account)",
+  "event AllTokenUnpaused(address indexed account)",
+  "event TokenPaused(address indexed account, uint256 indexed tokenId)",
+  "event TokenUnpaused(address indexed account, uint256 indexed tokenId)",
+  "function PAUSABLE_AREXA_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_FULL() view returns (bytes32)",
+  "function PAUSABLE_MAGIC_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_SUBSCR1_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_SUBSCR2_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_TRADER_TOKEN() view returns (bytes32)",
+  "function pause(bytes32 target)",
+  "function pauseAllToken()",
+  "function pauseToken(uint256 tokenId)",
+  "function paused(bytes32 target) view returns (bool status_)",
+  "function unpause(bytes32 target)",
+  "function unpauseAllToken()",
+  "function unpauseToken(uint256 tokenId)"
+]

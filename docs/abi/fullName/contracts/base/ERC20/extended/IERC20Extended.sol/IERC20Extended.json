@@ -1,0 +1,6 @@
+[
+  "error ERC20Extended__ExcessiveAllowance()",
+  "error ERC20Extended__InsufficientAllowance()",
+  "function decreaseAllowance(address spender, uint256 amount) returns (bool)",
+  "function increaseAllowance(address spender, uint256 amount) returns (bool)"
+]

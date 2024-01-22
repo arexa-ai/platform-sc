@@ -1,0 +1,4 @@
+[
+  "function AMOUNT_VALUE_TYPE() view returns (uint8)",
+  "function QUANTITY_VALUE_TYPE() view returns (uint8)"
+]

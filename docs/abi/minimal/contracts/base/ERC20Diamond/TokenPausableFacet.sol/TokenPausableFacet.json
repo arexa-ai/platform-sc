@@ -1,0 +1,10 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "function PAUSABLE_FULL() view returns (bytes32)",
+  "function pause(bytes32)",
+  "function paused(bytes32) view returns (bool)",
+  "function unpause(bytes32)"
+]

@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\utils\AddressUtils.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/utils/</a> AddressUtils.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.79% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 uSmart
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+import { UintUtils } from "./UintUtils.sol";
+&nbsp;
+library AddressUtils {
+	using UintUtils for uint256;
+&nbsp;
+	error AddressUtils__InsufficientBalance();
+	error AddressUtils__NotContract();
+	error AddressUtils__SendValueFailed();
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function toString(address account) internal pure returns (string memory) {</span>
+<span class="cstat-no" title="statement not covered" >		return uint256(uint160(account)).toHexString(20);</span>
+	}
+&nbsp;
+	function isContract(address account) internal view returns (bool) {
+		uint256 size;
+		assembly {
+			size := extcodesize(account)
+		}
+		return size &gt; 0;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function sendValue(address payable account, uint256 amount) internal {</span>
+<span class="cstat-no" title="statement not covered" >		(bool success, ) = account.call{ value: amount }("");</span>
+<span class="cstat-no" title="statement not covered" >		if (!success) revert AddressUtils__SendValueFailed();</span>
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function functionCall(address target, bytes memory data) internal returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >		return functionCall(target, data, "AddressUtils: failed low-level call");</span>
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function functionCall(address target, bytes memory data, string memory error) internal returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >		return _functionCallWithValue(target, data, 0, error);</span>
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function functionCallWithValue(address target, bytes memory data, uint256 value) internal returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >		return functionCallWithValue(target, data, value, "AddressUtils: failed low-level call with value");</span>
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function functionCallWithValue(address target, bytes memory data, uint256 value, string memory error) internal returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >		if (value &gt; address(this).balance) revert AddressUtils__InsufficientBalance();</span>
+<span class="cstat-no" title="statement not covered" >		return _functionCallWithValue(target, data, value, error);</span>
+	}
+&nbsp;
+	/**
+	 * @notice execute arbitrary external call with limited gas usage and amount of copied return data
+	 * @dev derived from https://github.com/nomad-xyz/ExcessivelySafeCall (MIT License)
+	 * @param target recipient of call
+	 * @param gasAmount gas allowance for call
+	 * @param value native token value to include in call
+	 * @param maxCopy maximum number of bytes to copy from return data
+	 * @param data encoded call data
+	 * @return success whether call is successful
+	 * @return returnData copied return data
+	 */
+<span class="fstat-no" title="function not covered" >	function excessivelySafeCall(</span>
+		address target,
+		uint256 gasAmount,
+		uint256 value,
+		uint16 maxCopy,
+		bytes memory data
+	) internal returns (bool success, bytes memory returnData) {
+		returnData = new bytes(maxCopy);
+&nbsp;
+		assembly {
+			// execute external call via assembly to avoid automatic copying of return data
+			success := call(gasAmount, target, value, add(data, 0x20), mload(data), 0, 0)
+&nbsp;
+			// determine whether to limit amount of data to copy
+			let toCopy := returndatasize()
+&nbsp;
+			if gt(toCopy, maxCopy) {
+				toCopy := maxCopy
+			}
+&nbsp;
+			// store the length of the copied bytes
+			mstore(returnData, toCopy)
+&nbsp;
+			// copy the bytes from returndata[0:toCopy]
+			returndatacopy(add(returnData, 0x20), 0, toCopy)
+		}
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function _functionCallWithValue(address target, bytes memory data, uint256 value, string memory error) private returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >		if (!isContract(target)) revert AddressUtils__NotContract();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		(bool success, bytes memory returnData) = target.call{ value: value }(data);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (success) {</span>
+<span class="cstat-no" title="statement not covered" >			return returnData;</span>
+		} else <span class="cstat-no" title="statement not covered" >if (returnData.length &gt; 0) {</span>
+			assembly {
+				let returnData_size := mload(returnData)
+				revert(add(32, returnData), returnData_size)
+			}
+		} else {
+<span class="cstat-no" title="statement not covered" >			revert(error)</span>;
+		}
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

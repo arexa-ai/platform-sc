@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\base\ERC20Token\ERC20Token.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/base/ERC20Token/</a> ERC20Token.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.57% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/30</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 uSmart
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+import { IERC20 } from "../ERC20/IERC20.sol";
+import { ERC20Base } from "../ERC20/base/ERC20Base.sol";
+import { ERC20Extended } from "../ERC20/extended/ERC20Extended.sol";
+import { ERC20Metadata } from "../ERC20/metadata/ERC20Metadata.sol";
+&nbsp;
+import { LibAccessControl } from "../AccessControl/LibAccessControl.sol";
+import { LibBlackWhiteList } from "../BlackWhiteList/LibBlackWhiteList.sol";
+import { LibTargetedPausable } from "../TargetedPausable/LibTargetedPausable.sol";
+&nbsp;
+import { LibTokenConst } from "./LibTokenConst.sol";
+import { LibCustomERC20Extension } from "./LibCustomERC20Extension.sol";
+&nbsp;
+import { SafeMath } from "../../utils/SafeMath.sol";
+&nbsp;
+import { ModifierRole } from "../AccessControl/ModifierRole.sol";
+import { ModifierPausable } from "../TargetedPausable/ModifierPausable.sol";
+&nbsp;
+/**
+ * @title uSmart's ERC20 implementation, including recommended extensions and other usfull stuff
+ */
+//ERC20Permit
+contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, ModifierRole, ModifierPausable {
+	using SafeMath for uint256;
+&nbsp;
+	constructor() {}
+&nbsp;
+	function _approve(
+		address _holder,
+		address _spender,
+		uint256 _value
+	) internal override <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibTokenConst.FULL) returns (bool) {
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(<span class="branch-0 cbranch-no" title="branch not covered" >(_value == 0)</span> || (_allowance(msg.sender, _spender) == 0), "Approve: zero first");
+		return super._approve(_holder, _spender, _value);
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function _increaseAllowance(address _spender, uint256 _addedValue) internal override whenNotPaused(LibTokenConst.FULL) returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >		return super._increaseAllowance(_spender, _addedValue);</span>
+	}
+&nbsp;
+	function _decreaseAllowance(
+		address _holder,
+		address _spender,
+		uint256 _subtractValue
+	) internal override <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibTokenConst.FULL) returns (bool) {
+		return super._decreaseAllowance(_holder, _spender, _subtractValue);
+	}
+&nbsp;
+	function mint(address account, uint256 amount) external <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibTokenConst.FULL) <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(LibTokenConst.TREASURY_ROLE) {
+		_mint(account, amount);
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function burn(uint256 amount) external whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TREASURY_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >		_burn(msg.sender, amount)</span>;
+	}
+&nbsp;
+	function burnFrom(address account, uint256 amount) external <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibTokenConst.FULL) <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(LibTokenConst.TREASURY_ROLE) {
+		_burn(account, amount);
+	}
+&nbsp;
+	//function _setName(string memory name) internal virtual override(ERC20Metadata, ERC20PermitInternal) {
+<span class="fstat-no" title="function not covered" >	function _setName(string memory name) internal virtual override {</span>
+<span class="cstat-no" title="statement not covered" >		super._setName(name)</span>;
+	}
+&nbsp;
+	/**
+	 * Transfer token between accounts, based on BNOX TOS.
+	 * - poolFee% of the transferred amount is going to poolAddress
+	 * - generalFee% of the transferred amount is going to amountGeneral
+	 *
+	 * @param _sender The address from where the token sent
+	 * @param _recipient Recipient address
+	 * @param _amount The amount to be transferred
+	 */
+	function _transfer(address _sender, address _recipient, uint256 _amount) internal override returns (bool) {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (
+			(LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.SENDER_FREE_FEE_WL, _sender)) ||
+			(LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.RECIPIENT_FREE_FEE_WL, _recipient))
+		) {
+<span class="cstat-no" title="statement not covered" >			return super._transfer(_sender, _recipient, _amount);</span>
+		} else {
+			/**
+			 * Three decimal in percent.
+			 * The decimal correction is 100.000, but to avoid rounding errors, first divide by 10.000
+			 * and after that the calculation must add 5 and divide 10 at the end.
+			 */
+			uint256 decimalCorrection = 10000;
+			uint256 generalFeePercent256 = LibCustomERC20Extension._getGeneralFee();
+			uint256 bsoFeePercent256 = LibCustomERC20Extension._getPoolFee();
+			uint256 totalFeePercent = generalFeePercent256.add(bsoFeePercent256);
+&nbsp;
+			uint256 totalFeeAmount = _amount.mul(totalFeePercent).div(decimalCorrection).add(5).div(10);
+			uint256 amountBso = _amount.mul(bsoFeePercent256).div(decimalCorrection).add(5).div(10);
+			uint256 amountGeneral = totalFeeAmount.sub(amountBso);
+&nbsp;
+			uint256 recipientTransferAmount = _amount.sub(totalFeeAmount);
+&nbsp;
+			bool result = super._transfer(_sender, _recipient, recipientTransferAmount);
+			<span class="missing-if-branch" title="else path not taken" >E</span>require(result, "Transfer error");
+&nbsp;
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (amountGeneral &gt; 0) {
+				result = super._transfer(_sender, LibCustomERC20Extension._getGeneralFeeAddress(), amountGeneral);
+<span class="cstat-no" title="statement not covered" >				require(result, "General fee transfer error")</span>;
+			}
+&nbsp;
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (amountBso &gt; 0) {
+				result = super._transfer(_sender, LibCustomERC20Extension._getPoolFeeAddress(), amountBso);
+<span class="cstat-no" title="statement not covered" >				require(result, "Pool fee transfer error")</span>;
+			}
+		}
+		return true;
+	}
+&nbsp;
+	function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual override <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibTokenConst.FULL) {
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(!LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.SENDER_BL, from), "Blacklist: sender");
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(!LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.RECIPIENT_BL, to), "Blacklist: recipient");
+		super._beforeTokenTransfer(from, to, amount);
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 21 2024 09:27:54 GMT+0100 (közép-európai téli idő)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

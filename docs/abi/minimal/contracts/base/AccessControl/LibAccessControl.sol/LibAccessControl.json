@@ -1,0 +1,9 @@
+[
+  "error AccessDenied(bytes32,address)",
+  "error Ownable__NotOwner()",
+  "error Ownable__NotTransitiveOwner()",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "event RoleAdminChanged(address indexed,bytes32,bytes32 indexed,bytes32 indexed)",
+  "event RoleGranted(address indexed,bytes32,address indexed,address indexed)",
+  "event RoleRevoked(address indexed,bytes32,address indexed,address indexed)"
+]

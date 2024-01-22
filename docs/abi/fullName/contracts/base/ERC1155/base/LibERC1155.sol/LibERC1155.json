@@ -1,0 +1,11 @@
+[
+  "event AllTokenPaused(address indexed account)",
+  "event AllTokenUnpaused(address indexed account)",
+  "event Approval(address indexed owner, address indexed operator, uint256 indexed id, uint256 currenctValue, uint256 newValue)",
+  "event ApprovalForAll(address indexed account, address indexed operator, bool approved)",
+  "event TokenPaused(address indexed account, uint256 indexed tokenId)",
+  "event TokenUnpaused(address indexed account, uint256 indexed tokenId)",
+  "event TransferBatch(address indexed operator, address indexed from, address indexed to, uint256[] ids, uint256[] values)",
+  "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
+  "event URI(string value, uint256 indexed tokenId)"
+]

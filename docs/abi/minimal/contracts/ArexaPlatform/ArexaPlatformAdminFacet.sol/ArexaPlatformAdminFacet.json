@@ -1,0 +1,18 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error LibERC1155__ArrayLengthMismatch()",
+  "error LibERC1155__BalanceQueryZeroAddress()",
+  "error LibERC1155__ERC1155ReceiverNotImplemented()",
+  "error LibERC1155__ERC1155ReceiverRejected()",
+  "error LibERC1155__MintToZeroAddress()",
+  "error LibERC1155__NotOwnerOrApproved()",
+  "error LibERC1155__NotOwnerOrApprovedLimit()",
+  "error LibERC1155__TransferExceedsBalance()",
+  "error LibERC1155__TransferToZeroAddress()",
+  "error TargetedPausable__TargetedPaused()",
+  "function buyMagic100TokenAdmin(address)",
+  "function createSubscription(uint256,uint16,uint8,uint256,uint256,uint256) returns (uint256)",
+  "function getArexaTokenPool(uint8) view returns (tuple(uint256,uint256))",
+  "function payArexaTokenFromPool(uint8,address,uint32)"
+]

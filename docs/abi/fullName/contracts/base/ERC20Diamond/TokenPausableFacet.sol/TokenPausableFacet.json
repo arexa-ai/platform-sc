@@ -1,0 +1,10 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32 role, address account)",
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "function PAUSABLE_FULL() view returns (bytes32)",
+  "function pause(bytes32 target)",
+  "function paused(bytes32 target) view returns (bool status_)",
+  "function unpause(bytes32 target)"
+]

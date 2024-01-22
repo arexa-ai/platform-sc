@@ -1,0 +1,14 @@
+[
+  "error AccessDenied(bytes32,address)",
+  "error Ownable__NotOwner()",
+  "function AML_ROLE() view returns (bytes32)",
+  "function COMPLIANCE_ROLE() view returns (bytes32)",
+  "function TOKEN_ADMIN_ROLE() view returns (bytes32)",
+  "function TREASURY_ROLE() view returns (bytes32)",
+  "function getRoleAdmin(bytes32) view returns (bytes32)",
+  "function grantRole(bytes32,address)",
+  "function hasRole(bytes32,address) view returns (bool)",
+  "function renounceRole(bytes32)",
+  "function revokeRole(bytes32,address)",
+  "function setRoleAdmin(bytes32,bytes32)"
+]

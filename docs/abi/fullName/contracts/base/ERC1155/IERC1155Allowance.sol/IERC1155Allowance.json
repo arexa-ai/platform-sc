@@ -1,0 +1,5 @@
+[
+  "event Approval(address indexed owner, address indexed operator, uint256 indexed id, uint256 currenctValue, uint256 newValue)",
+  "function allowance(address _owner, address _operator, uint256 _id) view returns (uint256)",
+  "function approve(address _operator, uint256 _id, uint256 _currentValue, uint256 _newValue)"
+]

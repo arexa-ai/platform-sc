@@ -1,0 +1,55 @@
+[
+  {
+    "inputs": [],
+    "name": "LibERC1155__ArrayLengthMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LibERC1155__BalanceQueryZeroAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LibERC1155__ERC1155ReceiverNotImplemented",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LibERC1155__ERC1155ReceiverRejected",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LibERC1155__MintToZeroAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Ownable__NotOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "payingToken",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IERC20",
+        "name": "arexaERC20Token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint64",
+        "name": "restrictionTimeDelta",
+        "type": "uint64"
+      }
+    ],
+    "name": "init",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

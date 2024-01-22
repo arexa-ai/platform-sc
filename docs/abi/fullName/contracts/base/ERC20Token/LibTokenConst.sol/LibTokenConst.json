@@ -1,0 +1,11 @@
+[
+  "function AML_ROLE() view returns (bytes32)",
+  "function COMPLIANCE_ROLE() view returns (bytes32)",
+  "function FULL() view returns (bytes32)",
+  "function RECIPIENT_BL() view returns (bytes32)",
+  "function RECIPIENT_FREE_FEE_WL() view returns (bytes32)",
+  "function SENDER_BL() view returns (bytes32)",
+  "function SENDER_FREE_FEE_WL() view returns (bytes32)",
+  "function TOKEN_ADMIN_ROLE() view returns (bytes32)",
+  "function TREASURY_ROLE() view returns (bytes32)"
+]

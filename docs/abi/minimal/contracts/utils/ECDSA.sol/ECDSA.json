@@ -1,0 +1,6 @@
+[
+  "error ECDSA__InvalidS()",
+  "error ECDSA__InvalidSignature()",
+  "error ECDSA__InvalidSignatureLength()",
+  "error ECDSA__InvalidV()"
+]

@@ -1,0 +1,6 @@
+[
+  "error InitializationFunctionReverted(address,bytes)",
+  "error Ownable__NotOwner()",
+  "event DiamondCut(tuple(address,uint8,bytes4[])[],address,bytes)",
+  "function diamondCut(tuple(address,uint8,bytes4[])[],address,bytes)"
+]

@@ -1,0 +1,16 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__TargetedPaused()",
+  "function RECIPIENT_BLACKLIST() view returns (bytes32)",
+  "function SENDER_BLACKLIST() view returns (bytes32)",
+  "function getAccountBlackWhiteList(bytes32,address) view returns (bool)",
+  "function getDestinationAccountBL(address) view returns (bool)",
+  "function getSourceAccountBL(address) view returns (bool)",
+  "function setAccountBlackWhiteList(bytes32,address,bool)",
+  "function setBatchDestinationAccountBL(address[],bool)",
+  "function setBatchSourceAccountBL(address[],bool)",
+  "function setDestinationAccountBL(address,bool)",
+  "function setSourceAccountBL(address,bool)",
+  "function withdrawUserTokenByCompliance(address)"
+]

@@ -1,0 +1,9 @@
+[
+  "error LibERC1155__ArrayLengthMismatch()",
+  "error LibERC1155__BalanceQueryZeroAddress()",
+  "error LibERC1155__ERC1155ReceiverNotImplemented()",
+  "error LibERC1155__ERC1155ReceiverRejected()",
+  "error LibERC1155__MintToZeroAddress()",
+  "error Ownable__NotOwner()",
+  "function init(address,address,uint64)"
+]

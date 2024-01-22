@@ -1,0 +1,8 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32 role, address account)",
+  "error TargetedPausable__TargetedPaused()",
+  "function getArexaERC20Token() view returns (address)",
+  "function getPayingToken() view returns (address)",
+  "function setPayingToken(address _token)"
+]

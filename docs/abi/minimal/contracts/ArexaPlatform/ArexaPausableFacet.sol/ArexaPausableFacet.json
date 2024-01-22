@@ -1,0 +1,23 @@
+[
+  "constructor()",
+  "error AccessDenied(bytes32,address)",
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "event AllTokenPaused(address indexed)",
+  "event AllTokenUnpaused(address indexed)",
+  "event TokenPaused(address indexed,uint256 indexed)",
+  "event TokenUnpaused(address indexed,uint256 indexed)",
+  "function PAUSABLE_AREXA_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_FULL() view returns (bytes32)",
+  "function PAUSABLE_MAGIC_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_SUBSCR1_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_SUBSCR2_TOKEN() view returns (bytes32)",
+  "function PAUSABLE_TRADER_TOKEN() view returns (bytes32)",
+  "function pause(bytes32)",
+  "function pauseAllToken()",
+  "function pauseToken(uint256)",
+  "function paused(bytes32) view returns (bool)",
+  "function unpause(bytes32)",
+  "function unpauseAllToken()",
+  "function unpauseToken(uint256)"
+]

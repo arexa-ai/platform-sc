@@ -1,0 +1,12 @@
+[
+  {
+    "inputs": [],
+    "name": "ERC20Extended__ExcessiveAllowance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ERC20Extended__InsufficientAllowance",
+    "type": "error"
+  }
+]

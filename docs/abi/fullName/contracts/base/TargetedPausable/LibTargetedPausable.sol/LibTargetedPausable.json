@@ -1,0 +1,6 @@
+[
+  "error TargetedPausable__NotTargetedPaused()",
+  "error TargetedPausable__TargetedPaused()",
+  "event TargetedPaused(bytes32 indexed target, address indexed account)",
+  "event TargetedUnpaused(bytes32 target, address indexed account)"
+]
