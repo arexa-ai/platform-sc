@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32,address)",
   "error ERC20Extended__ExcessiveAllowance()",
   "error ERC20Extended__InsufficientAllowance()",

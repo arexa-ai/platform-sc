@@ -1,7 +1,7 @@
 import { task } from "hardhat/config";
 import { getUSDTSmartContracts } from "./utils/utils";
 
-task("verfiy-arexa-test-usdt", "Verify AREXA Test USDT").setAction(async (_taskArg, hre) => {
+task("verify-arexa-test-usdt", "Verify AREXA Test USDT").setAction(async (_taskArg, hre) => {
 	if (hre.network.name !== "goerli") {
 		throw new Error("Not supported or not implemented on this network!");
 	}
