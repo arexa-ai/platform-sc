@@ -35,19 +35,8 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 			"Only subscription token type is permitted!"
 		);
 		tokenId = LibArexaPlatform.createSubscriptions(msg.sender, tokenType, year, month, quantity, min, max);
+		LibERC1155.setTokenURI(tokenId, LibERC1155.getTokenUri(tokenType));
 	}
-
-	// function buySubscriptionAdmin(
-	// 	uint256 tokenId,
-	// 	address toAccount,
-	// 	uint32 quantity
-	// ) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
-	// 	//Tier1 Oracle or Tier2 Edge
-	// 	//Price: variable USDT/piece, based on algorithm
-	// 	//Quantity: 1 per account, but with admin can be more...
-
-	// 	LibArexaPlatform.buySubscription(tokenId, toAccount, quantity);
-	// }
 
 	function payArexaTokenFromPool(
 		uint8 poolType,

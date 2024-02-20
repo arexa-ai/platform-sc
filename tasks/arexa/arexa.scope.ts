@@ -1,3 +1,4 @@
 import { scope } from "hardhat/config";
 
-export const arexaScope = scope("arexa", "AREXA platform related tasks");
+export const arexaAdminScope = scope("arexa-admin", "AREXA platform - token admin related tasks");
+export const arexaTokenScope = scope("arexa-token", "AREXA platform - token related tasks");

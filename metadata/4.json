@@ -1,0 +1,16 @@
+{
+	"name": "AREXA AI Token",
+	"description": "AREXA AI token at AREXA AI platform",
+	"image": "https://bafybeie5jgka7lpv6lu7fybvbwehbez6ftfjgl6j7xuwkyonafx3buvefy.ipfs.nftstorage.link/AREXA_AI_512.png",
+	"external_url": "https://www.arexa.io/",
+	"decimals": 0,
+	"properties": {
+		"token_type": 400000000
+	},
+	"attributes": [
+		{
+			"trait_type": "TokenType",
+			"value": 400000000
+		}
+	]
+}

@@ -35,3 +35,11 @@ npx hardhat verify-arexa-platform --network goerli
 npx hardhat verfiy-arexa-erc20 --network goerli
 npx hardhat verify-arexa-test-usdt --network goerli
 ```
+
+# Development
+
+To dev
+
+## Befor Start
+
+Tran

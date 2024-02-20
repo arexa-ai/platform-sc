@@ -1,0 +1,16 @@
+{
+	"name": "AREXA Oracle subscription",
+	"description": "Oracle subscription token at AREXA AI platform",
+	"image": "https://bafybeie5jgka7lpv6lu7fybvbwehbez6ftfjgl6j7xuwkyonafx3buvefy.ipfs.nftstorage.link/AREXA_1_512.png",
+	"external_url": "https://www.arexa.io/",
+	"decimals": 0,
+	"properties": {
+		"token_type": 100000000
+	},
+	"attributes": [
+		{
+			"trait_type": "TokenType",
+			"value": 100000000
+		}
+	]
+}

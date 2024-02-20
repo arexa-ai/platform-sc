@@ -312,6 +312,8 @@ describe("ArexaPlatform - Example", function () {
 			const user1USDTCloseBalance = await usdt.tokenFacet.balanceOf(user1.address);
 			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub(100n * BigInt(10 ** usdt.DECIMALS)));
 
+			await arexa.amlFacet.connect(arexa.ownerAddress).setMagic100FirstBuyerWL(user1.address, true);
+
 			const resultWithError = platformFacetUser1.buyMagic100Token();
 			await expect(resultWithError).to.be.revertedWith("Only 1 Magic token can be bought now!");
 		});

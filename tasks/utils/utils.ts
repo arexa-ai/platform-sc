@@ -36,11 +36,10 @@ import {
 	Diamond,
 	DiamondCutFacet,
 	DiamondLoupeFacet,
-	IERC20,
 	IERC20Metadata,
-	TokenFacet,
 } from "../../typechain-types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
+import { erc20Abi } from "./abi.erc20";
 
 export async function getAREXASmartContracts(hre: HardhatRuntimeEnvironment) {
 	const { network, ethers, deployments } = hre;
@@ -285,21 +284,21 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 	if (isTestNetwork) {
 		const descriptor = getArexaTokenDeploymentDescriptor(descriptorTypeUSDT);
 
-		const rxaiAddress = (await deployments.get(descriptor.diamond.name)).address;
+		const usdtAddress = (await deployments.get(descriptor.diamond.name)).address;
 
-		const usdtDiamond = await ethers.getContractAt(descriptor.diamond.artifact, rxaiAddress, signers[0]);
-		const usdtDiamondInitializer = await ethers.getContractAt(descriptor.initializer.artifact, rxaiAddress, signers[0]);
+		const usdtDiamond = await ethers.getContractAt(descriptor.diamond.artifact, usdtAddress, signers[0]);
+		const usdtDiamondInitializer = await ethers.getContractAt(descriptor.initializer.artifact, usdtAddress, signers[0]);
 		const usdtFacets = descriptor.facets;
-		const usdtDiamondCutFacet = await ethers.getContractAt(descriptor.diamondCutFacet.artifact, rxaiAddress, signers[0]);
-		const usdtDiamondLoupeFacet = await ethers.getContractAt(usdtFacets.diamondLoupeFacet.artifact, rxaiAddress, signers[0]);
-		const usdtOwnershipFacet = await ethers.getContractAt(usdtFacets.ownershipFacet.artifact, rxaiAddress, signers[0]);
-		const usdtPausableFacet = await ethers.getContractAt(usdtFacets.pausableFacet.artifact, rxaiAddress, signers[0]);
-		const usdtACLFacet = await ethers.getContractAt(usdtFacets.aclFacet.artifact, rxaiAddress, signers[0]);
-		const usdtAdminFacet = await ethers.getContractAt(usdtFacets.adminFacet.artifact, rxaiAddress, signers[0]);
-		const usdtAMLFacet = await ethers.getContractAt(usdtFacets.amlFacet.artifact, rxaiAddress, signers[0]);
-		const usdtTokenFacet = await ethers.getContractAt(usdtFacets.tokenFacet.artifact, rxaiAddress, signers[0]);
+		const usdtDiamondCutFacet = await ethers.getContractAt(descriptor.diamondCutFacet.artifact, usdtAddress, signers[0]);
+		const usdtDiamondLoupeFacet = await ethers.getContractAt(usdtFacets.diamondLoupeFacet.artifact, usdtAddress, signers[0]);
+		const usdtOwnershipFacet = await ethers.getContractAt(usdtFacets.ownershipFacet.artifact, usdtAddress, signers[0]);
+		const usdtPausableFacet = await ethers.getContractAt(usdtFacets.pausableFacet.artifact, usdtAddress, signers[0]);
+		const usdtACLFacet = await ethers.getContractAt(usdtFacets.aclFacet.artifact, usdtAddress, signers[0]);
+		const usdtAdminFacet = await ethers.getContractAt(usdtFacets.adminFacet.artifact, usdtAddress, signers[0]);
+		const usdtAMLFacet = await ethers.getContractAt(usdtFacets.amlFacet.artifact, usdtAddress, signers[0]);
+		const usdtTokenFacet = await ethers.getContractAt(usdtFacets.tokenFacet.artifact, usdtAddress, signers[0]);
 
-		const usdtDecimals = await usdtTokenFacet.decimals();
+		const usdtDecimals = (await usdtTokenFacet.decimals()) as number;
 
 		return {
 			signers: signers,
@@ -309,7 +308,7 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 			ownerSigner: signers[namedAccounts.diamondOwner],
 			ownerSignerAddress: signers[namedAccounts.diamondOwner].address,
 			deploymentDescriptor: descriptor,
-			diamondAddress: rxaiAddress,
+			diamondAddress: usdtAddress,
 			diamond: usdtDiamond as Diamond,
 			diamondInitializer: usdtDiamondInitializer as ArexaTokenDiamondInit,
 			diamondCutFacet: usdtDiamondCutFacet as DiamondCutFacet,
@@ -327,7 +326,7 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 	if (ArexaInitParams[descriptorTypeAREXA].payingToken === zeroAddress) {
 		const descriptorUSDT = getArexaTokenDeploymentDescriptor(descriptorTypeUSDT);
 		const usdtAddress = (await deployments.get(descriptorUSDT.diamond.name)).address;
-		const usdtToken = (await ethers.getContractAt(descriptorUSDT.facets.tokenFacet.artifact, usdtAddress)) as IERC20 & IERC20Metadata;
+		const usdtToken = (await ethers.getContractAt(descriptorUSDT.facets.tokenFacet.artifact, usdtAddress)) as unknown;
 		const decimals = await (usdtToken as unknown as IERC20Metadata).decimals();
 		return {
 			signers: signers,
@@ -337,10 +336,12 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 			ownerSigner: signers[namedAccounts.diamondOwner],
 			ownerSignerAddress: signers[namedAccounts.diamondOwner].address,
 			diamondAddress: usdtAddress,
-			tokenFacet: usdtToken as IERC20,
+			tokenFacet: usdtToken as ArexaTokenFacet,
 			DECIMALS: decimals,
 		};
 	} else {
+		const usdtToken = (await ethers.getContractAt(erc20Abi, ArexaInitParams[descriptorTypeAREXA].payingToken)) as unknown;
+		const decimals = await (usdtToken as unknown as IERC20Metadata).decimals();
 		return {
 			signers: signers,
 			namedAccounts: namedAccounts,
@@ -348,6 +349,9 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 			deployerSignerAddress: signers[namedAccounts.deployer].address,
 			ownerSigner: signers[namedAccounts.diamondOwner],
 			ownerSignerAddress: signers[namedAccounts.diamondOwner].address,
+			diamondAddress: ArexaInitParams[descriptorTypeAREXA].payingToken,
+			tokenFacet: usdtToken as ArexaTokenFacet,
+			DECIMALS: decimals,
 		};
 	}
 }

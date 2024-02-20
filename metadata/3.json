@@ -1,0 +1,16 @@
+{
+	"name": "AREXA Singuralirty token",
+	"description": "Singuralirty token at AREXA AI platform",
+	"image": "https://bafybeie5jgka7lpv6lu7fybvbwehbez6ftfjgl6j7xuwkyonafx3buvefy.ipfs.nftstorage.link/AREXA_3_512.png",
+	"external_url": "https://www.arexa.io/",
+	"decimals": 0,
+	"properties": {
+		"token_type": 300000000
+	},
+	"attributes": [
+		{
+			"trait_type": "TokenType",
+			"value": 300000000
+		}
+	]
+}

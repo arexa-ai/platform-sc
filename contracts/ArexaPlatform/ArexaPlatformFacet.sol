@@ -100,6 +100,8 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 			"Only an approved account can buy the Magic token"
 		);
 
+		LibBlackWhiteList._setAccountBlackWhiteList(LibArexaConst.MAGIC100_FIRST_BUYER, msg.sender, false);
+
 		uint256 balance = LibERC1155.balanceOf(msg.sender, LibArexaConst.MAGIC_TOKEN_ID);
 		require(balance == 0, "Only 1 Magic token can be bought now!");
 
