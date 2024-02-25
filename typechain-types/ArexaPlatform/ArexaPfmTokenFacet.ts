@@ -32,9 +32,11 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
     "balanceOf(address,uint256)": FunctionFragment;
     "balanceOfBatch(address[],uint256[])": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
+    "name()": FunctionFragment;
     "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)": FunctionFragment;
     "safeTransferFrom(address,address,uint256,uint256,bytes)": FunctionFragment;
     "setApprovalForAll(address,bool)": FunctionFragment;
+    "symbol()": FunctionFragment;
   };
 
   getFunction(
@@ -42,9 +44,11 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
       | "balanceOf"
       | "balanceOfBatch"
       | "isApprovedForAll"
+      | "name"
       | "safeBatchTransferFrom"
       | "safeTransferFrom"
       | "setApprovalForAll"
+      | "symbol"
   ): FunctionFragment;
 
   encodeFunctionData(
@@ -59,6 +63,7 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
     functionFragment: "isApprovedForAll",
     values: [PromiseOrValue<string>, PromiseOrValue<string>]
   ): string;
+  encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "safeBatchTransferFrom",
     values: [
@@ -83,6 +88,7 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
     functionFragment: "setApprovalForAll",
     values: [PromiseOrValue<string>, PromiseOrValue<boolean>]
   ): string;
+  encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
 
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
   decodeFunctionResult(
@@ -93,6 +99,7 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
     functionFragment: "isApprovedForAll",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "safeBatchTransferFrom",
     data: BytesLike
@@ -105,6 +112,7 @@ export interface ArexaPfmTokenFacetInterface extends utils.Interface {
     functionFragment: "setApprovalForAll",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
 
   events: {
     "ApprovalForAll(address,address,bool)": EventFragment;
@@ -212,6 +220,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
+    name(overrides?: CallOverrides): Promise<[string]>;
+
     safeBatchTransferFrom(
       _from: PromiseOrValue<string>,
       _to: PromiseOrValue<string>,
@@ -235,6 +245,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       _approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
+
+    symbol(overrides?: CallOverrides): Promise<[string]>;
   };
 
   balanceOf(
@@ -254,6 +266,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
     _operator: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
+
+  name(overrides?: CallOverrides): Promise<string>;
 
   safeBatchTransferFrom(
     _from: PromiseOrValue<string>,
@@ -279,6 +293,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  symbol(overrides?: CallOverrides): Promise<string>;
+
   callStatic: {
     balanceOf(
       _owner: PromiseOrValue<string>,
@@ -297,6 +313,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       _operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
+
+    name(overrides?: CallOverrides): Promise<string>;
 
     safeBatchTransferFrom(
       _from: PromiseOrValue<string>,
@@ -321,6 +339,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       _approved: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    symbol(overrides?: CallOverrides): Promise<string>;
   };
 
   filters: {
@@ -394,6 +414,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    name(overrides?: CallOverrides): Promise<BigNumber>;
+
     safeBatchTransferFrom(
       _from: PromiseOrValue<string>,
       _to: PromiseOrValue<string>,
@@ -417,6 +439,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       _approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
+
+    symbol(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -438,6 +462,8 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
     safeBatchTransferFrom(
       _from: PromiseOrValue<string>,
       _to: PromiseOrValue<string>,
@@ -461,5 +487,7 @@ export interface ArexaPfmTokenFacet extends BaseContract {
       _approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
+
+    symbol(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

@@ -13,6 +13,14 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "ArexaDiamondDummyImplementation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ArexaDiamondDummyImplementation__factory>;
+    getContractFactory(
+      name: "TokenDiamondDummyImplementation",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TokenDiamondDummyImplementation__factory>;
+    getContractFactory(
       name: "ArexaACLFacet",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ArexaACLFacet__factory>;
@@ -129,6 +137,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.LibDiamond__factory>;
     getContractFactory(
+      name: "LibDiamondEtherscan",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.LibDiamondEtherscan__factory>;
+    getContractFactory(
       name: "LibERC1155",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.LibERC1155__factory>;
@@ -237,6 +249,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DiamondCutFacet__factory>;
     getContractFactory(
+      name: "DiamondEtherscanFacet",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.DiamondEtherscanFacet__factory>;
+    getContractFactory(
       name: "DiamondLoupeFacet",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DiamondLoupeFacet__factory>;
@@ -285,6 +301,16 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.UintUtils__factory>;
 
+    getContractAt(
+      name: "ArexaDiamondDummyImplementation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ArexaDiamondDummyImplementation>;
+    getContractAt(
+      name: "TokenDiamondDummyImplementation",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TokenDiamondDummyImplementation>;
     getContractAt(
       name: "ArexaACLFacet",
       address: string,
@@ -431,6 +457,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.LibDiamond>;
     getContractAt(
+      name: "LibDiamondEtherscan",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.LibDiamondEtherscan>;
+    getContractAt(
       name: "LibERC1155",
       address: string,
       signer?: ethers.Signer
@@ -565,6 +596,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.DiamondCutFacet>;
+    getContractAt(
+      name: "DiamondEtherscanFacet",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.DiamondEtherscanFacet>;
     getContractAt(
       name: "DiamondLoupeFacet",
       address: string,

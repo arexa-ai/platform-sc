@@ -4,6 +4,7 @@
 export * as arexaPlatform from "./ArexaPlatform";
 export * as arexaToken from "./ArexaToken";
 export * as diamondFacets from "./DiamondFacets";
+export * as dummy from "./_dummy";
 export * as base from "./base";
 export * as interfaces from "./interfaces";
 export * as upgradeInitializers from "./upgradeInitializers";

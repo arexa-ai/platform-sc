@@ -2,4 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { DiamondCutFacet } from "./DiamondCutFacet";
+export type { DiamondEtherscanFacet } from "./DiamondEtherscanFacet";
 export type { DiamondLoupeFacet } from "./DiamondLoupeFacet";

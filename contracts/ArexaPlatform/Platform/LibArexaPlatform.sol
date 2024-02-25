@@ -180,8 +180,9 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// require(result, "Something wrong with the payment!");
 
 		//divide the amount to pool and arexa
 		//SUBSCR1_TOKEN_TYPE OR SUBSCR2_TOKEN_TYPE lesz a vége
@@ -219,8 +220,9 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// require(result, "Something wrong with the payment!");
 
 		//divide the amount to pool and arexa, fontos a sorrend, mielőtt megkapta a tokent és adminisztráltuk a PNL változást, előtte növeljük a pool értéket
 		//azért mert így a deltaPNLben nem napja meg maga után járó részt.
@@ -262,8 +264,9 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// require(result, "Something wrong with the payment!");
 
 		//divide the amount to pool and arexa, fontos a sorrend, mielőtt megkapta a tokent és adminisztráltuk a PNL változást, előtte növeljük a pool értéket
 		//azért mert így a deltaPNLben nem napja meg maga után járó részt.
@@ -301,8 +304,9 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		// require(result, "Something wrong with the payment!");
 
 		LibERC1155.safeTransfer(contractAddress, contractAddress, _account, LibArexaConst.MAGIC_TOKEN_ID, 1, "");
 
@@ -314,8 +318,9 @@ library LibArexaPlatform {
 		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
 		require(_value <= arexa.arexaBalance, "Not enough amount to pay out!");
 
-		bool result = arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _account, _value);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _account, _value);
+		// bool result = arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _account, _value);
+		// require(result, "Something wrong with the payment!");
 	}
 
 	function payoutPoolDivident(address _collectingAccount, address _toAccount, uint256 _amount) internal {
@@ -327,8 +332,9 @@ library LibArexaPlatform {
 			_collectingAccount,
 			int256(_amount)
 		);
-		bool result = arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _toAccount, _amount);
-		require(result, "Something wrong with the payment!");
+		arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _toAccount, _amount);
+		// bool result = arexa.payingERC20Token.transferFrom(LibDiamond.getDiamondAddress(), _toAccount, _amount);
+		// require(result, "Something wrong with the payment!");
 	}
 
 	function stakeArexaToken(address _fromAccount, address _toAccount, uint256 _quantity) internal {

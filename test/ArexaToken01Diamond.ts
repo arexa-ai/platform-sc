@@ -24,6 +24,7 @@ describe("ArexaTokenDiamond", function () {
 
 		const facets = descriptorToken.facets;
 		const diamondLoupeFacet = await ethers.getContractAt(facets.diamondLoupeFacet.artifact, diamond.address);
+		const diamondEtherscanFacet = await ethers.getContractAt(facets.diamondEtherscanFacet.artifact, diamond.address);
 		const ownershipFacet = await ethers.getContractAt(facets.ownershipFacet.artifact, diamond.address);
 		const pausableFacet = await ethers.getContractAt(facets.pausableFacet.artifact, diamond.address);
 		const aclFacet = await ethers.getContractAt(facets.aclFacet.artifact, diamond.address);
@@ -34,6 +35,7 @@ describe("ArexaTokenDiamond", function () {
 			diamondAddress: diamond.address,
 			diamondCutFacet,
 			diamondLoupeFacet,
+			diamondEtherscanFacet,
 			ownershipFacet,
 			pausableFacet,
 			tokenACLFacet: aclFacet,
@@ -50,7 +52,7 @@ describe("ArexaTokenDiamond", function () {
 			for (const address of await diamondLoupeFacet.facetAddresses()) {
 				addresses.push(address);
 			}
-			expect(addresses.length).to.equal(8);
+			expect(addresses.length).to.equal(9);
 		});
 
 		it("Check name", async function () {
@@ -64,6 +66,7 @@ describe("ArexaTokenDiamond", function () {
 			const {
 				diamondCutFacet,
 				diamondLoupeFacet,
+				diamondEtherscanFacet,
 				ownershipFacet,
 				pausableFacet,
 				tokenACLFacet,
@@ -84,12 +87,13 @@ describe("ArexaTokenDiamond", function () {
 
 			await testFacetSelector(diamondCutFacet, 0);
 			await testFacetSelector(diamondLoupeFacet, 1);
-			await testFacetSelector(ownershipFacet, 2);
-			await testFacetSelector(pausableFacet, 3);
-			await testFacetSelector(tokenACLFacet, 4);
-			await testFacetSelector(tokenAdminFacet, 5);
-			await testFacetSelector(tokenAMLFacet, 6);
-			await testFacetSelector(tokenFacet, 7);
+			await testFacetSelector(diamondEtherscanFacet, 2);
+			await testFacetSelector(ownershipFacet, 3);
+			await testFacetSelector(pausableFacet, 4);
+			await testFacetSelector(tokenACLFacet, 5);
+			await testFacetSelector(tokenAdminFacet, 6);
+			await testFacetSelector(tokenAMLFacet, 7);
+			await testFacetSelector(tokenFacet, 8);
 		});
 	});
 });

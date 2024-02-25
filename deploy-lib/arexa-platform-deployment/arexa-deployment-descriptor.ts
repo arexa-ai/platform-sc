@@ -51,8 +51,13 @@ export function getArexaDeploymentDescriptor(descriptorType: DescriptorTypeArexa
 	return {
 		diamond: { name: `${descriptorType}Diamond`, artifact: "Diamond" },
 		diamondCutFacet: { name: `${descriptorType}DiamondCutFacet`, artifact: "DiamondCutFacet" },
+		diamondDummyImplementation: {
+			name: `${descriptorType}ArexaDiamondDummyImplementation`,
+			artifact: "ArexaDiamondDummyImplementation",
+		},
 		facets: {
 			diamondLoupeFacet: { name: `${descriptorType}DiamondLoupeFacet`, artifact: "DiamondLoupeFacet" },
+			diamondEtherscanFacet: { name: `${descriptorType}DiamondEtherscanFacet`, artifact: "DiamondEtherscanFacet" },
 			ownershipFacet: { name: `${descriptorType}ArexaOwnershipFacet`, artifact: "ArexaOwnershipFacet" },
 			pausableFacet: { name: `${descriptorType}ArexaPausableFacet`, artifact: "ArexaPausableFacet" },
 			aclFacet: { name: `${descriptorType}ArexaACLFacet`, artifact: "ArexaACLFacet" },

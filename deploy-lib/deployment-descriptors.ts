@@ -8,26 +8,16 @@ export type DiamondDeploymentInit = DeploymentItem & {
 	params: unknown[];
 };
 
-// export type DiamondDeploymentDescriptor = {
-// 	diamond: DeploymentItem;
-// 	diamondCutFacet: DeploymentItem;
-// 	diamondInit: DeploymentItem;
-// 	requiredFacets: Record<DiamondRequiredFacets, DeploymentItem>;
-// 	requiredFacetsDeployInit: DiamondDeploymentInit;
-// 	requiredFacetsUpgradeInit: DiamondDeploymentInit;
-// 	businessFacets: Record<BlockBenTokenFacets, DeploymentItem>;
-// 	businessFacetsDeployInit: DiamondDeploymentInit;
-// 	businessFacetsUpgradeInit: DiamondDeploymentInit;
-// };
-
 export enum DiamondRequiredFacets {
 	DiamondLoupeFacet = "diamondLoupeFacet",
+	DiamondEtherscanFacet = "diamondEtherscanFacet",
 	OwnershipFacet = "ownershipFacet",
 }
 
 export type DiamondDeploymentDescriptorNew<TBusinessFacets extends string> = {
 	diamond: DeploymentItem;
 	diamondCutFacet: DeploymentItem;
+	diamondDummyImplementation: DeploymentItem;
 	facets: Record<DiamondRequiredFacets | TBusinessFacets, DeploymentItem>;
 	initializer: DiamondDeploymentInit;
 };

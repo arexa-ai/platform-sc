@@ -6,7 +6,7 @@ task("verify-arexa-platform", "Verify AREXA Platform").setAction(async (_taskArg
 
 	arexa.diamondInitializer.address;
 
-	const verifyParams: { address: string; constructorArguments?: any[] }[] = [];
+	const verifyParams: { address: string; constructorArguments?: any[]; contract?: string }[] = [];
 
 	const desc = arexa.deploymentDescriptor;
 
@@ -19,6 +19,7 @@ task("verify-arexa-platform", "Verify AREXA Platform").setAction(async (_taskArg
 	});
 	verifyParams.push({ address: (await hre.deployments.get(desc.initializer.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.diamondLoupeFacet.name)).address });
+	verifyParams.push({ address: (await hre.deployments.get(desc.facets.diamondEtherscanFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.ownershipFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.pausableFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.aclFacet.name)).address });
@@ -34,6 +35,7 @@ task("verify-arexa-platform", "Verify AREXA Platform").setAction(async (_taskArg
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.tokenEnumerableFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.tokenMetadataURIFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.tokenReceiverFacet.name)).address });
+	verifyParams.push({ address: (await hre.deployments.get(desc.diamondDummyImplementation.name)).address });
 
 	for (let i = 0; i < verifyParams.length; i++) {
 		const verifyParam = verifyParams[i];

@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/_dummy/TokenDiamondDummyImplementation.sol": {
+      "content": "\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.17;\n\n/**\n * This is a generated dummy diamond implementation for compatibility with\n * etherscan. For full contract implementation, check out the diamond on https://louper.dev\n */\n\ncontract TokenDiamondDummyImplementation {\n\n\n    struct Tuple6871229 {\n        address facetAddress;\n        uint8 action;\n        bytes4[] functionSelectors;\n    }\n\n    struct Tuple1236461 {\n        address facetAddress;\n        bytes4[] functionSelectors;\n    }\n    \n\n   function diamondCut(Tuple6871229[] memory _diamondCut, address  _init, bytes memory _calldata) external {}\n\n   function facetAddress(bytes4  _functionSelector) external view returns (address  facetAddress_) {}\n\n   function facetAddresses() external view returns (address[] memory facetAddresses_) {}\n\n   function facetFunctionSelectors(address  _facet) external view returns (bytes4[] memory facetFunctionSelectors_) {}\n\n   function facets() external view returns (Tuple1236461[] memory facets_) {}\n\n   function supportsInterface(bytes4  _interfaceId) external view returns (bool ) {}\n\n   function implementation() external view returns (address ) {}\n\n   function setDummyImplementation(address  _implementation) external {}\n\n   function owner() external view returns (address ) {}\n\n   function transferOwnership(address  _newOwner) external {}\n\n   function PAUSABLE_FULL() external view returns (bytes32 ) {}\n\n   function pause(bytes32  target) external {}\n\n   function paused(bytes32  target) external view returns (bool  status_) {}\n\n   function unpause(bytes32  target) external {}\n\n   function AML_ROLE() external view returns (bytes32 ) {}\n\n   function COMPLIANCE_ROLE() external view returns (bytes32 ) {}\n\n   function TOKEN_ADMIN_ROLE() external view returns (bytes32 ) {}\n\n   function TREASURY_ROLE() external view returns (bytes32 ) {}\n\n   function getRoleAdmin(bytes32  role) external view returns (bytes32 ) {}\n\n   function grantRole(bytes32  role, address  account) external {}\n\n   function hasRole(bytes32  role, address  account) external view returns (bool ) {}\n\n   function renounceRole(bytes32  role) external {}\n\n   function revokeRole(bytes32  role, address  account) external {}\n\n   function setRoleAdmin(bytes32  role, bytes32  adminRole) external {}\n\n   function getGeneralFee() external view returns (uint16 ) {}\n\n   function getGeneralFeeAddress() external view returns (address ) {}\n\n   function getPoolFee() external view returns (uint16 ) {}\n\n   function getPoolFeeAddress() external view returns (address ) {}\n\n   function getTreasuryAddress() external view returns (address ) {}\n\n   function getURL() external view returns (string memory) {}\n\n   function setGeneralFee(uint16  _generalFee) external {}\n\n   function setGeneralFeeAddress(address  _generalFeeAddress) external {}\n\n   function setPoolFee(uint16  _PoolFee) external {}\n\n   function setPoolFeeAddress(address  _PoolFeeAddress) external {}\n\n   function setTreasuryAddress(address  _treasuryAddress) external {}\n\n   function setURL(string memory _url) external {}\n\n   function RECIPIENT_BLACKLIST() external view returns (bytes32 ) {}\n\n   function SENDER_BLACKLIST() external view returns (bytes32 ) {}\n\n   function getAccountBlackWhiteList(bytes32  _target, address  _account) external view returns (bool ) {}\n\n   function getDestinationAccountBL(address  _account) external view returns (bool ) {}\n\n   function getSourceAccountBL(address  _account) external view returns (bool ) {}\n\n   function setAccountBlackWhiteList(bytes32  _target, address  _account, bool  _lockValue) external {}\n\n   function setBatchDestinationAccountBL(address[] memory _addresses, bool  _lockValue) external {}\n\n   function setBatchSourceAccountBL(address[] memory _addresses, bool  _lockValue) external {}\n\n   function setDestinationAccountBL(address  _account, bool  _lockValue) external {}\n\n   function setSourceAccountBL(address  _account, bool  _lockValue) external {}\n\n   function withdrawUserTokenByCompliance(address  _account) external {}\n\n   function allowance(address  holder, address  spender) external view returns (uint256  allowance_) {}\n\n   function approve(address  spender, uint256  amount) external returns (bool  status_) {}\n\n   function balanceOf(address  account) external view returns (uint256  balance_) {}\n\n   function burn(uint256  amount) external {}\n\n   function burnFrom(address  account, uint256  amount) external {}\n\n   function decimals() external view returns (uint8 ) {}\n\n   function decreaseAllowance(address  spender, uint256  amount) external returns (bool ) {}\n\n   function increaseAllowance(address  spender, uint256  amount) external returns (bool ) {}\n\n   function mint(address  account, uint256  amount) external {}\n\n   function name() external view returns (string memory) {}\n\n   function symbol() external view returns (string memory) {}\n\n   function totalSupply() external view returns (uint256  totalSupply_) {}\n\n   function transfer(address  recipient, uint256  amount) external returns (bool  status_) {}\n\n   function transferFrom(address  holder, address  recipient, uint256  amount) external returns (bool  status_) {}\n}\n"
+    }
+  },
+  "settings": {
+    "viaIR": false,
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

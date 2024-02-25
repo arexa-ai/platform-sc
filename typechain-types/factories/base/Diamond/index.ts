@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export { LibDiamond__factory } from "./LibDiamond__factory";
+export { LibDiamondEtherscan__factory } from "./LibDiamondEtherscan__factory";

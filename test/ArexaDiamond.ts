@@ -21,6 +21,7 @@ describe("ArexaDiamond", function () {
 		const facets = descriptor.facets;
 
 		const diamondLoupeFacet = await ethers.getContractAt(facets.diamondLoupeFacet.artifact, diamond.address);
+		const diamondEtherscanFacet = await ethers.getContractAt(facets.diamondEtherscanFacet.artifact, diamond.address);
 		const arexaOwnershipFacet = await ethers.getContractAt(facets.ownershipFacet.artifact, diamond.address);
 		//
 		const arexaPausableFacet = await ethers.getContractAt(facets.pausableFacet.artifact, diamond.address);
@@ -41,6 +42,7 @@ describe("ArexaDiamond", function () {
 			diamondAddress: diamond.address,
 			diamondCutFacet,
 			diamondLoupeFacet,
+			diamondEtherscanFacet,
 			arexaOwnershipFacet,
 			arexaPausableFacet,
 			arexaACLFacet,
@@ -66,7 +68,7 @@ describe("ArexaDiamond", function () {
 			for (const address of await diamondLoupeFacet.facetAddresses()) {
 				addresses.push(address);
 			}
-			expect(addresses.length).to.equal(17);
+			expect(addresses.length).to.equal(18);
 		});
 
 		//Facets should have the right function selectors -- call to facetFunctionSelectors function
@@ -74,6 +76,7 @@ describe("ArexaDiamond", function () {
 			const {
 				diamondCutFacet,
 				diamondLoupeFacet,
+				diamondEtherscanFacet,
 				arexaOwnershipFacet,
 				arexaPausableFacet,
 				arexaACLFacet,
@@ -103,21 +106,22 @@ describe("ArexaDiamond", function () {
 
 			await testFacetSelector(diamondCutFacet, 0);
 			await testFacetSelector(diamondLoupeFacet, 1);
-			await testFacetSelector(arexaOwnershipFacet, 2);
-			await testFacetSelector(arexaPausableFacet, 3);
-			await testFacetSelector(arexaACLFacet, 4);
-			await testFacetSelector(arexaAdminFacet, 5);
-			await testFacetSelector(arexaAMLFacet, 6);
-			await testFacetSelector(arexaPlatformFacet, 7);
-			await testFacetSelector(arexaPlatformAdminFacet, 8);
-			await testFacetSelector(arexaPoolPNLFacet, 9);
-			await testFacetSelector(arexaRestrictionFacet, 10);
-			await testFacetSelector(arexaStakingFacet, 11);
-			await testFacetSelector(arexaPfmTokenFacet, 12);
-			await testFacetSelector(arexaPfmTokenAllowanceFacet, 13);
-			await testFacetSelector(arexaPfmTokenEnumerableFacet, 14);
-			await testFacetSelector(arexaPfmTokenMetadataURIFacet, 15);
-			await testFacetSelector(arexaPfmTokenReceiverFacet, 16);
+			await testFacetSelector(diamondEtherscanFacet, 2);
+			await testFacetSelector(arexaOwnershipFacet, 3);
+			await testFacetSelector(arexaPausableFacet, 4);
+			await testFacetSelector(arexaACLFacet, 5);
+			await testFacetSelector(arexaAdminFacet, 6);
+			await testFacetSelector(arexaAMLFacet, 7);
+			await testFacetSelector(arexaPlatformFacet, 8);
+			await testFacetSelector(arexaPlatformAdminFacet, 9);
+			await testFacetSelector(arexaPoolPNLFacet, 10);
+			await testFacetSelector(arexaRestrictionFacet, 11);
+			await testFacetSelector(arexaStakingFacet, 12);
+			await testFacetSelector(arexaPfmTokenFacet, 13);
+			await testFacetSelector(arexaPfmTokenAllowanceFacet, 14);
+			await testFacetSelector(arexaPfmTokenEnumerableFacet, 15);
+			await testFacetSelector(arexaPfmTokenMetadataURIFacet, 16);
+			await testFacetSelector(arexaPfmTokenReceiverFacet, 17);
 		});
 	});
 });

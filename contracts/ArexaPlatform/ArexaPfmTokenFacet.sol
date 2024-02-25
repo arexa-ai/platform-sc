@@ -13,6 +13,9 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPfmTokenFacet is IERC1155, CallProtection, ModifierPausable {
+	string public constant name = "Arexa AI Platform";
+	string public constant symbol = "AREXA";
+
 	constructor() {}
 
 	function safeTransferFrom(

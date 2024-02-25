@@ -1,0 +1,5 @@
+[
+  "error Ownable__NotOwner()",
+  "function implementation() view returns (address)",
+  "function setDummyImplementation(address _implementation)"
+]

@@ -5,6 +5,8 @@ import { networkConfig } from "../helper-hardhat-config";
 import { zeroAddress } from "./utils";
 import { DiamondDeploymentInit, DeploymentItem, DiamondDeploymentDescriptorNew } from "./deployment-descriptors";
 import { Address, DeployResult, DeploymentsExtension } from "hardhat-deploy/types";
+import { generateDummyContract } from "./generate-dummy-diamond-implemention";
+import * as fs from "fs";
 
 export const MAX_FACET_COUNT_IN_ONE_CUT = 10;
 
@@ -58,7 +60,6 @@ async function deployItem(
 		waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
 	});
 	//log(`"${deloymentItem.name}" is newly deployed: ${deployedItem.newlyDeployed}`);
-	deployedItem.transactionHash;
 	log(
 		` "${deloymentItem.name}" (tx: ${deployedItem.transactionHash}) at (${deployedItem.address}) (${deployedItem.receipt?.gasUsed} gas) (new: ${deployedItem.newlyDeployed})`,
 	);
@@ -72,11 +73,14 @@ export async function deployDiamondNative(
 	deployItemCutFacet: DeploymentItem,
 	deployItemInit: DiamondDeploymentInit,
 	facets: Record<string, DeploymentItem>,
+	diamondDummyImplementation: DeploymentItem,
 ): Promise<void> {
 	//
 	const { getNamedAccounts, deployments, network } = hre;
 	const { deploy, log } = deployments;
 	const { deployer, diamondOwner } = await getNamedAccounts();
+
+	const diamondFacetContracts: Contract[] = [];
 
 	log("");
 	log("----------------------------------------------------");
@@ -92,19 +96,18 @@ export async function deployDiamondNative(
 	const diamond = await deployItem(network, deployments, deployer, deployItemDiamond, [diamondOwner, diamondCutFacet.address]);
 	const diamondOwnerSigner = await ethers.getSigner(diamondOwner);
 	const diamondCutContract = await ethers.getContractAt("IDiamondCut", diamond.address, diamondOwnerSigner);
+	diamondFacetContracts.push(diamondCutContract);
 
 	//const deployItemInit = TokenDeploymentDescriptors[descriptorType].initializer;
 	const diamondInitializer = await deployItem(network, deployments, deployer, deployItemInit, []);
 
-	const isLoupeExists = !!(await deployments.getOrNull(facets.diamondLoupeFacet.name));
-	// const diamondLoupeContract = await ethers.getContractAt("IDiamondLoupe", diamond.address, diamondOwnerSigner);
-	// if (isLoupeExists) {
-	// 	console.log("Elvileg megy ez mint az ágyba vizelés...", isLoupeExists);
-	// 	console.log("Teszt hívás:", await diamondLoupeContract.facetAddress("0xa9059cba"));
-	// }
+	// const diamondEtherscanFacet = await deployItem(network, deployments, deployer, deployEtherscanFacet, []);
+	// const diamondEtherscanContract = await ethers.getContractAt(deployEtherscanFacet.artifact, diamond.address, diamondOwnerSigner);
 
-	const origFactes: { facetAddress: string; functionSelectors: string[] }[] = [];
-	const actFacets: { facetAddress: string; functionSelectors: string[] }[] = [];
+	const isLoupeExists = !!(await deployments.getOrNull(facets.diamondLoupeFacet.name));
+
+	const origFactesSelectors: { facetAddress: string; functionSelectors: string[] }[] = [];
+	const actFacetsSelectors: { facetAddress: string; functionSelectors: string[] }[] = [];
 	const cut: FacetCut[] = [];
 
 	const diamondCutFacetContract = await ethers.getContractAt(deployItemCutFacet.artifact, diamondCutFacet.address);
@@ -113,17 +116,19 @@ export async function deployDiamondNative(
 		try {
 			const diamondLoupeContract = await ethers.getContractAt("IDiamondLoupe", diamond.address, diamondOwnerSigner);
 			const facets = await diamondLoupeContract.facets();
-			origFactes.push(...facets.map((item) => ({ facetAddress: item.facetAddress, functionSelectors: item.functionSelectors })));
+			origFactesSelectors.push(
+				...facets.map((item) => ({ facetAddress: item.facetAddress, functionSelectors: item.functionSelectors })),
+			);
 		} catch (error) {
 			log(`diamondLoupeContract is deployed but not cut into the diamond!`);
-			origFactes.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
+			origFactesSelectors.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
 		}
 	} else {
 		//on a new Diamond, the diamondCutFacet is already added
-		origFactes.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
+		origFactesSelectors.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
 	}
 
-	actFacets.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
+	actFacetsSelectors.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
 
 	//deploy facets
 	//const facets = TokenDeploymentDescriptors[descriptorType].facets;
@@ -135,20 +140,22 @@ export async function deployDiamondNative(
 			const facet = await deployItem(network, deployments, deployer, facetDeploymentItem, []);
 			const facetContract = await ethers.getContractAt(facetDeploymentItem.artifact, facet.address);
 
-			actFacets.push({ facetAddress: facet.address, functionSelectors: getSelectors(facetContract) });
+			diamondFacetContracts.push(facetContract);
+
+			actFacetsSelectors.push({ facetAddress: facet.address, functionSelectors: getSelectors(facetContract) });
 		}
 	}
-	// console.log("origFactes");
-	// console.log(JSON.stringify(origFactes, null, 2));
-	// console.log("actFacets");
-	// console.log(JSON.stringify(actFacets, null, 2));
+	// console.log("origFactesSelectors");
+	// console.log(JSON.stringify(origFactesSelectors, null, 2));
+	// console.log("actFacetsSelectors");
+	// console.log(JSON.stringify(actFacetsSelectors, null, 2));
 
 	//Calculate Cuts
-	for (let i = 0; i < origFactes.length; i++) {
-		const origFacet = origFactes[i];
+	for (let i = 0; i < origFactesSelectors.length; i++) {
+		const origFacet = origFactesSelectors[i];
 		for (let j = 0; j < origFacet.functionSelectors.length; j++) {
 			const origSelector = origFacet.functionSelectors[j];
-			const newFacet = actFacets.find((item) => item.functionSelectors.includes(origSelector));
+			const newFacet = actFacetsSelectors.find((item) => item.functionSelectors.includes(origSelector));
 			if (newFacet) {
 				if (origFacet.facetAddress !== newFacet.facetAddress) {
 					let cutItem = cut.find((item) => item.facetAddress == newFacet.facetAddress && item.action == FacetCutAction.Replace);
@@ -177,8 +184,8 @@ export async function deployDiamondNative(
 			}
 		}
 	}
-	for (let i = 0; i < actFacets.length; i++) {
-		const newFacet = actFacets[i];
+	for (let i = 0; i < actFacetsSelectors.length; i++) {
+		const newFacet = actFacetsSelectors[i];
 		for (let j = 0; j < newFacet.functionSelectors.length; j++) {
 			const selector = newFacet.functionSelectors[j];
 			let cutItem = cut.find((item) => item.facetAddress == newFacet.facetAddress && item.action == FacetCutAction.Add);
@@ -224,6 +231,49 @@ export async function deployDiamondNative(
 		log(` '${descriptorType}' INIT Diamond cut failed: ${error.reason}`);
 	}
 
+	log(` '${descriptorType}' Diamond add Etherscan compatibility`);
+	//const implContractName = `${deployItemDiamond.name}DummyImplementation`;
+
+	//generálni a dummyContractot
+	const dummyContractStr = generateDummyContract(diamondFacetContracts, {
+		diamondAddress: diamond.address,
+		network: network.name,
+		contractName: diamondDummyImplementation.artifact,
+	});
+
+	const fileName = `./contracts/_dummy/${diamondDummyImplementation.artifact}.sol`;
+
+	let originalDummyContractStr = "";
+	try {
+		originalDummyContractStr = fs.readFileSync(fileName, { encoding: "utf8" });
+	} catch (err) {}
+	if (dummyContractStr != originalDummyContractStr) {
+		fs.writeFileSync(fileName, dummyContractStr, { encoding: "utf8" });
+		await hre.run("compile", { quiet: true });
+	}
+
+	const dummy = await deployItem(network, deployments, deployer, diamondDummyImplementation, []);
+
+	const etherscanFacetContract = await ethers.getContractAt("DiamondEtherscanFacet", diamond.address, diamondOwnerSigner);
+	const dummyContractAddress = await etherscanFacetContract.implementation();
+
+	if (dummy.newlyDeployed || dummyContractAddress !== dummy.address) {
+		//be kell állítani a dummy címet a contractba.
+		try {
+			const tx = await etherscanFacetContract.setDummyImplementation(dummy.address);
+			const receipt = await tx.wait(networkConfig[network.name].blockConfirmations || 1);
+			if (!receipt.status) {
+				throw Error(`'${descriptorType}' ETHERSCAN dummy implementation tx failed: ${tx.hash}`);
+			}
+			log(` '${descriptorType}' ETHERSCAN dummy implementation tx completed (${receipt.gasUsed} gas)`);
+		} catch (err) {
+			const error = err as any;
+			log(` '${descriptorType}' ETHERSCAN dummy implementation tx failed: ${error.reason}`);
+		}
+	} else {
+		log(` '${descriptorType}' ETHERSCAN dummy implementation tx already done`);
+	}
+
 	//const deployedInit = await deployments.get(deployItemInit.name);
 	// const deployedInitContract = await ethers.getContractAt(deployItemInit.artifact, diamondInitializer.address, diamondOwnerSigner);
 	// const initAddress = diamond.newlyDeployed ? deployedInitContract.address : zeroAddress;
@@ -252,6 +302,7 @@ export async function deployDiamondWithDescriptor<TBusinessFacetsEnum extends st
 		descriptor.diamondCutFacet,
 		descriptor.initializer,
 		descriptor.facets,
+		descriptor.diamondDummyImplementation,
 	);
 }
 
@@ -268,5 +319,6 @@ export async function deployDiamond<TDescriptorType extends string, TBusinessFac
 		descriptor.diamondCutFacet,
 		descriptor.initializer,
 		descriptor.facets,
+		descriptor.diamondDummyImplementation,
 	);
 }

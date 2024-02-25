@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { LibDiamond } from "./LibDiamond";
+export type { LibDiamondEtherscan } from "./LibDiamondEtherscan";

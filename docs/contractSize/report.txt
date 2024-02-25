@@ -3,133 +3,141 @@
  ·······································································································|································|·································
  |  Contract Name                                                                                       ·  Deployed size (KiB) (change)  ·  Initcode size (KiB) (change)  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaACLFacet.sol:ArexaACLFacet                                             ·                 4.825 (0.000)  ·                 4.856 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaACLFacet.sol:ArexaACLFacet                                             ·                      4.825 ()  ·                      4.856 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaAdminFacet.sol:ArexaAdminFacet                                         ·                 1.877 (0.000)  ·                 1.908 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaAdminFacet.sol:ArexaAdminFacet                                         ·                      1.877 ()  ·                      1.908 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaAMLFacet.sol:ArexaAMLFacet                                             ·                 2.852 (0.000)  ·                 2.883 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaAMLFacet.sol:ArexaAMLFacet                                             ·                      2.852 ()  ·                      2.883 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaOwnershipFacet.sol:ArexaOwnershipFacet                                 ·                 2.087 (0.000)  ·                 2.118 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaOwnershipFacet.sol:ArexaOwnershipFacet                                 ·                      2.087 ()  ·                      2.118 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPausableFacet.sol:ArexaPausableFacet                                   ·                 4.173 (0.000)  ·                 4.204 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPausableFacet.sol:ArexaPausableFacet                                   ·                      4.173 ()  ·                      4.204 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenAllowanceFacet.sol:ArexaPfmTokenAllowanceFacet                 ·                 2.699 (0.000)  ·                 2.730 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenAllowanceFacet.sol:ArexaPfmTokenAllowanceFacet                 ·                      2.699 ()  ·                      2.730 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenEnuremableFacet.sol:ArexaPfmTokenEnumerableFacet               ·                 2.059 (0.000)  ·                 2.090 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenEnuremableFacet.sol:ArexaPfmTokenEnumerableFacet               ·                      2.059 ()  ·                      2.090 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenFacet.sol:ArexaPfmTokenFacet                                   ·                14.735 (0.000)  ·                14.767 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenFacet.sol:ArexaPfmTokenFacet                                   ·                     14.942 ()  ·                     14.974 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenMetadataURIFacet.sol:ArexaPfmTokenMetadataURIFacet             ·                 4.365 (0.000)  ·                 4.396 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenMetadataURIFacet.sol:ArexaPfmTokenMetadataURIFacet             ·                      4.365 ()  ·                      4.396 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenReceiverFacet.sol:ArexaPfmTokenReceiverFacet                   ·                 2.906 (0.000)  ·                 2.938 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenReceiverFacet.sol:ArexaPfmTokenReceiverFacet                   ·                      2.906 ()  ·                      2.938 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPlatformAdminFacet.sol:ArexaPlatformAdminFacet                         ·               15.744 (+1.016)  ·               15.775 (+1.016)  │
+ |  contracts/ArexaPlatform/ArexaPlatformAdminFacet.sol:ArexaPlatformAdminFacet                         ·                     15.535 ()  ·                     15.566 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPlatformFacet.sol:ArexaPlatformFacet                                   ·               18.692 (+0.282)  ·               18.724 (+0.282)  │
+ |  contracts/ArexaPlatform/ArexaPlatformFacet.sol:ArexaPlatformFacet                                   ·                     18.284 ()  ·                     18.315 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPoolPNLFacet.sol:ArexaPoolPNLFacet                                     ·                 6.886 (0.000)  ·                 6.917 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaPoolPNLFacet.sol:ArexaPoolPNLFacet                                     ·                      6.610 ()  ·                      6.642 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaRestrictionFacet.sol:ArexaRestrictionFacet                             ·                 2.783 (0.000)  ·                 2.814 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaRestrictionFacet.sol:ArexaRestrictionFacet                             ·                      2.783 ()  ·                      2.814 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaStakingFacet.sol:ArexaStakingFacet                                     ·                10.656 (0.000)  ·                10.688 (0.000)  │
+ |  contracts/ArexaPlatform/ArexaStakingFacet.sol:ArexaStakingFacet                                     ·                     10.656 ()  ·                     10.688 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/LibArexaConst.sol:LibArexaConst                                             ·                 1.537 (0.000)  ·                 1.618 (0.000)  │
+ |  contracts/ArexaPlatform/LibArexaConst.sol:LibArexaConst                                             ·                      1.537 ()  ·                      1.618 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/Platform/LibArexaPlatform.sol:LibArexaPlatform                              ·                 0.228 (0.000)  ·                 0.308 (0.000)  │
+ |  contracts/ArexaPlatform/Platform/LibArexaPlatform.sol:LibArexaPlatform                              ·                      0.228 ()  ·                      0.308 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/Platform/LibArexaPlatformStorage.sol:LibArexaPlatformStorage                ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/ArexaPlatform/Platform/LibArexaPlatformStorage.sol:LibArexaPlatformStorage                ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenACLFacet.sol:ArexaTokenACLFacet                                      ·                 5.051 (0.000)  ·                 5.082 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenACLFacet.sol:ArexaTokenACLFacet                                      ·                      5.051 ()  ·                      5.082 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenAdminFacet.sol:ArexaTokenAdminFacet                                  ·                 5.442 (0.000)  ·                 5.474 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenAdminFacet.sol:ArexaTokenAdminFacet                                  ·                      5.442 ()  ·                      5.474 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenAMLFacet.sol:ArexaTokenAMLFacet                                      ·                 4.672 (0.000)  ·                 4.703 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenAMLFacet.sol:ArexaTokenAMLFacet                                      ·                      4.672 ()  ·                      4.703 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenFacet.sol:ArexaTokenFacet                                            ·                 9.174 (0.000)  ·                 9.205 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenFacet.sol:ArexaTokenFacet                                            ·                      9.174 ()  ·                      9.205 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenOwnershipFacet.sol:ArexaTokenOwnershipFacet                          ·                 2.955 (0.000)  ·                 2.986 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenOwnershipFacet.sol:ArexaTokenOwnershipFacet                          ·                      2.955 ()  ·                      2.986 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaToken/ArexaTokenPausableFacet.sol:ArexaTokenPausableFacet                            ·                 1.791 (0.000)  ·                 1.822 (0.000)  │
+ |  contracts/ArexaToken/ArexaTokenPausableFacet.sol:ArexaTokenPausableFacet                            ·                      1.791 ()  ·                      1.822 ()  │
  ·······································································································|································|·································
- |  contracts/base/AccessControl/LibAccessControl.sol:LibAccessControl                                  ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/AccessControl/LibAccessControl.sol:LibAccessControl                                  ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/AccessControl/LibAccessControlStorage.sol:LibAccessControlStorage                    ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/AccessControl/LibAccessControlStorage.sol:LibAccessControlStorage                    ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/BlackWhiteList/LibBlackWhiteList.sol:LibBlackWhiteList                               ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/BlackWhiteList/LibBlackWhiteList.sol:LibBlackWhiteList                               ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/BlackWhiteList/LibBlackWhiteListStorage.sol:LibBlackWhiteListStorage                 ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/BlackWhiteList/LibBlackWhiteListStorage.sol:LibBlackWhiteListStorage                 ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/Diamond/LibDiamond.sol:LibDiamond                                                    ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/Diamond/LibDiamond.sol:LibDiamond                                                    ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/Diamond/LibDiamondStorage.sol:LibDiamondStorage                                      ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/Diamond/LibDiamondEtherscan.sol:LibDiamondEtherscan                                  ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/EIP712/LibEIP712.sol:LibEIP712                                                       ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/Diamond/LibDiamondStorage.sol:LibDiamondStorage                                      ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/EIP712/LibEIP712Storage.sol:LibEIP712Storage                                         ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/EIP712/LibEIP712.sol:LibEIP712                                                       ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC1155/base/LibERC1155.sol:LibERC1155                                               ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/EIP712/LibEIP712Storage.sol:LibEIP712Storage                                         ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC1155/base/LibERC1155Storage.sol:LibERC1155Storage                                 ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC1155/base/LibERC1155.sol:LibERC1155                                               ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC1155/customization/LibERC1155Customization.sol:LibERC1155Customization            ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC1155/base/LibERC1155Storage.sol:LibERC1155Storage                                 ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20/base/LibERC20Base.sol:LibERC20Base                                             ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC1155/customization/LibERC1155Customization.sol:LibERC1155Customization            ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20/base/LibERC20Storage.sol:LibERC20BaseStorage                                   ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20/base/LibERC20Base.sol:LibERC20Base                                             ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20/metadata/LibERC20Metadata.sol:LibERC20Metadata                                 ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20/base/LibERC20Storage.sol:LibERC20BaseStorage                                   ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20/metadata/LibERC20MetadataStorage.sol:LibERC20MetadataStorage                   ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20/metadata/LibERC20Metadata.sol:LibERC20Metadata                                 ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20Token/LibCustomERC20Extension.sol:LibCustomERC20Extension                       ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20/metadata/LibERC20MetadataStorage.sol:LibERC20MetadataStorage                   ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20Token/LibCustomERC20ExtensionStorage.sol:LibCustomERC20ExtensionStorage         ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20Token/LibCustomERC20Extension.sol:LibCustomERC20Extension                       ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/ERC20Token/LibTokenConst.sol:LibTokenConst                                           ·                 0.813 (0.000)  ·                 0.895 (0.000)  │
+ |  contracts/base/ERC20Token/LibCustomERC20ExtensionStorage.sol:LibCustomERC20ExtensionStorage         ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/Shared/LibReentryProtectionStorage.sol:LibReentryProtectionStorage                   ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/ERC20Token/LibTokenConst.sol:LibTokenConst                                           ·                      0.813 ()  ·                      0.895 ()  │
  ·······································································································|································|·································
- |  contracts/base/Shared/ProtectedCall.sol:CallProtection                                              ·                 0.062 (0.000)  ·                 0.090 (0.000)  │
+ |  contracts/base/Shared/LibReentryProtectionStorage.sol:LibReentryProtectionStorage                   ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/Shared/ReentryProtection.sol:ReentryProtection                                       ·                 0.062 (0.000)  ·                 0.090 (0.000)  │
+ |  contracts/base/Shared/ProtectedCall.sol:CallProtection                                              ·                      0.062 ()  ·                      0.090 ()  │
  ·······································································································|································|·································
- |  contracts/base/TargetedPausable/LibTargetedPausable.sol:LibTargetedPausable                         ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/Shared/ReentryProtection.sol:ReentryProtection                                       ·                      0.062 ()  ·                      0.090 ()  │
  ·······································································································|································|·································
- |  contracts/base/TargetedPausable/LibTargetedPausableStorage.sol:LibTargetedPausableStorage           ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TargetedPausable/LibTargetedPausable.sol:LibTargetedPausable                         ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenDynamicPricing/LibTokenDynamicPricing.sol:LibTokenDynamicPricing                ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TargetedPausable/LibTargetedPausableStorage.sol:LibTargetedPausableStorage           ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenDynamicPricing/LibTokenDynamicPricingStorage.sol:LibTokenDynamicPricingStorage  ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TokenDynamicPricing/LibTokenDynamicPricing.sol:LibTokenDynamicPricing                ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenPNL/LibTokenPNL.sol:LibTokenPNL                                                 ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TokenDynamicPricing/LibTokenDynamicPricingStorage.sol:LibTokenDynamicPricingStorage  ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenPNL/LibTokenPNLStorage.sol:LibTokenPNLStorage                                   ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TokenPNL/LibTokenPNL.sol:LibTokenPNL                                                 ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenRestriction/LibTokenRestriction.sol:LibTokenRestriction                         ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TokenPNL/LibTokenPNLStorage.sol:LibTokenPNLStorage                                   ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/base/TokenRestriction/LibTokenRestrictionStorage.sol:LibTokenRestrictionStorage           ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/base/TokenRestriction/LibTokenRestriction.sol:LibTokenRestriction                         ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/Diamond.sol:Diamond                                                                       ·                 9.359 (0.000)  ·                19.574 (0.000)  │
+ |  contracts/base/TokenRestriction/LibTokenRestrictionStorage.sol:LibTokenRestrictionStorage           ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/DiamondFacets/DiamondCutFacet.sol:DiamondCutFacet                                         ·                 9.066 (0.000)  ·                 9.098 (0.000)  │
+ |  contracts/Diamond.sol:Diamond                                                                       ·                      9.359 ()  ·                     19.574 ()  │
  ·······································································································|································|·································
- |  contracts/DiamondFacets/DiamondLoupeFacet.sol:DiamondLoupeFacet                                     ·                 3.012 (0.000)  ·                 3.043 (0.000)  │
+ |  contracts/DiamondFacets/DiamondCutFacet.sol:DiamondCutFacet                                         ·                      9.066 ()  ·                      9.098 ()  │
  ·······································································································|································|·································
- |  contracts/upgradeInitializers/ArexaPlatformDiamondInit.sol:ArexaPlatformDiamondInit                 ·                12.012 (0.000)  ·                12.043 (0.000)  │
+ |  contracts/DiamondFacets/DiamondEtherscanFacet.sol:DiamondEtherscanFacet                             ·                      0.847 ()  ·                      0.878 ()  │
  ·······································································································|································|·································
- |  contracts/upgradeInitializers/ArexaTokenDiamondInit.sol:ArexaTokenDiamondInit                       ·                 5.566 (0.000)  ·                 5.598 (0.000)  │
+ |  contracts/DiamondFacets/DiamondLoupeFacet.sol:DiamondLoupeFacet                                     ·                      3.012 ()  ·                      3.043 ()  │
  ·······································································································|································|·································
- |  contracts/utils/AddressUtils.sol:AddressUtils                                                       ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/upgradeInitializers/ArexaPlatformDiamondInit.sol:ArexaPlatformDiamondInit                 ·                     12.012 ()  ·                     12.043 ()  │
  ·······································································································|································|·································
- |  contracts/utils/ECDSA.sol:ECDSA                                                                     ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/upgradeInitializers/ArexaTokenDiamondInit.sol:ArexaTokenDiamondInit                       ·                      5.566 ()  ·                      5.598 ()  │
  ·······································································································|································|·································
- |  contracts/utils/EnumerableSet.sol:EnumerableSet                                                     ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/utils/AddressUtils.sol:AddressUtils                                                       ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/utils/Math.sol:Math                                                                       ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/utils/ECDSA.sol:ECDSA                                                                     ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/utils/SafeMath.sol:SafeMath                                                               ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/utils/EnumerableSet.sol:EnumerableSet                                                     ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  contracts/utils/UintUtils.sol:UintUtils                                                             ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/utils/Math.sol:Math                                                                       ·                      0.084 ()  ·                      0.162 ()  │
  ·······································································································|································|·································
- |  hardhat/console.sol:console                                                                         ·                 0.084 (0.000)  ·                 0.162 (0.000)  │
+ |  contracts/utils/SafeMath.sol:SafeMath                                                               ·                      0.084 ()  ·                      0.162 ()  │
+ ·······································································································|································|·································
+ |  contracts/utils/UintUtils.sol:UintUtils                                                             ·                      0.084 ()  ·                      0.162 ()  │
+ ·······································································································|································|·································
+ |  contracts/_dummy/ArexaDiamondDummyImplementation.sol:ArexaDiamondDummyImplementation                ·                     11.630 ()  ·                     11.661 ()  │
+ ·······································································································|································|·································
+ |  contracts/_dummy/TokenDiamondDummyImplementation.sol:TokenDiamondDummyImplementation                ·                      7.212 ()  ·                      7.243 ()  │
+ ·······································································································|································|·································
+ |  hardhat/console.sol:console                                                                         ·                      0.084 ()  ·                      0.162 ()  │
  ·------------------------------------------------------------------------------------------------------|--------------------------------|--------------------------------·

@@ -7,7 +7,7 @@ task("verify-arexa-test-usdt", "Verify AREXA Test USDT").setAction(async (_taskA
 	}
 	const rxai = await getUSDTSmartContracts(hre);
 
-	const verifyParams: { address: string; constructorArguments?: any[] }[] = [];
+	const verifyParams: { address: string; constructorArguments?: any[]; contract?: string }[] = [];
 
 	const desc = rxai.deploymentDescriptor!;
 
@@ -20,12 +20,14 @@ task("verify-arexa-test-usdt", "Verify AREXA Test USDT").setAction(async (_taskA
 	});
 	verifyParams.push({ address: (await hre.deployments.get(desc.initializer.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.diamondLoupeFacet.name)).address });
+	verifyParams.push({ address: (await hre.deployments.get(desc.facets.diamondEtherscanFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.ownershipFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.pausableFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.aclFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.adminFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.amlFacet.name)).address });
 	verifyParams.push({ address: (await hre.deployments.get(desc.facets.tokenFacet.name)).address });
+	verifyParams.push({ address: (await hre.deployments.get(desc.diamondDummyImplementation.name)).address });
 
 	for (let i = 0; i < verifyParams.length; i++) {
 		const verifyParam = verifyParams[i];
