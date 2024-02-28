@@ -6,17 +6,30 @@ import { call } from "../../utils/helper.call";
 
 arexaTokenScope
 	.task("1-oracle:approve", "Approve a spender to spend some amount of token from your address")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("address", "Spender Address, this address can spend on you address", undefined, types.string)
 	.addParam("tokenid", "TokenId, this token can send out from you account by the spender", undefined, types.string)
 	.addParam("currvalue", "Currently approved value", undefined, types.float)
 	.addParam("newvalue", "New value to approve", undefined, types.float)
-	.setAction(async (params: Pick<All, "address" | "tokenid" | "currvalue" | "newvalue">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "address" | "tokenid" | "currvalue" | "newvalue">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
-		const result = await call(
-			hre,
-			arexa.pfmTokenAllowanceFacet.approve(params.address, params.tokenid, params.currvalue, params.newvalue),
-		);
+		const contract = arexa.pfmTokenAllowanceFacet.connect(arexa.signers[params.signer]);
+		const result = await call(hre, contract.approve(params.address, params.tokenid, params.currvalue, params.newvalue));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
+	});
+
+arexaTokenScope
+	.task("1-oracle:allowance", "Check allowance of a spender to spend some amount of ORACLE token from an address")
+	.addParam("spender", "Spender Address, this address can spend on you address", undefined, types.string)
+	.addParam("holder", "Holder Address, the spender spend money if this address", undefined, types.string)
+	.addOptionalParam("tokenid", "TokenId, if it is not given, the the most current ORACLE subscripton tokenId is used", null, types.string)
+	.setAction(async (params: Pick<All, "spender" | "holder" | "tokenid">, hre) => {
+		const arexa = await getAREXASmartContracts(hre);
+		const tokenId = params.tokenid ?? (await arexa.platformFacet.getCurrentSubscriptionTokenId(arexa.const.SUBSRIPTION1_TOKEN_TYPE));
+		const result = await arexa.pfmTokenAllowanceFacet.allowance(params.holder, params.spender, tokenId);
+		await hre.run("print", {
+			message: ` holder: ${params.holder}, spender: ${params.spender}, allowance: ${result.toNumber()}`,
+		});
 	});
 
 arexaTokenScope.task("1-oracle:current-id", "Get the most current ORACLE subscript token Id").setAction(async (_taskArg, hre) => {
@@ -37,15 +50,18 @@ arexaTokenScope
 
 arexaTokenScope
 	.task("1-oracle:buy", "Buy ORACLE Subscripton token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("value", "Amount to pay out", undefined, types.float)
-	.setAction(async (params: Pick<All, "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
-		const result = await call(hre, arexa.platformFacet.buyOracleSubscription(params.value));
+		const contract = arexa.platformFacet.connect(arexa.signers[params.signer]);
+		const result = await call(hre, contract.buyOracleSubscription(params.value));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
 
 arexaTokenScope
 	.task("1-oracle:transfer", "Transfer ORACLE subscription token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("address", "Sending to address", undefined, types.string)
 	.addOptionalParam(
 		"tokenid",
@@ -54,25 +70,27 @@ arexaTokenScope
 		types.string,
 	)
 	.addParam("value", "Value to send", undefined, types.int)
-	.setAction(async (params: Pick<All, "address" | "tokenid" | "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "address" | "tokenid" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
 		const tokenId = params.tokenid ?? (await arexa.platformFacet.getCurrentSubscriptionTokenId(arexa.const.SUBSRIPTION1_TOKEN_TYPE));
-		const result = await call(
-			hre,
-			arexa.pfmTokenFacet.safeTransferFrom(arexa.signers[0].address, params.address, tokenId, params.value, ""),
-		);
+		const signer = arexa.signers[params.signer];
+		const contract = arexa.pfmTokenFacet.connect(signer);
+		const result = await call(hre, contract.safeTransferFrom(signer.address, params.address, tokenId, params.value, ""));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
 
 arexaTokenScope
 	.task("1-oracle:transferFrom", "On behalf trasnfer ORACLE subscription token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("from", "Sending from address", undefined, types.string)
 	.addParam("to", "Sending to address", undefined, types.string)
 	.addOptionalParam("tokenid", "TokenId, if it is not given, the the most current ORACLE subscripton tokenId is used", null, types.string)
 	.addParam("value", "Value to send", undefined, types.float)
-	.setAction(async (params: Pick<All, "from" | "to" | "tokenid" | "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "from" | "to" | "tokenid" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
 		const tokenId = params.tokenid ?? (await arexa.platformFacet.getCurrentSubscriptionTokenId(arexa.const.SUBSRIPTION1_TOKEN_TYPE));
-		const result = await call(hre, arexa.pfmTokenFacet.safeTransferFrom(params.from, params.to, tokenId, params.value, ""));
+		const signer = arexa.signers[params.signer];
+		const contract = arexa.pfmTokenFacet.connect(signer);
+		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, tokenId, params.value, ""));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});

@@ -1,5 +1,6 @@
 [
   "constructor()",
+  "error AddressUtils__NotContract()",
   "error LibERC1155__ArrayLengthMismatch()",
   "error LibERC1155__BalanceQueryZeroAddress()",
   "error LibERC1155__ERC1155ReceiverNotImplemented()",
@@ -9,6 +10,7 @@
   "error LibERC1155__NotOwnerOrApprovedLimit()",
   "error LibERC1155__TransferExceedsBalance()",
   "error LibERC1155__TransferToZeroAddress()",
+  "error SafeERC20FailedOperation(address token)",
   "error TargetedPausable__TargetedPaused()",
   "function AMOUNT_VALUE_TYPE() view returns (uint8)",
   "function AREXA_TOKEN_ID() view returns (uint256)",

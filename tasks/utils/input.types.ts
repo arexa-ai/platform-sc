@@ -1,6 +1,9 @@
 export type All = {
+	signer: number;
 	uri: string;
 	tokenid: string;
+	spender: string;
+	holder: string;
 	address: string;
 	from: string;
 	to: string;

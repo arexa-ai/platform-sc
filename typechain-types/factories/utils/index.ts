@@ -4,4 +4,5 @@
 export { AddressUtils__factory } from "./AddressUtils__factory";
 export { ECDSA__factory } from "./ECDSA__factory";
 export { EnumerableSet__factory } from "./EnumerableSet__factory";
+export { SafeERC20__factory } from "./SafeERC20__factory";
 export { UintUtils__factory } from "./UintUtils__factory";

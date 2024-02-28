@@ -22,6 +22,11 @@
   },
   {
     "inputs": [],
+    "name": "AddressUtils__NotContract",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "LibERC1155__ArrayLengthMismatch",
     "type": "error"
   },
@@ -63,6 +68,17 @@
   {
     "inputs": [],
     "name": "LibERC1155__TransferToZeroAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "SafeERC20FailedOperation",
     "type": "error"
   },
   {

@@ -1,0 +1,7 @@
+# Add files here to ignore them from prettier formatting
+
+/artifacts
+/cache
+/node_modules
+/typechain-types
+/dist

@@ -4,11 +4,11 @@
  */
 pragma solidity ^0.8.9;
 
-import "hardhat/console.sol";
+//import "hardhat/console.sol";
 
 import "./LibArexaPlatformStorage.sol";
 import "../../utils/Math.sol";
-
+import "../../utils/SafeERC20.sol";
 import "../../base/Diamond/LibDiamond.sol";
 import "../../base/ERC1155/base/LibERC1155.sol";
 import "../../base/TokenRestriction/LibTokenRestriction.sol";
@@ -180,7 +180,7 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		SafeERC20.safeTransferFrom(arexa.payingERC20Token, _account, contractAddress, amount);
 		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
 		// require(result, "Something wrong with the payment!");
 
@@ -220,7 +220,7 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		SafeERC20.safeTransferFrom(arexa.payingERC20Token, _account, contractAddress, amount);
 		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
 		// require(result, "Something wrong with the payment!");
 
@@ -264,7 +264,7 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		SafeERC20.safeTransferFrom(arexa.payingERC20Token, _account, contractAddress, amount);
 		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
 		// require(result, "Something wrong with the payment!");
 
@@ -304,7 +304,7 @@ library LibArexaPlatform {
 
 		address contractAddress = LibDiamond.getDiamondAddress();
 
-		arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
+		SafeERC20.safeTransferFrom(arexa.payingERC20Token, _account, contractAddress, amount);
 		// bool result = arexa.payingERC20Token.transferFrom(_account, contractAddress, amount);
 		// require(result, "Something wrong with the payment!");
 

@@ -51,3 +51,15 @@ arexaAdminScope
 		);
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
+
+arexaAdminScope
+	.task("token:enableMagic100Buyer", "Enable addresses to buy Magic 100 token")
+	.addParam("signer", "Index of Signer", 2, types.int)
+	.setAction(async (params: Pick<All, "signer">, hre) => {
+		const arexa = await getAREXASmartContracts(hre);
+		const signer = arexa.signers[params.signer];
+		const contract = arexa.amlFacet.connect(signer);
+		//TODO: fill by hand before calling
+		const result = await call(hre, contract.setBatchMagic100FirstBuyerWL(["WrongAccountNumber"], true));
+		await hre.run("print", { message: ` TX: ${result.hash}` });
+	});

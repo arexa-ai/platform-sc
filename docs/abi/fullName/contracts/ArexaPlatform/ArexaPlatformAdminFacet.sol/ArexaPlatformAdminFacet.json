@@ -1,6 +1,7 @@
 [
   "constructor()",
   "error AccessDenied(bytes32 role, address account)",
+  "error AddressUtils__NotContract()",
   "error LibERC1155__ArrayLengthMismatch()",
   "error LibERC1155__BalanceQueryZeroAddress()",
   "error LibERC1155__ERC1155ReceiverNotImplemented()",
@@ -10,6 +11,7 @@
   "error LibERC1155__NotOwnerOrApprovedLimit()",
   "error LibERC1155__TransferExceedsBalance()",
   "error LibERC1155__TransferToZeroAddress()",
+  "error SafeERC20FailedOperation(address token)",
   "error TargetedPausable__TargetedPaused()",
   "function buyMagic100TokenAdmin(address toAccount)",
   "function createSubscription(uint256 tokenType, uint16 year, uint8 month, uint256 quantity, uint256 min, uint256 max) returns (uint256 tokenId)",

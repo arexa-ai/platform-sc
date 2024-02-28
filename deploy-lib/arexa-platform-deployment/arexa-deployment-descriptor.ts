@@ -37,6 +37,7 @@ type ArexaInitParamsType = {
 };
 
 export const ArexaInitParams: Record<DescriptorTypeArexa, ArexaInitParamsType> = {
+	//hAREXA: { payingToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3", arexaERC20Token: zeroAddress, restrictionTimeDelta: 2 },
 	hAREXA: { payingToken: zeroAddress, arexaERC20Token: zeroAddress, restrictionTimeDelta: 2 },
 	etAREXA: { payingToken: zeroAddress, arexaERC20Token: zeroAddress, restrictionTimeDelta: 2 },
 	btAREXA: { payingToken: zeroAddress, arexaERC20Token: zeroAddress, restrictionTimeDelta: 2 },

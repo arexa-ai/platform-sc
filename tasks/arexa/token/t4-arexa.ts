@@ -20,16 +20,27 @@ npx hardhat arexa token:arexa:payoutDivident
 
 arexaTokenScope
 	.task("4-arexa:approve", "Approve a spender to spend some amount of token from your address")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("address", "Spender Address, this address can spend on you address", undefined, types.string)
 	.addParam("currvalue", "Currently approved value", undefined, types.float)
 	.addParam("newvalue", "New value to approve", undefined, types.float)
-	.setAction(async (params: Pick<All, "address" | "currvalue" | "newvalue">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "address" | "currvalue" | "newvalue">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
-		const result = await call(
-			hre,
-			arexa.pfmTokenAllowanceFacet.approve(params.address, arexa.const.AREXA_TOKEN_ID, params.currvalue, params.newvalue),
-		);
+		const contract = arexa.pfmTokenAllowanceFacet.connect(arexa.signers[params.signer]);
+		const result = await call(hre, contract.approve(params.address, arexa.const.AREXA_TOKEN_ID, params.currvalue, params.newvalue));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
+	});
+
+arexaTokenScope
+	.task("4-arexa:allowance", "Check allowance of a spender to spend some amount of USDT from an address")
+	.addParam("spender", "Spender Address, this address can spend on you address", undefined, types.string)
+	.addParam("holder", "Holder Address, the spender spend money if this address", undefined, types.string)
+	.setAction(async (params: Pick<All, "spender" | "holder">, hre) => {
+		const arexa = await getAREXASmartContracts(hre);
+		const result = await arexa.pfmTokenAllowanceFacet.allowance(params.holder, params.spender, arexa.const.AREXA_TOKEN_ID);
+		await hre.run("print", {
+			message: ` holder: ${params.holder}, spender: ${params.spender}, allowance: ${result.toNumber()}`,
+		});
 	});
 
 arexaTokenScope
@@ -45,10 +56,12 @@ arexaTokenScope
 
 arexaTokenScope
 	.task("4-arexa:buy", "Buy AREXA AI token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("value", "Quantity, how much AREXA AI token to buy", undefined, types.float)
-	.setAction(async (params: Pick<All, "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
-		const result = await call(hre, arexa.platformFacet.buyArexaToken(params.value, arexa.const.QUANTITY));
+		const contract = arexa.platformFacet.connect(arexa.signers[params.signer]);
+		const result = await call(hre, contract.buyArexaToken(params.value, arexa.const.QUANTITY));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
 
@@ -84,27 +97,30 @@ arexaTokenScope
 
 arexaTokenScope
 	.task("4-arexa:transfer", "Transfer AREXA AI token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("address", "Sending to address", undefined, types.string)
 	.addParam("value", "Value to send", undefined, types.int)
-	.setAction(async (params: Pick<All, "address" | "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "address" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
+		const signer = arexa.signers[params.signer];
+		const contract = arexa.pfmTokenFacet.connect(signer);
 		const result = await call(
 			hre,
-			arexa.pfmTokenFacet.safeTransferFrom(arexa.signers[0].address, params.address, arexa.const.AREXA_TOKEN_ID, params.value, ""),
+			contract.safeTransferFrom(signer.address, params.address, arexa.const.AREXA_TOKEN_ID, params.value, ""),
 		);
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
 
 arexaTokenScope
 	.task("4-arexa:transferFrom", "On behalf trasnfer AREXA AI subscription token")
+	.addParam("signer", "Index of Signer", undefined, types.int)
 	.addParam("from", "Sending from address", undefined, types.string)
 	.addParam("to", "Sending to address", undefined, types.string)
 	.addParam("value", "Value to send", undefined, types.float)
-	.setAction(async (params: Pick<All, "from" | "to" | "value">, hre) => {
+	.setAction(async (params: Pick<All, "signer" | "from" | "to" | "value">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
-		const result = await call(
-			hre,
-			arexa.pfmTokenFacet.safeTransferFrom(params.from, params.to, arexa.const.AREXA_TOKEN_ID, params.value, ""),
-		);
+		const signer = arexa.signers[params.signer];
+		const contract = arexa.pfmTokenFacet.connect(signer);
+		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, arexa.const.AREXA_TOKEN_ID, params.value, ""));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});

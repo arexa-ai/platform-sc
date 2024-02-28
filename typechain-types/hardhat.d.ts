@@ -297,6 +297,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.EnumerableSet__factory>;
     getContractFactory(
+      name: "SafeERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SafeERC20__factory>;
+    getContractFactory(
       name: "UintUtils",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.UintUtils__factory>;
@@ -656,6 +660,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.EnumerableSet>;
+    getContractAt(
+      name: "SafeERC20",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SafeERC20>;
     getContractAt(
       name: "UintUtils",
       address: string,

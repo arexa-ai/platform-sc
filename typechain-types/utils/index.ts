@@ -4,4 +4,5 @@
 export type { AddressUtils } from "./AddressUtils";
 export type { ECDSA } from "./ECDSA";
 export type { EnumerableSet } from "./EnumerableSet";
+export type { SafeERC20 } from "./SafeERC20";
 export type { UintUtils } from "./UintUtils";
