@@ -99,7 +99,7 @@ const config: HardhatUserConfig = {
 			url: POLYGON_MUMBAI_RPC_URL,
 			accounts: PRIVATE_KEYS !== undefined ? PRIVATE_KEYS : { mnemonic: MNEMONIC },
 			saveDeployments: true,
-			chainId: 137,
+			chainId: 80001,
 		},
 		polygon: {
 			url: POLYGON_MAINNET_RPC_URL,
@@ -125,7 +125,7 @@ const config: HardhatUserConfig = {
 		apiKey: {
 			bscTestnet: "", //get from here: https://bscscan.com/
 			bsc: "",
-			// mumbai: POLYGONSCAN_API_KEY,
+			polygonMumbai: POLYGONSCAN_API_KEY,
 			polygon: POLYGONSCAN_API_KEY,
 			goerli: ETHERSCAN_API_KEY,
 			mainnet: ETHERSCAN_API_KEY,

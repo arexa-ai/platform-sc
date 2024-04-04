@@ -75,7 +75,7 @@ arexaTokenScope
 		const tokenId = params.tokenid ?? (await arexa.platformFacet.getCurrentSubscriptionTokenId(arexa.const.SUBSRIPTION2_TOKEN_TYPE));
 		const signer = arexa.signers[params.signer];
 		const contract = arexa.pfmTokenFacet.connect(signer);
-		const result = await call(hre, contract.safeTransferFrom(signer.address, params.address, tokenId, params.value, ""));
+		const result = await call(hre, contract.safeTransferFrom(signer.address, params.address, tokenId, params.value, []));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
 
@@ -91,6 +91,6 @@ arexaTokenScope
 		const tokenId = params.tokenid ?? (await arexa.platformFacet.getCurrentSubscriptionTokenId(arexa.const.SUBSRIPTION2_TOKEN_TYPE));
 		const signer = arexa.signers[params.signer];
 		const contract = arexa.pfmTokenFacet.connect(signer);
-		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, tokenId, params.value, ""));
+		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, tokenId, params.value, []));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});

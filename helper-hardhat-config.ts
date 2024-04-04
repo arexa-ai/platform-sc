@@ -30,12 +30,12 @@ export const networkConfig: networkConfigInfo = {
 		blockConfirmations: 1,
 	},
 	polygon: {
-		blockConfirmations: 6,
+		blockConfirmations: 1,
 	},
 	goerli: {
 		blockConfirmations: 1,
 	},
 	mainnet: {
-		blockConfirmations: 6,
+		blockConfirmations: 1,
 	},
 };
