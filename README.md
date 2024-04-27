@@ -29,11 +29,11 @@ npx hardhat coverage
 npx hardhat node --no-compile
 npx hardhat deploy --network localhost
 
-npx hardhat deploy --network goerli
+npx hardhat deploy --network sepolia
 
-npx hardhat verify-arexa-platform --network goerli
-npx hardhat verfiy-arexa-erc20 --network goerli
-npx hardhat verify-arexa-test-usdt --network goerli
+npx hardhat verify-arexa-platform --network sepolia
+npx hardhat verfiy-arexa-erc20 --network sepolia
+npx hardhat verify-arexa-test-usdt --network sepolia
 ```
 
 # Development

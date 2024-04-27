@@ -34,7 +34,7 @@ const FORKING_BLOCK_NUMBER = Number.parseInt(process.env.FORKING_BLOCK_NUMBER ??
 
 //RPC URLs
 const MAINNET_RPC_URL = `https://mainnet.infura.io/v3/${INFURA_API_KEY}`;
-const GOERLI_RPC_URL = `https://goerli.infura.io/v3/${INFURA_API_KEY}`;
+const SEPOLIA_RPC_URL = `https://sepolia.infura.io/v3/${INFURA_API_KEY}`;
 
 const POLYGON_MAINNET_RPC_URL = `https://polygon-mainnet.infura.io/v3/${INFURA_API_KEY}`;
 const POLYGON_MUMBAI_RPC_URL = `https://polygon-mumbai.infura.io/v3/${INFURA_API_KEY}`;
@@ -107,11 +107,11 @@ const config: HardhatUserConfig = {
 			saveDeployments: true,
 			chainId: 137,
 		},
-		goerli: {
-			url: GOERLI_RPC_URL,
+		sepolia: {
+			url: SEPOLIA_RPC_URL,
 			accounts: PRIVATE_KEYS !== undefined ? PRIVATE_KEYS : { mnemonic: MNEMONIC },
 			saveDeployments: true,
-			chainId: 5,
+			chainId: 11155111,
 		},
 		mainnet: {
 			url: MAINNET_RPC_URL,
@@ -127,7 +127,7 @@ const config: HardhatUserConfig = {
 			bsc: "",
 			// mumbai: POLYGONSCAN_API_KEY,
 			polygon: POLYGONSCAN_API_KEY,
-			goerli: ETHERSCAN_API_KEY,
+			sepolia: ETHERSCAN_API_KEY,
 			mainnet: ETHERSCAN_API_KEY,
 		},
 	},

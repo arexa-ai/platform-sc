@@ -32,7 +32,7 @@ export const networkConfig: networkConfigInfo = {
 	polygon: {
 		blockConfirmations: 6,
 	},
-	goerli: {
+	sepolia: {
 		blockConfirmations: 1,
 	},
 	mainnet: {

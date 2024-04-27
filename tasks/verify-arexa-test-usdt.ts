@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import { getUSDTSmartContracts } from "./utils/utils";
 
 task("verify-arexa-test-usdt", "Verify AREXA Test USDT").setAction(async (_taskArg, hre) => {
-	if (hre.network.name !== "goerli" && hre.network.name !== "mumbai") {
+	if (hre.network.name !== "sepolia" && hre.network.name !== "mumbai") {
 		throw new Error("Not supported or not implemented on this network!");
 	}
 	const rxai = await getUSDTSmartContracts(hre);

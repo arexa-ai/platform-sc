@@ -36,7 +36,7 @@ const deploy: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 			usdtDeploymentName = "pUSDTDiamond";
 			rxaiDeploymentName = "pRXAIDiamond";
 			break;
-		case "goerli":
+		case "sepolia":
 			usdtDeploymentName = "eUSDTDiamond";
 			rxaiDeploymentName = "eRXAIDiamond";
 			descriptorType = DescriptorTypeArexa.etAREXA;
