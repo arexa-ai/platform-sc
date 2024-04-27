@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">27.27% </span>
+        <span class="strong">11.11% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/11</span>
+        <span class='fraction'>1/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6% </span>
+        <span class="strong">5.77% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/50</span>
+        <span class='fraction'>3/52</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.44% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/9</span>
+        <span class='fraction'>4/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">23.08% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/12</span>
+        <span class='fraction'>3/13</span>
       </div>
     </div>
   </div>
@@ -125,7 +125,27 @@
 80
 81
 82
-83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,7 +174,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,6 +220,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -218,6 +254,8 @@ import { LibBlackWhiteList } from "../base/BlackWhiteList/LibBlackWhiteList.sol"
 import { LibDiamond } from "../base/Diamond/LibDiamond.sol";
 &nbsp;
 import { LibArexaPlatform } from "./Platform/LibArexaPlatform.sol";
+import { LibArexaPlatformPNL } from "./Platform/LibArexaPlatformPNL.sol";
+import { LibArexaPlatformShared } from "./Platform/LibArexaPlatformShared.sol";
 import { LibTokenPNL } from "../base/TokenPNL/LibTokenPNL.sol";
 import { InventoryItem } from "../base/TokenPNL/LibTokenPNLStorage.sol";
 //import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
@@ -232,18 +270,25 @@ contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
 	constructor() {}
 &nbsp;
 	function getInventory() external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (bool isEnabled, int256 sumQuantity, int256 sumAmount, int256 sumPnl) {
-		return LibTokenPNL.getInventory(address(LibArexaPlatform.getPayingToken()), LibArexaConst.AREXA_TOKEN_ID);
+		(isEnabled, sumQuantity, sumAmount, sumPnl) = LibTokenPNL.getInventory(
+			address(LibArexaPlatformShared.getPayingToken()),
+			LibArexaConst.AREXA_TOKEN_ID
+		);
 	}
 &nbsp;
-	function getInventoryItem(address account) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (InventoryItem memory) {
-		return LibTokenPNL.getInventoryItem(address(LibArexaPlatform.getPayingToken()), LibArexaConst.AREXA_TOKEN_ID, account);
+	function getInventoryItem(address account) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (int256 quantity, int256 deltaPnl, int256 payedPnl) {
+		(quantity, deltaPnl, payedPnl) = LibTokenPNL.getInventoryItem(
+			address(LibArexaPlatformShared.getPayingToken()),
+			LibArexaConst.AREXA_TOKEN_ID,
+			account
+		);
 	}
 &nbsp;
 	function calcDivident(address account) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (int256) {
-		return LibTokenPNL.calcDivident(address(LibArexaPlatform.getPayingToken()), LibArexaConst.AREXA_TOKEN_ID, account);
+		return LibTokenPNL.calcDivident(address(LibArexaPlatformShared.getPayingToken()), LibArexaConst.AREXA_TOKEN_ID, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function getArexaIncomeParameter(uint256 tokenId) external view protectedCall returns (uint32 pool_, uint32 arexa_) {</span>
+<span class="fstat-no" title="function not covered" >	function getArexaIncomeParameter(uint256 tokenId) external view protectedCall returns (uint32 pool, uint32 arexa) {</span>
 <span class="cstat-no" title="statement not covered" >		uint256 tokenIdType = (tokenId / 100000000) * 100000000;</span>
 <span class="cstat-no" title="statement not covered" >		require(</span>
 			tokenIdType == LibArexaConst.SUBSCR1_TOKEN_TYPE ||
@@ -252,7 +297,7 @@ contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
 				tokenIdType == LibArexaConst.AREXA_TOKEN_ID ||
 				tokenIdType == LibArexaConst.MAGIC_TOKEN_ID
 		);
-		(pool_, arexa_) = LibArexaPlatform.getArexaIncomeParameter(tokenIdType);
+		(pool, arexa) = LibArexaPlatformShared.getArexaIncomeParameter(tokenIdType);
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	function setArexaIncomeParameter(</span>
@@ -271,22 +316,31 @@ contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
 <span class="cstat-no" title="statement not covered" >		LibArexaPlatform.setArexaIncomeParameter(tokenId, pool, arexa)</span>;
 	}
 &nbsp;
+<span class="fstat-no" title="function not covered" >	function getPoolAndArexaIncomeBalances()</span>
+		external
+		view
+		protectedCall
+		returns (uint256 pool, uint256 poolPaidOut, uint256 arexa, uint256 arexaPaidOut)
+	{
+		(pool, poolPaidOut, arexa, arexaPaidOut) = LibArexaPlatformPNL.getPoolAndArexaIncomeBalances();
+	}
+&nbsp;
 <span class="fstat-no" title="function not covered" >	function payoutArexaIncome(</span>
 		address toAccount,
 		uint256 value
 	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
-<span class="cstat-no" title="statement not covered" >		LibArexaPlatform.payoutArexaIncome(toAccount, value)</span>;
+<span class="cstat-no" title="statement not covered" >		LibArexaPlatformPNL.payoutArexaIncome(toAccount, value)</span>;
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	function payoutArexaDivident(</span>
 		address toAccount,
 		uint256 value
 	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
-<span class="cstat-no" title="statement not covered" >		LibArexaPlatform.payoutPoolDivident(LibDiamond.getDiamondAddress(), toAccount, value)</span>;
+<span class="cstat-no" title="statement not covered" >		LibArexaPlatformPNL.payoutPoolDivident(LibDiamond.getDiamondAddress(), toAccount, value)</span>;
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	function payoutDivident(uint256 value) external protectedCall whenNotPaused(LibArexaConst.FULL) {</span>
-<span class="cstat-no" title="statement not covered" >		LibArexaPlatform.payoutPoolDivident(msg.sender, msg.sender, value)</span>;
+<span class="cstat-no" title="statement not covered" >		LibArexaPlatformPNL.payoutPoolDivident(msg.sender, msg.sender, value)</span>;
 	}
 }
 &nbsp;</pre></td></tr>
@@ -295,7 +349,7 @@ contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Feb 28 2024 06:51:08 GMT+0100 (közép-európai téli idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

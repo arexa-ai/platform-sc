@@ -55,7 +55,7 @@ export async function getAREXASmartContracts(hre: HardhatRuntimeEnvironment) {
 		case "bsctest":
 			descriptorTypeAREXA = DescriptorTypeArexa.btAREXA;
 			break;
-		case "mumbai":
+		case "amoy":
 			descriptorTypeAREXA = DescriptorTypeArexa.ptAREXA;
 			break;
 		case "sepolia":
@@ -176,7 +176,7 @@ export async function getRXAISmartContracts(hre: HardhatRuntimeEnvironment) {
 		case "bsctest":
 			descriptorType = DescriptorTypeToken.bRXAI;
 			break;
-		case "mumbai":
+		case "amoy":
 			descriptorType = DescriptorTypeToken.pRXAI;
 			break;
 		case "sepolia":
@@ -255,7 +255,7 @@ export async function getUSDTSmartContracts(hre: HardhatRuntimeEnvironment) {
 			descriptorTypeAREXA = DescriptorTypeArexa.btAREXA;
 			isTestNetwork = true;
 			break;
-		case "mumbai":
+		case "amoy":
 			descriptorTypeUSDT = DescriptorTypeToken.pUSDT;
 			descriptorTypeAREXA = DescriptorTypeArexa.ptAREXA;
 			isTestNetwork = true;

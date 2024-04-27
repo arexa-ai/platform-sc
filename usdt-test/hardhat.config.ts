@@ -37,7 +37,7 @@ const MAINNET_RPC_URL = `https://mainnet.infura.io/v3/${INFURA_API_KEY}`;
 const SEPOLIA_RPC_URL = `https://sepolia.infura.io/v3/${INFURA_API_KEY}`;
 
 const POLYGON_MAINNET_RPC_URL = `https://polygon-mainnet.infura.io/v3/${INFURA_API_KEY}`;
-const POLYGON_MUMBAI_RPC_URL = `https://polygon-mumbai.infura.io/v3/${INFURA_API_KEY}`;
+const POLYGON_AMOY_RPC_URL = `https://polygon-amoy.infura.io/v3/${INFURA_API_KEY}`;
 
 //https://testnet.bscscan.com/
 const BSC_MAINNET_RPC_URL = "https://bsc-dataseed.binance.org/";
@@ -95,8 +95,8 @@ const config: HardhatUserConfig = {
 			chainId: 56,
 			gasPrice: 20000000000,
 		},
-		mumbai: {
-			url: POLYGON_MUMBAI_RPC_URL,
+		amoy: {
+			url: POLYGON_AMOY_RPC_URL,
 			accounts: PRIVATE_KEYS !== undefined ? PRIVATE_KEYS : { mnemonic: MNEMONIC },
 			saveDeployments: true,
 			chainId: 137,
@@ -125,7 +125,7 @@ const config: HardhatUserConfig = {
 		apiKey: {
 			bscTestnet: "", //get from here: https://bscscan.com/
 			bsc: "",
-			// mumbai: POLYGONSCAN_API_KEY,
+			// amoy: POLYGONSCAN_API_KEY,
 			polygon: POLYGONSCAN_API_KEY,
 			sepolia: ETHERSCAN_API_KEY,
 			mainnet: ETHERSCAN_API_KEY,

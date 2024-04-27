@@ -85,9 +85,9 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.LibArexaConst__factory>;
     getContractFactory(
-      name: "LibArexaPlatform",
+      name: "LibArexaPlatformShared",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LibArexaPlatform__factory>;
+    ): Promise<Contracts.LibArexaPlatformShared__factory>;
     getContractFactory(
       name: "ArexaTokenACLFacet",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -396,10 +396,10 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.LibArexaConst>;
     getContractAt(
-      name: "LibArexaPlatform",
+      name: "LibArexaPlatformShared",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.LibArexaPlatform>;
+    ): Promise<Contracts.LibArexaPlatformShared>;
     getContractAt(
       name: "ArexaTokenACLFacet",
       address: string,

@@ -45,28 +45,6 @@ export declare namespace ArexaDiamondDummyImplementation {
     facetAddress: string;
     functionSelectors: string[];
   };
-
-  export type Tuple4951158Struct = {
-    total: PromiseOrValue<BigNumberish>;
-    sold: PromiseOrValue<BigNumberish>;
-  };
-
-  export type Tuple4951158StructOutput = [BigNumber, BigNumber] & {
-    total: BigNumber;
-    sold: BigNumber;
-  };
-
-  export type Tuple9951786Struct = {
-    quantity: PromiseOrValue<BigNumberish>;
-    deltaPnl: PromiseOrValue<BigNumberish>;
-    payedPnl: PromiseOrValue<BigNumberish>;
-  };
-
-  export type Tuple9951786StructOutput = [BigNumber, BigNumber, BigNumber] & {
-    quantity: BigNumber;
-    deltaPnl: BigNumber;
-    payedPnl: BigNumber;
-  };
 }
 
 export interface ArexaDiamondDummyImplementationInterface
@@ -98,12 +76,17 @@ export interface ArexaDiamondDummyImplementationInterface
     "balanceOf(address,uint256)": FunctionFragment;
     "balanceOfBatch(address[],uint256[])": FunctionFragment;
     "buyArexaToken(uint128,uint8)": FunctionFragment;
+    "buyArexaTokenAdmin(address,uint128,uint8,uint16)": FunctionFragment;
     "buyEdgeSubscription(uint32)": FunctionFragment;
+    "buyEdgeSubscriptionAdmin(address,uint32,uint16)": FunctionFragment;
     "buyMagic100Token()": FunctionFragment;
-    "buyMagic100TokenAdmin(address)": FunctionFragment;
+    "buyMagic100TokenAdmin(address,uint16)": FunctionFragment;
     "buyOracleSubscription(uint32)": FunctionFragment;
+    "buyOracleSubscriptionAdmin(address,uint32,uint16)": FunctionFragment;
     "buySubscription(uint256,uint32)": FunctionFragment;
+    "buySubscriptionAdmin(address,uint256,uint32,uint16)": FunctionFragment;
     "buyTraderToken(uint128,uint8)": FunctionFragment;
+    "buyTraderTokenAdmin(address,uint128,uint8,uint16)": FunctionFragment;
     "calcDivident(address)": FunctionFragment;
     "calcSubscriptionPrice(uint256,uint32)": FunctionFragment;
     "calcUnrestrictedAmount(address,uint256,uint256)": FunctionFragment;
@@ -124,6 +107,7 @@ export interface ArexaDiamondDummyImplementationInterface
     "getInventoryItem(address)": FunctionFragment;
     "getMagic100FirstBuyerWL(address)": FunctionFragment;
     "getPayingToken()": FunctionFragment;
+    "getPoolAndArexaIncomeBalances()": FunctionFragment;
     "getRoleAdmin(bytes32)": FunctionFragment;
     "getTokenBaseUri()": FunctionFragment;
     "getTokenUri(uint256)": FunctionFragment;
@@ -203,12 +187,17 @@ export interface ArexaDiamondDummyImplementationInterface
       | "balanceOf"
       | "balanceOfBatch"
       | "buyArexaToken"
+      | "buyArexaTokenAdmin"
       | "buyEdgeSubscription"
+      | "buyEdgeSubscriptionAdmin"
       | "buyMagic100Token"
       | "buyMagic100TokenAdmin"
       | "buyOracleSubscription"
+      | "buyOracleSubscriptionAdmin"
       | "buySubscription"
+      | "buySubscriptionAdmin"
       | "buyTraderToken"
+      | "buyTraderTokenAdmin"
       | "calcDivident"
       | "calcSubscriptionPrice"
       | "calcUnrestrictedAmount"
@@ -229,6 +218,7 @@ export interface ArexaDiamondDummyImplementationInterface
       | "getInventoryItem"
       | "getMagic100FirstBuyerWL"
       | "getPayingToken"
+      | "getPoolAndArexaIncomeBalances"
       | "getRoleAdmin"
       | "getTokenBaseUri"
       | "getTokenUri"
@@ -394,8 +384,25 @@ export interface ArexaDiamondDummyImplementationInterface
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
+    functionFragment: "buyArexaTokenAdmin",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string;
+  encodeFunctionData(
     functionFragment: "buyEdgeSubscription",
     values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "buyEdgeSubscriptionAdmin",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "buyMagic100Token",
@@ -403,19 +410,45 @@ export interface ArexaDiamondDummyImplementationInterface
   ): string;
   encodeFunctionData(
     functionFragment: "buyMagic100TokenAdmin",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "buyOracleSubscription",
     values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
+    functionFragment: "buyOracleSubscriptionAdmin",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string;
+  encodeFunctionData(
     functionFragment: "buySubscription",
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
+    functionFragment: "buySubscriptionAdmin",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string;
+  encodeFunctionData(
     functionFragment: "buyTraderToken",
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "buyTraderTokenAdmin",
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "calcDivident",
@@ -515,6 +548,10 @@ export interface ArexaDiamondDummyImplementationInterface
   ): string;
   encodeFunctionData(
     functionFragment: "getPayingToken",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getPoolAndArexaIncomeBalances",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -838,7 +875,15 @@ export interface ArexaDiamondDummyImplementationInterface
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "buyArexaTokenAdmin",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "buyEdgeSubscription",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "buyEdgeSubscriptionAdmin",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -854,11 +899,23 @@ export interface ArexaDiamondDummyImplementationInterface
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "buyOracleSubscriptionAdmin",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "buySubscription",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "buySubscriptionAdmin",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "buyTraderToken",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "buyTraderTokenAdmin",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -933,6 +990,10 @@ export interface ArexaDiamondDummyImplementationInterface
   ): Result;
   decodeFunctionResult(
     functionFragment: "getPayingToken",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getPoolAndArexaIncomeBalances",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -1201,8 +1262,23 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    buyArexaTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     buyEdgeSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    buyEdgeSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1212,11 +1288,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
 
     buyMagic100TokenAdmin(
       toAccount: PromiseOrValue<string>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     buyOracleSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    buyOracleSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1226,9 +1310,25 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    buySubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     buyTraderToken(
       value: PromiseOrValue<BigNumberish>,
       valueType: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    buyTraderTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1255,14 +1355,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       tokenId: PromiseOrValue<BigNumberish>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[void]>;
+    ): Promise<[boolean]>;
 
     checkRestrictions(
       account: PromiseOrValue<string>,
       tokenIds: PromiseOrValue<BigNumberish>[],
       amounts: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
-    ): Promise<[void]>;
+    ): Promise<[boolean]>;
 
     createSubscription(
       tokenType: PromiseOrValue<BigNumberish>,
@@ -1314,12 +1414,12 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getArexaIncomeParameter(
       tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+    ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getArexaTokenPool(
       _tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[ArexaDiamondDummyImplementation.Tuple4951158StructOutput]>;
+    ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
     getCurrentSubscriptionTokenId(
       tokenType: PromiseOrValue<BigNumberish>,
@@ -1340,7 +1440,13 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getInventoryItem(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<[ArexaDiamondDummyImplementation.Tuple9951786StructOutput]>;
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        quantity: BigNumber;
+        deltaPnl: BigNumber;
+        payedPnl: BigNumber;
+      }
+    >;
 
     getMagic100FirstBuyerWL(
       _account: PromiseOrValue<string>,
@@ -1348,6 +1454,17 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<[boolean]>;
 
     getPayingToken(overrides?: CallOverrides): Promise<[string]>;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber, BigNumber] & {
+        pool: BigNumber;
+        poolPaidOut: BigNumber;
+        arexa: BigNumber;
+        arexaPaidOut: BigNumber;
+      }
+    >;
 
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
@@ -1689,8 +1806,23 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  buyArexaTokenAdmin(
+    toAccount: PromiseOrValue<string>,
+    value: PromiseOrValue<BigNumberish>,
+    valueType: PromiseOrValue<BigNumberish>,
+    discountPercent: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   buyEdgeSubscription(
     quantity: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  buyEdgeSubscriptionAdmin(
+    toAccount: PromiseOrValue<string>,
+    quantity: PromiseOrValue<BigNumberish>,
+    discountPercent: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1700,11 +1832,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
 
   buyMagic100TokenAdmin(
     toAccount: PromiseOrValue<string>,
+    discountPercent: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   buyOracleSubscription(
     quantity: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  buyOracleSubscriptionAdmin(
+    toAccount: PromiseOrValue<string>,
+    quantity: PromiseOrValue<BigNumberish>,
+    discountPercent: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1714,9 +1854,25 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  buySubscriptionAdmin(
+    toAccount: PromiseOrValue<string>,
+    tokenId: PromiseOrValue<BigNumberish>,
+    quantity: PromiseOrValue<BigNumberish>,
+    discountPercent: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   buyTraderToken(
     value: PromiseOrValue<BigNumberish>,
     valueType: PromiseOrValue<BigNumberish>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  buyTraderTokenAdmin(
+    toAccount: PromiseOrValue<string>,
+    value: PromiseOrValue<BigNumberish>,
+    valueType: PromiseOrValue<BigNumberish>,
+    discountPercent: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1743,14 +1899,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     tokenId: PromiseOrValue<BigNumberish>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<void>;
+  ): Promise<boolean>;
 
   checkRestrictions(
     account: PromiseOrValue<string>,
     tokenIds: PromiseOrValue<BigNumberish>[],
     amounts: PromiseOrValue<BigNumberish>[],
     overrides?: CallOverrides
-  ): Promise<void>;
+  ): Promise<boolean>;
 
   createSubscription(
     tokenType: PromiseOrValue<BigNumberish>,
@@ -1796,12 +1952,12 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   getArexaIncomeParameter(
     tokenId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+  ): Promise<[number, number] & { pool: number; arexa: number }>;
 
   getArexaTokenPool(
     _tokenType: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<ArexaDiamondDummyImplementation.Tuple4951158StructOutput>;
+  ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
   getCurrentSubscriptionTokenId(
     tokenType: PromiseOrValue<BigNumberish>,
@@ -1822,7 +1978,13 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   getInventoryItem(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
-  ): Promise<ArexaDiamondDummyImplementation.Tuple9951786StructOutput>;
+  ): Promise<
+    [BigNumber, BigNumber, BigNumber] & {
+      quantity: BigNumber;
+      deltaPnl: BigNumber;
+      payedPnl: BigNumber;
+    }
+  >;
 
   getMagic100FirstBuyerWL(
     _account: PromiseOrValue<string>,
@@ -1830,6 +1992,17 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<boolean>;
 
   getPayingToken(overrides?: CallOverrides): Promise<string>;
+
+  getPoolAndArexaIncomeBalances(
+    overrides?: CallOverrides
+  ): Promise<
+    [BigNumber, BigNumber, BigNumber, BigNumber] & {
+      pool: BigNumber;
+      poolPaidOut: BigNumber;
+      arexa: BigNumber;
+      arexaPaidOut: BigNumber;
+    }
+  >;
 
   getRoleAdmin(
     role: PromiseOrValue<BytesLike>,
@@ -2171,8 +2344,23 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    buyArexaTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     buyEdgeSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    buyEdgeSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2180,11 +2368,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
 
     buyMagic100TokenAdmin(
       toAccount: PromiseOrValue<string>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     buyOracleSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    buyOracleSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2194,9 +2390,25 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    buySubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     buyTraderToken(
       value: PromiseOrValue<BigNumberish>,
       valueType: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    buyTraderTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2223,14 +2435,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       tokenId: PromiseOrValue<BigNumberish>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<boolean>;
 
     checkRestrictions(
       account: PromiseOrValue<string>,
       tokenIds: PromiseOrValue<BigNumberish>[],
       amounts: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<boolean>;
 
     createSubscription(
       tokenType: PromiseOrValue<BigNumberish>,
@@ -2276,12 +2488,12 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getArexaIncomeParameter(
       tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+    ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getArexaTokenPool(
       _tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<ArexaDiamondDummyImplementation.Tuple4951158StructOutput>;
+    ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
     getCurrentSubscriptionTokenId(
       tokenType: PromiseOrValue<BigNumberish>,
@@ -2302,7 +2514,13 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getInventoryItem(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<ArexaDiamondDummyImplementation.Tuple9951786StructOutput>;
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        quantity: BigNumber;
+        deltaPnl: BigNumber;
+        payedPnl: BigNumber;
+      }
+    >;
 
     getMagic100FirstBuyerWL(
       _account: PromiseOrValue<string>,
@@ -2310,6 +2528,17 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<boolean>;
 
     getPayingToken(overrides?: CallOverrides): Promise<string>;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber, BigNumber] & {
+        pool: BigNumber;
+        poolPaidOut: BigNumber;
+        arexa: BigNumber;
+        arexaPaidOut: BigNumber;
+      }
+    >;
 
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
@@ -2650,8 +2879,23 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    buyArexaTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     buyEdgeSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    buyEdgeSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -2661,11 +2905,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
 
     buyMagic100TokenAdmin(
       toAccount: PromiseOrValue<string>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     buyOracleSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    buyOracleSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -2675,9 +2927,25 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    buySubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     buyTraderToken(
       value: PromiseOrValue<BigNumberish>,
       valueType: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    buyTraderTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -2780,6 +3048,10 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     getPayingToken(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,
@@ -3150,8 +3422,23 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    buyArexaTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     buyEdgeSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    buyEdgeSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3161,11 +3448,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
 
     buyMagic100TokenAdmin(
       toAccount: PromiseOrValue<string>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     buyOracleSubscription(
       quantity: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    buyOracleSubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3175,9 +3470,25 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    buySubscriptionAdmin(
+      toAccount: PromiseOrValue<string>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     buyTraderToken(
       value: PromiseOrValue<BigNumberish>,
       valueType: PromiseOrValue<BigNumberish>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    buyTraderTokenAdmin(
+      toAccount: PromiseOrValue<string>,
+      value: PromiseOrValue<BigNumberish>,
+      valueType: PromiseOrValue<BigNumberish>,
+      discountPercent: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3282,6 +3593,10 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getPayingToken(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     getRoleAdmin(
       role: PromiseOrValue<BytesLike>,

@@ -27,6 +27,8 @@ struct ArexaPlatformStorage {
 	mapping(uint256 => uint256) lastSubscriptionTokenIds;
 	IERC20 arexaERC20Token; //AREXA
 	uint256 stakedArexaERC20TokenQuantity;
+	uint256 poolPaidOutBalance; //The "pool" part of the sum outgoing
+	uint256 arexaPaidOutBalance; //The "owner" part of the sum outgoing
 }
 
 library LibArexaPlatformStorage {

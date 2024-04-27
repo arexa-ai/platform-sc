@@ -177,7 +177,7 @@ export async function deployDiamondNative(
 			} else {
 				let cutItem = cut.find((item) => item.facetAddress == origFacet.facetAddress && item.action == FacetCutAction.Remove);
 				if (!cutItem) {
-					cutItem = { facetAddress: origFacet.facetAddress, action: FacetCutAction.Remove, functionSelectors: [] };
+					cutItem = { facetAddress: zeroAddress, action: FacetCutAction.Remove, functionSelectors: [] };
 					cut.push(cutItem);
 				}
 				cutItem.functionSelectors.push(origSelector);

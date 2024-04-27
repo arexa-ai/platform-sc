@@ -7,7 +7,7 @@ pragma solidity ^0.8.9;
 import "../../TokenRestriction/LibTokenRestriction.sol";
 import "../../TokenPNL/LibTokenPNL.sol";
 
-import "../../../ArexaPlatform/Platform/LibArexaPlatform.sol";
+import "../../../ArexaPlatform/Platform/LibArexaPlatformShared.sol";
 
 library LibERC1155Customization {
 	/**
@@ -74,7 +74,13 @@ library LibERC1155Customization {
 		}
 
 		for (uint256 i; i < _tokenIds.length; ) {
-			LibTokenPNL.refreshDivident(address(LibArexaPlatform.getPayingToken()), _tokenIds[i], _fromAccount, _toAccount, _amounts[i]);
+			LibTokenPNL.refreshDivident(
+				address(LibArexaPlatformShared.getPayingToken()),
+				_tokenIds[i],
+				_fromAccount,
+				_toAccount,
+				_amounts[i]
+			);
 
 			unchecked {
 				i++;

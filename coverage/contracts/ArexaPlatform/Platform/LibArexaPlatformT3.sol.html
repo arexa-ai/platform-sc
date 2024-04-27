@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\ArexaPlatform\Platform\LibArexaPlatformT3.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/ArexaPlatform/Platform/</a> LibArexaPlatformT3.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 AREXA
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+//import "hardhat/console.sol";
+&nbsp;
+import "./LibArexaPlatformStorage.sol";
+// import "../../utils/Math.sol";
+import "../../utils/SafeERC20.sol";
+import "../../base/Diamond/LibDiamond.sol";
+import "../../base/ERC1155/base/LibERC1155.sol";
+&nbsp;
+import "../LibArexaConst.sol";
+&nbsp;
+import { IERC20Metadata } from "../../base/ERC20/metadata/IERC20Metadata.sol";
+// import "../../base/BridgeCentralized/IBridgeableToken.sol";
+&nbsp;
+import "./LibArexaPlatformShared.sol";
+&nbsp;
+library LibArexaPlatformT3 {
+	function buyTraderToken(address _operator, address _account, uint128 _value, uint8 _valueType, uint16 _discountPercent) internal {
+		//Tier3
+		//AREXA_TOKEN
+		//Price: 1.0 USDT/piece
+		//Quantity: No limit to buy
+		//_valueType: 0 is amount, 1 is quantity
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(_valueType == 0 || <span class="branch-1 cbranch-no" title="branch not covered" >_valueType == 1</span>, "valueType can be 0 or 1 only!");
+&nbsp;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(_discountPercent &lt;= 10000, "Discount percent cannot be more then 100,00%");
+&nbsp;
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
+&nbsp;
+		uint256 decimal = 10 ** IERC20Metadata(address(arexa.payingERC20Token)).decimals();
+		uint256 priceFactor = 10;
+		uint256 price = decimal * priceFactor * 1;
+&nbsp;
+		uint256 amount = 0;
+		uint256 quantity = 0;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (_valueType == 1) {
+			amount = ((_value * 10 * price) / priceFactor + 5) / 10; //add 5 and div 10: rounding to the nearest
+			quantity = (amount * priceFactor) / price;
+<span class="cstat-no" title="statement not covered" >			require(amount &gt; 0 &amp;&amp; quantity &gt; 0, "The input quantity is too small for paying token!")</span>;
+		} else {
+			quantity = (_value * priceFactor) / price;
+			amount = (quantity * price) / priceFactor;
+			<span class="missing-if-branch" title="else path not taken" >E</span>require(amount &gt; 0 &amp;&amp; quantity &gt; 0, "The input amount is too small for buying a token!");
+		}
+&nbsp;
+		amount = (((amount * (10000 - _discountPercent) * 10) / 10000) + 5) / 10;
+&nbsp;
+		address contractAddress = LibDiamond.getDiamondAddress();
+&nbsp;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (amount &gt; 0) {
+			SafeERC20.safeTransferFrom(arexa.payingERC20Token, _account, contractAddress, amount);
+		}
+&nbsp;
+		//divide the amount to pool and arexa, fontos a sorrend, mielőtt megkapta a tokent és adminisztráltuk a PNL változást, előtte növeljük a pool értéket
+		//azért mert így a deltaPNLben nem napja meg maga után járó részt.
+		LibArexaPlatformShared._divideAmountPoolAndArexa(LibArexaConst.TRADER_TOKEN_ID, amount);
+&nbsp;
+		LibERC1155.mint(_operator, _account, LibArexaConst.TRADER_TOKEN_ID, quantity, "");
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -91,7 +91,7 @@ describe("ArexaPlatform - T5 - Magic100 Token", function () {
 
 			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
 
-			const result = platformAdminFacetUser1.buyMagic100TokenAdmin(user1.address);
+			const result = platformAdminFacetUser1.buyMagic100TokenAdmin(user1.address, 0);
 			await expect(result).to.be.revertedWithCustomError(platformAdminFacetUser1, "AccessDenied");
 
 			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
@@ -108,7 +108,7 @@ describe("ArexaPlatform - T5 - Magic100 Token", function () {
 
 			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
 
-			const result = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address); //Only an approved account can buy the Magic token
+			const result = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 0); //Only an approved account can buy the Magic token
 			await expect(result).not.to.be.reverted;
 
 			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
@@ -118,6 +118,57 @@ describe("ArexaPlatform - T5 - Magic100 Token", function () {
 			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub(100n * BigInt(10 ** usdt.DECIMALS)));
 		});
 
+		it("Buy token by admin with discount!", async function () {
+			const { accounts, user1, user2, arexa, rxai, usdt } = await loadFixture(deployDiamond);
+
+			const platformAdminFacetOwn = arexa.platformAdminFacet.connect(arexa.ownerAddress);
+
+			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
+
+			const result = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 1000); //Only an approved account can buy the Magic token
+			await expect(result).not.to.be.reverted;
+
+			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
+			expect(user1ArexaTokenBalance).to.be.equal(1);
+
+			const user1USDTCloseBalance = await usdt.tokenFacet.balanceOf(user1.address);
+			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub(90n * BigInt(10 ** usdt.DECIMALS)));
+		});
+
+		it("Buy token by admin with discount with rounding!", async function () {
+			const { accounts, user1, user2, arexa, rxai, usdt } = await loadFixture(deployDiamond);
+
+			const platformAdminFacetOwn = arexa.platformAdminFacet.connect(arexa.ownerAddress);
+
+			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
+
+			const result = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 1377); //Only an approved account can buy the Magic token
+			await expect(result).not.to.be.reverted;
+
+			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
+			expect(user1ArexaTokenBalance).to.be.equal(1);
+
+			const user1USDTCloseBalance = await usdt.tokenFacet.balanceOf(user1.address);
+			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub((8623n * BigInt(10 ** usdt.DECIMALS)) / 100n));
+		});
+
+		it("Buy token by admin for free!", async function () {
+			const { accounts, user1, user2, arexa, rxai, usdt } = await loadFixture(deployDiamond);
+
+			const platformAdminFacetOwn = arexa.platformAdminFacet.connect(arexa.ownerAddress);
+
+			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
+
+			const result = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 10000); //Only an approved account can buy the Magic token
+			await expect(result).not.to.be.reverted;
+
+			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
+			expect(user1ArexaTokenBalance).to.be.equal(1);
+
+			const user1USDTCloseBalance = await usdt.tokenFacet.balanceOf(user1.address);
+			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub(0n * BigInt(10 ** usdt.DECIMALS)));
+		});
+
 		it("Buy multiple token by admin!", async function () {
 			const { accounts, user1, user2, arexa, rxai, usdt } = await loadFixture(deployDiamond);
 
@@ -125,10 +176,10 @@ describe("ArexaPlatform - T5 - Magic100 Token", function () {
 
 			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
 
-			const result1 = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address); //Only an approved account can buy the Magic token
+			const result1 = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 0); //Only an approved account can buy the Magic token
 			await expect(result1).not.to.be.reverted;
 
-			const result2 = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address); //Only an approved account can buy the Magic token
+			const result2 = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 0); //Only an approved account can buy the Magic token
 			await expect(result2).not.to.be.reverted;
 
 			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);
@@ -159,7 +210,7 @@ describe("ArexaPlatform - T5 - Magic100 Token", function () {
 			let user1USDTCloseBalance = await usdt.tokenFacet.balanceOf(user1.address);
 			expect(user1USDTCloseBalance).to.be.equal(user1USDTOpenBalance.sub(100n * BigInt(10 ** usdt.DECIMALS)));
 
-			const resultWithError = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address);
+			const resultWithError = platformAdminFacetOwn.buyMagic100TokenAdmin(user1.address, 0);
 			await expect(result).not.to.be.reverted;
 
 			user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);

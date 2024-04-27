@@ -21,7 +21,7 @@ const deploy: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		case "bsctest":
 			await deployUSDT(hre);
 			break;
-		case "mumbai":
+		case "amoy":
 			await deployUSDT(hre);
 			break;
 		case "sepolia":

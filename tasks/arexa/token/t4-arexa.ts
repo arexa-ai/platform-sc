@@ -1,7 +1,7 @@
 import { types } from "hardhat/config";
 import { arexaTokenScope } from "../arexa.scope";
 import { All } from "../../utils/input.types";
-import { getAREXASmartContracts } from "../../utils/utils";
+import { getAREXASmartContracts, getUSDTSmartContracts } from "../../utils/utils";
 import { call } from "../../utils/helper.call";
 
 /**
@@ -122,5 +122,17 @@ arexaTokenScope
 		const signer = arexa.signers[params.signer];
 		const contract = arexa.pfmTokenFacet.connect(signer);
 		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, arexa.const.AREXA_TOKEN_ID, params.value, []));
+		await hre.run("print", { message: ` TX: ${result.hash}` });
+	});
+
+arexaTokenScope
+	.task("4-arexa:payOutDivident", "Payout pool divident that belongs to the user")
+	.addParam("signer", "Index of Signer", undefined, types.int)
+	.addParam("value", "Amount to pay out", undefined, types.float)
+	.setAction(async (params: Pick<All, "signer" | "value">, hre) => {
+		const arexa = await getAREXASmartContracts(hre);
+		const usdt = await getUSDTSmartContracts(hre);
+		const contract = arexa.poolPNLFacet.connect(arexa.signers[params.signer]);
+		const result = await call(hre, contract.payoutDivident(params.value * 10 ** usdt.DECIMALS));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});

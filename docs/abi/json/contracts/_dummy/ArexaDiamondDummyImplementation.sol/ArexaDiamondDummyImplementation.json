@@ -404,12 +404,63 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "value",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "valueType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyArexaTokenAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint32",
         "name": "quantity",
         "type": "uint32"
       }
     ],
     "name": "buyEdgeSubscription",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyEdgeSubscriptionAdmin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -427,6 +478,11 @@
         "internalType": "address",
         "name": "toAccount",
         "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
       }
     ],
     "name": "buyMagic100TokenAdmin",
@@ -443,6 +499,29 @@
       }
     ],
     "name": "buyOracleSubscription",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyOracleSubscriptionAdmin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -468,6 +547,34 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buySubscriptionAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint128",
         "name": "value",
         "type": "uint128"
@@ -479,6 +586,34 @@
       }
     ],
     "name": "buyTraderToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "value",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "valueType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyTraderTokenAdmin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -574,7 +709,13 @@
       }
     ],
     "name": "checkRestriction",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -597,7 +738,13 @@
       }
     ],
     "name": "checkRestrictions",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -810,12 +957,12 @@
     "outputs": [
       {
         "internalType": "uint32",
-        "name": "pool_",
+        "name": "pool",
         "type": "uint32"
       },
       {
         "internalType": "uint32",
-        "name": "arexa_",
+        "name": "arexa",
         "type": "uint32"
       }
     ],
@@ -833,21 +980,14 @@
     "name": "getArexaTokenPool",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "total",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "sold",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct ArexaDiamondDummyImplementation.Tuple4951158",
-        "name": "",
-        "type": "tuple"
+        "internalType": "uint256",
+        "name": "total",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sold",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -911,26 +1051,19 @@
     "name": "getInventoryItem",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "int256",
-            "name": "quantity",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "deltaPnl",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "payedPnl",
-            "type": "int256"
-          }
-        ],
-        "internalType": "struct ArexaDiamondDummyImplementation.Tuple9951786",
-        "name": "",
-        "type": "tuple"
+        "internalType": "int256",
+        "name": "quantity",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "deltaPnl",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "payedPnl",
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
@@ -963,6 +1096,34 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPoolAndArexaIncomeBalances",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "pool",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "poolPaidOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arexa",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arexaPaidOut",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",

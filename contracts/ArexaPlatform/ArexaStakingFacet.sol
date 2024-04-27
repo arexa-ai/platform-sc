@@ -4,7 +4,7 @@
  */
 pragma solidity ^0.8.9;
 
-import { LibArexaPlatform } from "./Platform/LibArexaPlatform.sol";
+import { LibArexaPlatformStaking } from "./Platform/LibArexaPlatformStaking.sol";
 
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
 
@@ -17,10 +17,10 @@ contract ArexaStakingFacet is CallProtection {
 	constructor() {}
 
 	function stakeArexaToken(uint256 quantity) external protectedCall {
-		LibArexaPlatform.stakeArexaToken(msg.sender, msg.sender, quantity);
+		LibArexaPlatformStaking.stakeArexaToken(msg.sender, msg.sender, quantity);
 	}
 
 	function withdrawArexaToken(address fromAccount, address toAccount, uint256 _quantity) external protectedCall {
-		LibArexaPlatform.withdrawArexaToken(msg.sender, fromAccount, toAccount, _quantity);
+		LibArexaPlatformStaking.withdrawArexaToken(msg.sender, fromAccount, toAccount, _quantity);
 	}
 }

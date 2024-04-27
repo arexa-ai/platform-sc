@@ -6,7 +6,6 @@ pragma solidity ^0.8.9;
 
 import { LibBlackWhiteList } from "../base/BlackWhiteList/LibBlackWhiteList.sol";
 
-import { LibArexaPlatform } from "./Platform/LibArexaPlatform.sol";
 import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
 
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
@@ -23,11 +22,15 @@ contract ArexaRestrictionFacet is CallProtection {
 		return LibTokenRestriction.calcUnrestrictedAmount(account, tokenId, amount);
 	}
 
-	function checkRestriction(address account, uint256 tokenId, uint256 amount) external view protectedCall {
-		LibTokenRestriction.checkRestriction(account, tokenId, amount);
+	function checkRestriction(address account, uint256 tokenId, uint256 amount) external view protectedCall returns (bool) {
+		return LibTokenRestriction.checkRestriction(account, tokenId, amount);
 	}
 
-	function checkRestrictions(address account, uint256[] calldata tokenIds, uint256[] calldata amounts) external view protectedCall {
-		LibTokenRestriction.checkRestrictions(account, tokenIds, amounts);
+	function checkRestrictions(
+		address account,
+		uint256[] calldata tokenIds,
+		uint256[] calldata amounts
+	) external view protectedCall returns (bool) {
+		return LibTokenRestriction.checkRestrictions(account, tokenIds, amounts);
 	}
 }

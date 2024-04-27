@@ -22,6 +22,22 @@
   },
   {
     "inputs": [],
+    "name": "AddressUtils__NotContract",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "SafeERC20FailedOperation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "TargetedPausable__TargetedPaused",
     "type": "error"
   },
@@ -56,12 +72,12 @@
     "outputs": [
       {
         "internalType": "uint32",
-        "name": "pool_",
+        "name": "pool",
         "type": "uint32"
       },
       {
         "internalType": "uint32",
-        "name": "arexa_",
+        "name": "arexa",
         "type": "uint32"
       }
     ],
@@ -107,26 +123,47 @@
     "name": "getInventoryItem",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "int256",
-            "name": "quantity",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "deltaPnl",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "payedPnl",
-            "type": "int256"
-          }
-        ],
-        "internalType": "struct InventoryItem",
-        "name": "",
-        "type": "tuple"
+        "internalType": "int256",
+        "name": "quantity",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "deltaPnl",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "payedPnl",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPoolAndArexaIncomeBalances",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "pool",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "poolPaidOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arexa",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arexaPaidOut",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",

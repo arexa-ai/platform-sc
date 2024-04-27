@@ -328,7 +328,7 @@ describe("ArexaPlatform - Example", function () {
 
 			const user1USDTOpenBalance = await usdt.tokenFacet.balanceOf(user1.address);
 
-			const result = platformFacetAdminUser1.buyMagic100TokenAdmin(user1.address);
+			const result = platformFacetAdminUser1.buyMagic100TokenAdmin(user1.address, 0);
 			await expect(result).to.be.revertedWithCustomError(platformFacetAdminUser1, "AccessDenied");
 
 			const user1ArexaTokenBalance = await arexa.pfmTokenFacet.balanceOf(user1.address, arexa.const.MAGIC_TOKEN_ID);

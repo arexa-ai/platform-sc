@@ -25,7 +25,7 @@ const deploy: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		case "bsctest":
 			await deployDiamond(hre, DescriptorTypeToken.bRXAI, getArexaTokenDeploymentDescriptor);
 			break;
-		case "mumbai":
+		case "amoy":
 			await deployDiamond(hre, DescriptorTypeToken.pRXAI, getArexaTokenDeploymentDescriptor);
 			break;
 		case "sepolia":

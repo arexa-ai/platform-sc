@@ -92,9 +92,144 @@
         "internalType": "address",
         "name": "toAccount",
         "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "value",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "valueType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyArexaTokenAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyEdgeSubscriptionAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
       }
     ],
     "name": "buyMagic100TokenAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyOracleSubscriptionAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "quantity",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buySubscriptionAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "toAccount",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "value",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "valueType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint16",
+        "name": "discountPercent",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyTraderTokenAdmin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -154,21 +289,14 @@
     "name": "getArexaTokenPool",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "total",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "sold",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct ArexaTokenPool",
-        "name": "",
-        "type": "tuple"
+        "internalType": "uint256",
+        "name": "total",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sold",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",

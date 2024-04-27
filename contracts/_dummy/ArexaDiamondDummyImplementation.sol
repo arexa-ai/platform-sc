@@ -20,17 +20,6 @@ contract ArexaDiamondDummyImplementation {
         address facetAddress;
         bytes4[] functionSelectors;
     }
-
-    struct Tuple4951158 {
-        uint256 total;
-        uint256 sold;
-    }
-
-    struct Tuple9951786 {
-        int256 quantity;
-        int256 deltaPnl;
-        int256 payedPnl;
-    }
     
 
    function diamondCut(Tuple6871229[] memory _diamondCut, address  _init, bytes memory _calldata) external {}
@@ -151,21 +140,33 @@ contract ArexaDiamondDummyImplementation {
 
    function getCurrentSubscriptionTokenId(uint256  tokenType) external view returns (uint256 ) {}
 
-   function buyMagic100TokenAdmin(address  toAccount) external {}
+   function buyArexaTokenAdmin(address  toAccount, uint128  value, uint8  valueType, uint16  discountPercent) external {}
+
+   function buyEdgeSubscriptionAdmin(address  toAccount, uint32  quantity, uint16  discountPercent) external {}
+
+   function buyMagic100TokenAdmin(address  toAccount, uint16  discountPercent) external {}
+
+   function buyOracleSubscriptionAdmin(address  toAccount, uint32  quantity, uint16  discountPercent) external {}
+
+   function buySubscriptionAdmin(address  toAccount, uint256  tokenId, uint32  quantity, uint16  discountPercent) external {}
+
+   function buyTraderTokenAdmin(address  toAccount, uint128  value, uint8  valueType, uint16  discountPercent) external {}
 
    function createSubscription(uint256  tokenType, uint16  year, uint8  month, uint256  quantity, uint256  min, uint256  max) external returns (uint256  tokenId) {}
 
-   function getArexaTokenPool(uint8  _tokenType) external view returns (Tuple4951158 memory) {}
+   function getArexaTokenPool(uint8  _tokenType) external view returns (uint256  total, uint256  sold) {}
 
    function payArexaTokenFromPool(uint8  poolType, address  account, uint32  quantity) external {}
 
    function calcDivident(address  account) external view returns (int256 ) {}
 
-   function getArexaIncomeParameter(uint256  tokenId) external view returns (uint32  pool_, uint32  arexa_) {}
+   function getArexaIncomeParameter(uint256  tokenId) external view returns (uint32  pool, uint32  arexa) {}
 
    function getInventory() external view returns (bool  isEnabled, int256  sumQuantity, int256  sumAmount, int256  sumPnl) {}
 
-   function getInventoryItem(address  account) external view returns (Tuple9951786 memory) {}
+   function getInventoryItem(address  account) external view returns (int256  quantity, int256  deltaPnl, int256  payedPnl) {}
+
+   function getPoolAndArexaIncomeBalances() external view returns (uint256  pool, uint256  poolPaidOut, uint256  arexa, uint256  arexaPaidOut) {}
 
    function payoutArexaDivident(address  toAccount, uint256  value) external {}
 
@@ -177,9 +178,9 @@ contract ArexaDiamondDummyImplementation {
 
    function calcUnrestrictedAmount(address  account, uint256  tokenId, uint256  amount) external view returns (uint256 ) {}
 
-   function checkRestriction(address  account, uint256  tokenId, uint256  amount) external view {}
+   function checkRestriction(address  account, uint256  tokenId, uint256  amount) external view returns (bool ) {}
 
-   function checkRestrictions(address  account, uint256[] memory tokenIds, uint256[] memory amounts) external view {}
+   function checkRestrictions(address  account, uint256[] memory tokenIds, uint256[] memory amounts) external view returns (bool ) {}
 
    function stakeArexaToken(uint256  quantity) external {}
 

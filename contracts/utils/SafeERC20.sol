@@ -11,6 +11,13 @@ library SafeERC20 {
 	error SafeERC20FailedOperation(address token);
 	using AddressUtils for address;
 
+	function safeTransfer(IERC20 token, address to, uint256 value) internal {
+		bytes memory returndata = address(token).functionCall(abi.encodeCall(token.transfer, (to, value)));
+		if (returndata.length != 0 && !abi.decode(returndata, (bool))) {
+			revert SafeERC20FailedOperation(address(token));
+		}
+	}
+
 	function safeTransferFrom(IERC20 token, address from, address to, uint256 value) internal {
 		bytes memory returndata = address(token).functionCall(abi.encodeCall(token.transferFrom, (from, to, value)));
 		if (returndata.length != 0 && !abi.decode(returndata, (bool))) {

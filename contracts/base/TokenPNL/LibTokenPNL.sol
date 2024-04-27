@@ -63,10 +63,10 @@ library LibTokenPNL {
 		address _contract,
 		uint256 _tokenId,
 		address _account
-	) internal view returns (InventoryItem memory inventoryItem) {
+	) internal view returns (int256 quantity, int256 deltaPnl, int256 payedPnl) {
 		TokenPNLStorage storage tokenPNL = LibTokenPNLStorage.layout();
 		Inventory storage inventory = tokenPNL.inventory[_contract][_tokenId];
-		inventoryItem = inventory.divident[_account];
+		return (inventory.divident[_account].quantity, inventory.divident[_account].deltaPnl, inventory.divident[_account].payedPnl);
 	}
 
 	function _refreshDividentInternal(Inventory storage inventory, address _account, int256 _quantity) internal {

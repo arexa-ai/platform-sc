@@ -23,24 +23,13 @@ import type {
   PromiseOrValue,
 } from "../common";
 
-export type InventoryItemStruct = {
-  quantity: PromiseOrValue<BigNumberish>;
-  deltaPnl: PromiseOrValue<BigNumberish>;
-  payedPnl: PromiseOrValue<BigNumberish>;
-};
-
-export type InventoryItemStructOutput = [BigNumber, BigNumber, BigNumber] & {
-  quantity: BigNumber;
-  deltaPnl: BigNumber;
-  payedPnl: BigNumber;
-};
-
 export interface ArexaPoolPNLFacetInterface extends utils.Interface {
   functions: {
     "calcDivident(address)": FunctionFragment;
     "getArexaIncomeParameter(uint256)": FunctionFragment;
     "getInventory()": FunctionFragment;
     "getInventoryItem(address)": FunctionFragment;
+    "getPoolAndArexaIncomeBalances()": FunctionFragment;
     "payoutArexaDivident(address,uint256)": FunctionFragment;
     "payoutArexaIncome(address,uint256)": FunctionFragment;
     "payoutDivident(uint256)": FunctionFragment;
@@ -53,6 +42,7 @@ export interface ArexaPoolPNLFacetInterface extends utils.Interface {
       | "getArexaIncomeParameter"
       | "getInventory"
       | "getInventoryItem"
+      | "getPoolAndArexaIncomeBalances"
       | "payoutArexaDivident"
       | "payoutArexaIncome"
       | "payoutDivident"
@@ -74,6 +64,10 @@ export interface ArexaPoolPNLFacetInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "getInventoryItem",
     values: [PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getPoolAndArexaIncomeBalances",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "payoutArexaDivident",
@@ -110,6 +104,10 @@ export interface ArexaPoolPNLFacetInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "getInventoryItem",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getPoolAndArexaIncomeBalances",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -167,7 +165,7 @@ export interface ArexaPoolPNLFacet extends BaseContract {
     getArexaIncomeParameter(
       tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+    ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getInventory(
       overrides?: CallOverrides
@@ -183,7 +181,24 @@ export interface ArexaPoolPNLFacet extends BaseContract {
     getInventoryItem(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<[InventoryItemStructOutput]>;
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        quantity: BigNumber;
+        deltaPnl: BigNumber;
+        payedPnl: BigNumber;
+      }
+    >;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber, BigNumber] & {
+        pool: BigNumber;
+        poolPaidOut: BigNumber;
+        arexa: BigNumber;
+        arexaPaidOut: BigNumber;
+      }
+    >;
 
     payoutArexaDivident(
       toAccount: PromiseOrValue<string>,
@@ -218,7 +233,7 @@ export interface ArexaPoolPNLFacet extends BaseContract {
   getArexaIncomeParameter(
     tokenId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+  ): Promise<[number, number] & { pool: number; arexa: number }>;
 
   getInventory(
     overrides?: CallOverrides
@@ -234,7 +249,24 @@ export interface ArexaPoolPNLFacet extends BaseContract {
   getInventoryItem(
     account: PromiseOrValue<string>,
     overrides?: CallOverrides
-  ): Promise<InventoryItemStructOutput>;
+  ): Promise<
+    [BigNumber, BigNumber, BigNumber] & {
+      quantity: BigNumber;
+      deltaPnl: BigNumber;
+      payedPnl: BigNumber;
+    }
+  >;
+
+  getPoolAndArexaIncomeBalances(
+    overrides?: CallOverrides
+  ): Promise<
+    [BigNumber, BigNumber, BigNumber, BigNumber] & {
+      pool: BigNumber;
+      poolPaidOut: BigNumber;
+      arexa: BigNumber;
+      arexaPaidOut: BigNumber;
+    }
+  >;
 
   payoutArexaDivident(
     toAccount: PromiseOrValue<string>,
@@ -269,7 +301,7 @@ export interface ArexaPoolPNLFacet extends BaseContract {
     getArexaIncomeParameter(
       tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[number, number] & { pool_: number; arexa_: number }>;
+    ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getInventory(
       overrides?: CallOverrides
@@ -285,7 +317,24 @@ export interface ArexaPoolPNLFacet extends BaseContract {
     getInventoryItem(
       account: PromiseOrValue<string>,
       overrides?: CallOverrides
-    ): Promise<InventoryItemStructOutput>;
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        quantity: BigNumber;
+        deltaPnl: BigNumber;
+        payedPnl: BigNumber;
+      }
+    >;
+
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, BigNumber, BigNumber] & {
+        pool: BigNumber;
+        poolPaidOut: BigNumber;
+        arexa: BigNumber;
+        arexaPaidOut: BigNumber;
+      }
+    >;
 
     payoutArexaDivident(
       toAccount: PromiseOrValue<string>,
@@ -332,6 +381,10 @@ export interface ArexaPoolPNLFacet extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    getPoolAndArexaIncomeBalances(
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     payoutArexaDivident(
       toAccount: PromiseOrValue<string>,
       value: PromiseOrValue<BigNumberish>,
@@ -372,6 +425,10 @@ export interface ArexaPoolPNLFacet extends BaseContract {
 
     getInventoryItem(
       account: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getPoolAndArexaIncomeBalances(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 

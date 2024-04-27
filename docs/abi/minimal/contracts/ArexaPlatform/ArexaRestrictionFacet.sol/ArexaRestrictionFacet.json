@@ -2,6 +2,6 @@
   "constructor()",
   "error LibERC1155__ArrayLengthMismatch()",
   "function calcUnrestrictedAmount(address,uint256,uint256) view returns (uint256)",
-  "function checkRestriction(address,uint256,uint256) view",
-  "function checkRestrictions(address,uint256[],uint256[]) view"
+  "function checkRestriction(address,uint256,uint256) view returns (bool)",
+  "function checkRestrictions(address,uint256[],uint256[]) view returns (bool)"
 ]

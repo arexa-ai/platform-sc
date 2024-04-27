@@ -153,7 +153,17 @@
 108
 109
 110
-111</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,7 +281,12 @@ pragma solidity ^0.8.9;
 &nbsp;
 import { LibBlackWhiteList } from "../base/BlackWhiteList/LibBlackWhiteList.sol";
 &nbsp;
-import { LibArexaPlatform } from "./Platform/LibArexaPlatform.sol";
+import { LibArexaPlatformShared } from "./Platform/LibArexaPlatformShared.sol";
+import { LibArexaPlatformSubscriptions } from "./Platform/LibArexaPlatformSubscriptions.sol";
+import { LibArexaPlatformT3 } from "./Platform/LibArexaPlatformT3.sol";
+import { LibArexaPlatformT4 } from "./Platform/LibArexaPlatformT4.sol";
+import { LibArexaPlatformT5 } from "./Platform/LibArexaPlatformT5.sol";
+&nbsp;
 import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
 &nbsp;
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
@@ -294,15 +309,15 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 	uint8 public constant AREXA_TOKEN_POOL_DEVELOPMENT = LibArexaConst.AREXA_TOKEN_POOL_DEVELOPMENT;
 	uint8 public constant AREXA_TOKEN_POOL_RESERVED = LibArexaConst.AREXA_TOKEN_POOL_RESERVED;
 &nbsp;
-	uint8 public constant AMOUNT_VALUE_TYPE = LibArexaPlatform.AMOUNT_VALUE_TYPE;
-	uint8 public constant QUANTITY_VALUE_TYPE = LibArexaPlatform.QUANTITY_VALUE_TYPE;
+	uint8 public constant AMOUNT_VALUE_TYPE = LibArexaPlatformShared.AMOUNT_VALUE_TYPE;
+	uint8 public constant QUANTITY_VALUE_TYPE = LibArexaPlatformShared.QUANTITY_VALUE_TYPE;
 &nbsp;
 	function getCurrentSubscriptionTokenId(uint256 tokenType) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (uint256) {
-		return LibArexaPlatform.getCurrentSubscriptionTokenId(tokenType);
+		return LibArexaPlatformSubscriptions.getCurrentSubscriptionTokenId(tokenType);
 	}
 &nbsp;
 	function calcSubscriptionPrice(uint256 tokenId, uint32 quantity) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (uint256) {
-		return LibArexaPlatform.calcSubscriptionPrice(tokenId, quantity);
+		return LibArexaPlatformSubscriptions.calcSubscriptionPrice(tokenId, quantity);
 	}
 &nbsp;
 	function buySubscription(uint256 tokenId, uint32 quantity) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
@@ -311,7 +326,7 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		//Quantity: 1 per account
 		// uint256 balance = LibERC1155.balanceOf(msg.sender, tokenId);
 		// require(balance == 0, "Only 1 token can be bought per account!");
-		LibArexaPlatform.buySubscription(tokenId, msg.sender, quantity);
+		LibArexaPlatformSubscriptions.buySubscription(tokenId, msg.sender, quantity, 0);
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	function buyOracleSubscription(uint32 quantity) external protectedCall whenNotPaused(LibArexaConst.FULL) {</span>
@@ -319,10 +334,10 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		//SUBSCR1_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
 		//Quantity: 1 per account
-<span class="cstat-no" title="statement not covered" >		uint256 tokenId = LibArexaPlatform.getCurrentSubscriptionTokenId(SUBSCR1_TOKEN_TYPE);</span>
+<span class="cstat-no" title="statement not covered" >		uint256 tokenId = LibArexaPlatformSubscriptions.getCurrentSubscriptionTokenId(SUBSCR1_TOKEN_TYPE);</span>
 		// uint256 balance = LibERC1155.balanceOf(msg.sender, tokenId);
 		// require(balance == 0, "Only 1 token can be bought per account!");
-<span class="cstat-no" title="statement not covered" >		LibArexaPlatform.buySubscription(tokenId, msg.sender, quantity)</span>;
+<span class="cstat-no" title="statement not covered" >		LibArexaPlatformSubscriptions.buySubscription(tokenId, msg.sender, quantity, 0)</span>;
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	function buyEdgeSubscription(uint32 quantity) external protectedCall whenNotPaused(LibArexaConst.FULL) {</span>
@@ -330,10 +345,10 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		//SUBSCR2_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
 		//Quantity: 1 per account
-<span class="cstat-no" title="statement not covered" >		uint256 tokenId = LibArexaPlatform.getCurrentSubscriptionTokenId(SUBSCR2_TOKEN_TYPE);</span>
+<span class="cstat-no" title="statement not covered" >		uint256 tokenId = LibArexaPlatformSubscriptions.getCurrentSubscriptionTokenId(SUBSCR2_TOKEN_TYPE);</span>
 		// uint256 balance = LibERC1155.balanceOf(msg.sender, tokenId);
 		// require(balance == 1, "Only 1 token can be bought per account!");
-<span class="cstat-no" title="statement not covered" >		LibArexaPlatform.buySubscription(tokenId, msg.sender, quantity)</span>;
+<span class="cstat-no" title="statement not covered" >		LibArexaPlatformSubscriptions.buySubscription(tokenId, msg.sender, quantity, 0)</span>;
 	}
 &nbsp;
 	function buyTraderToken(uint128 value, uint8 valueType) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
@@ -342,7 +357,7 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		//Price: 1.0 USDT/piece
 		//Quantity: No limit to buy
 		//valueType: 0 is amount, 1 is quantity
-		LibArexaPlatform.buyTraderToken(msg.sender, msg.sender, value, valueType);
+		LibArexaPlatformT3.buyTraderToken(msg.sender, msg.sender, value, valueType, 0);
 	}
 &nbsp;
 	function buyArexaToken(uint128 value, uint8 valueType) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
@@ -351,7 +366,7 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		//Price: 0.1 USDT/piece
 		//Quantity: No limit to buy
 		//valueType: 0 is amount, 1 is quantity
-		LibArexaPlatform.buyArexaToken(msg.sender, value, valueType);
+		LibArexaPlatformT4.buyArexaToken(msg.sender, value, valueType, 0);
 	}
 &nbsp;
 	function buyMagic100Token() external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
@@ -370,7 +385,7 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 		uint256 balance = LibERC1155.balanceOf(msg.sender, LibArexaConst.MAGIC_TOKEN_ID);
 		require(balance == 0, "Only 1 Magic token can be bought now!");
 &nbsp;
-		LibArexaPlatform.buyMagic100Token(msg.sender);
+		LibArexaPlatformT5.buyMagic100Token(msg.sender, 0);
 	}
 }
 &nbsp;</pre></td></tr>
@@ -379,7 +394,7 @@ contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Feb 28 2024 06:51:08 GMT+0100 (közép-európai téli idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

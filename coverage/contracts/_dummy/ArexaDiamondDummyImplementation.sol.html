@@ -32,7 +32,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/101</span>
+        <span class='fraction'>0/107</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -280,7 +280,9 @@
 235
 236
 237
-238</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+238
+239</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -539,17 +541,6 @@ contract ArexaDiamondDummyImplementation {
         address facetAddress;
         bytes4[] functionSelectors;
     }
-&nbsp;
-    struct Tuple4951158 {
-        uint256 total;
-        uint256 sold;
-    }
-&nbsp;
-    struct Tuple9951786 {
-        int256 quantity;
-        int256 deltaPnl;
-        int256 payedPnl;
-    }
     
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function diamondCut(Tuple6871229[] memory _diamondCut, address  _init, bytes memory _calldata) external {}</span>
@@ -670,21 +661,33 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function getCurrentSubscriptionTokenId(uint256  tokenType) external view returns (uint256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function buyMagic100TokenAdmin(address  toAccount) external {}</span>
+<span class="fstat-no" title="function not covered" >   function buyArexaTokenAdmin(address  toAccount, uint128  value, uint8  valueType, uint16  discountPercent) external {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function buyEdgeSubscriptionAdmin(address  toAccount, uint32  quantity, uint16  discountPercent) external {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function buyMagic100TokenAdmin(address  toAccount, uint16  discountPercent) external {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function buyOracleSubscriptionAdmin(address  toAccount, uint32  quantity, uint16  discountPercent) external {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function buySubscriptionAdmin(address  toAccount, uint256  tokenId, uint32  quantity, uint16  discountPercent) external {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function buyTraderTokenAdmin(address  toAccount, uint128  value, uint8  valueType, uint16  discountPercent) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function createSubscription(uint256  tokenType, uint16  year, uint8  month, uint256  quantity, uint256  min, uint256  max) external returns (uint256  tokenId) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getArexaTokenPool(uint8  _tokenType) external view returns (Tuple4951158 memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function getArexaTokenPool(uint8  _tokenType) external view returns (uint256  total, uint256  sold) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function payArexaTokenFromPool(uint8  poolType, address  account, uint32  quantity) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function calcDivident(address  account) external view returns (int256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getArexaIncomeParameter(uint256  tokenId) external view returns (uint32  pool_, uint32  arexa_) {}</span>
+<span class="fstat-no" title="function not covered" >   function getArexaIncomeParameter(uint256  tokenId) external view returns (uint32  pool, uint32  arexa) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function getInventory() external view returns (bool  isEnabled, int256  sumQuantity, int256  sumAmount, int256  sumPnl) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getInventoryItem(address  account) external view returns (Tuple9951786 memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function getInventoryItem(address  account) external view returns (int256  quantity, int256  deltaPnl, int256  payedPnl) {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >   function getPoolAndArexaIncomeBalances() external view returns (uint256  pool, uint256  poolPaidOut, uint256  arexa, uint256  arexaPaidOut) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function payoutArexaDivident(address  toAccount, uint256  value) external {}</span>
 &nbsp;
@@ -696,9 +699,9 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function calcUnrestrictedAmount(address  account, uint256  tokenId, uint256  amount) external view returns (uint256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function checkRestriction(address  account, uint256  tokenId, uint256  amount) external view {}</span>
+<span class="fstat-no" title="function not covered" >   function checkRestriction(address  account, uint256  tokenId, uint256  amount) external view returns (bool ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function checkRestrictions(address  account, uint256[] memory tokenIds, uint256[] memory amounts) external view {}</span>
+<span class="fstat-no" title="function not covered" >   function checkRestrictions(address  account, uint256[] memory tokenIds, uint256[] memory amounts) external view returns (bool ) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function stakeArexaToken(uint256  quantity) external {}</span>
 &nbsp;
@@ -760,7 +763,7 @@ contract ArexaDiamondDummyImplementation {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Feb 28 2024 06:51:08 GMT+0100 (közép-európai téli idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -115,14 +115,14 @@ export interface ArexaRestrictionFacet extends BaseContract {
       tokenId: PromiseOrValue<BigNumberish>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[void]>;
+    ): Promise<[boolean]>;
 
     checkRestrictions(
       account: PromiseOrValue<string>,
       tokenIds: PromiseOrValue<BigNumberish>[],
       amounts: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
-    ): Promise<[void]>;
+    ): Promise<[boolean]>;
   };
 
   calcUnrestrictedAmount(
@@ -137,14 +137,14 @@ export interface ArexaRestrictionFacet extends BaseContract {
     tokenId: PromiseOrValue<BigNumberish>,
     amount: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<void>;
+  ): Promise<boolean>;
 
   checkRestrictions(
     account: PromiseOrValue<string>,
     tokenIds: PromiseOrValue<BigNumberish>[],
     amounts: PromiseOrValue<BigNumberish>[],
     overrides?: CallOverrides
-  ): Promise<void>;
+  ): Promise<boolean>;
 
   callStatic: {
     calcUnrestrictedAmount(
@@ -159,14 +159,14 @@ export interface ArexaRestrictionFacet extends BaseContract {
       tokenId: PromiseOrValue<BigNumberish>,
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<boolean>;
 
     checkRestrictions(
       account: PromiseOrValue<string>,
       tokenIds: PromiseOrValue<BigNumberish>[],
       amounts: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<boolean>;
   };
 
   filters: {};

@@ -2,6 +2,6 @@
   "constructor()",
   "error LibERC1155__ArrayLengthMismatch()",
   "function calcUnrestrictedAmount(address account, uint256 tokenId, uint256 amount) view returns (uint256)",
-  "function checkRestriction(address account, uint256 tokenId, uint256 amount) view",
-  "function checkRestrictions(address account, uint256[] tokenIds, uint256[] amounts) view"
+  "function checkRestriction(address account, uint256 tokenId, uint256 amount) view returns (bool)",
+  "function checkRestrictions(address account, uint256[] tokenIds, uint256[] amounts) view returns (bool)"
 ]

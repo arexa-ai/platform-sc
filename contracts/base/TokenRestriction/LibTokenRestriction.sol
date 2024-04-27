@@ -60,12 +60,12 @@ library LibTokenRestriction {
 		return canSell;
 	}
 
-	function checkRestriction(address _account, uint256 _tokenId, uint256 _amount) internal view {
+	function checkRestriction(address _account, uint256 _tokenId, uint256 _amount) internal view returns (bool) {
 		TokenRestrictionStorage storage arexa = LibTokenRestrictionStorage.layout();
 		Restriction storage restriction = arexa.tokenRestriction[_tokenId];
 
 		if (restriction.endOfRestrictionCalc <= block.number) {
-			return;
+			return true;
 		}
 
 		// if (restriction.endOfRestriction < block.number) {
@@ -92,9 +92,11 @@ library LibTokenRestriction {
 		// console.log("canSell", canSell);
 
 		require(_amount <= canSell, "The amount is grater then the accumlated ('sellable') amount!");
+
+		return true;
 	}
 
-	function checkRestrictions(address _account, uint256[] memory _tokenIds, uint256[] memory _amounts) internal view {
+	function checkRestrictions(address _account, uint256[] memory _tokenIds, uint256[] memory _amounts) internal view returns (bool) {
 		if (_tokenIds.length != _amounts.length) revert LibERC1155__ArrayLengthMismatch();
 
 		for (uint256 i; i < _tokenIds.length; ) {
@@ -103,6 +105,8 @@ library LibTokenRestriction {
 				i++;
 			}
 		}
+
+		return true;
 	}
 
 	function recalcRestriction(address _account, uint256 _tokenId, uint256 _amount, uint8 _direction) internal {

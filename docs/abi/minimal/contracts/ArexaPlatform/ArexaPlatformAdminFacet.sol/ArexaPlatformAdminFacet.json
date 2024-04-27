@@ -13,8 +13,13 @@
   "error LibERC1155__TransferToZeroAddress()",
   "error SafeERC20FailedOperation(address)",
   "error TargetedPausable__TargetedPaused()",
-  "function buyMagic100TokenAdmin(address)",
+  "function buyArexaTokenAdmin(address,uint128,uint8,uint16)",
+  "function buyEdgeSubscriptionAdmin(address,uint32,uint16)",
+  "function buyMagic100TokenAdmin(address,uint16)",
+  "function buyOracleSubscriptionAdmin(address,uint32,uint16)",
+  "function buySubscriptionAdmin(address,uint256,uint32,uint16)",
+  "function buyTraderTokenAdmin(address,uint128,uint8,uint16)",
   "function createSubscription(uint256,uint16,uint8,uint256,uint256,uint256) returns (uint256)",
-  "function getArexaTokenPool(uint8) view returns (tuple(uint256,uint256))",
+  "function getArexaTokenPool(uint8) view returns (uint256, uint256)",
   "function payArexaTokenFromPool(uint8,address,uint32)"
 ]

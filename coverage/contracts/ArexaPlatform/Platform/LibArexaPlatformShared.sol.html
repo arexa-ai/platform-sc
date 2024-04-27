@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\ArexaPlatform\Platform\LibArexaPlatformShared.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/ArexaPlatform/Platform/</a> LibArexaPlatformShared.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">104×</span>
+<span class="cline-any cline-yes">104×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 AREXA
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+//import "hardhat/console.sol";
+&nbsp;
+import "./LibArexaPlatformStorage.sol";
+import "../../base/TokenPNL/LibTokenPNL.sol";
+&nbsp;
+import "../LibArexaConst.sol";
+&nbsp;
+library LibArexaPlatformShared {
+	uint8 public constant AMOUNT_VALUE_TYPE = 0;
+	uint8 public constant QUANTITY_VALUE_TYPE = 1;
+&nbsp;
+	function getPayingToken() internal view returns (IERC20) {
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
+		return arexa.payingERC20Token;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function getArexaERC20Token() internal view returns (IERC20) {</span>
+<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+<span class="cstat-no" title="statement not covered" >		return arexa.arexaERC20Token;</span>
+	}
+&nbsp;
+	function getArexaTokenPool(uint8 _tokenPool) internal view returns (uint256 total_, uint256 sold_) {
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
+		total_ = arexa.arexaTokenPool[_tokenPool].total;
+		sold_ = arexa.arexaTokenPool[_tokenPool].sold;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function getArexaIncomeParameter(uint256 _tokenId) internal view returns (uint32 pool_, uint32 arexa_) {</span>
+<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+		pool_ = arexa.arexaIncomeParameter[_tokenId].pool;
+		arexa_ = arexa.arexaIncomeParameter[_tokenId].arexa;
+	}
+&nbsp;
+	function _divideAmountPoolAndArexa(uint256 _tokenId, uint256 _value) internal {
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
+&nbsp;
+		uint256 poolAmount = (_value * arexa.arexaIncomeParameter[_tokenId].pool) /
+			(arexa.arexaIncomeParameter[_tokenId].pool + arexa.arexaIncomeParameter[_tokenId].arexa);
+		uint256 arexaAmount = _value - poolAmount;
+&nbsp;
+		LibTokenPNL.changeTotalValue(address(arexa.payingERC20Token), LibArexaConst.AREXA_TOKEN_ID, int256(poolAmount));
+		arexa.poolBalance += poolAmount;
+		arexa.arexaBalance += arexaAmount;
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

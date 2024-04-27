@@ -26,7 +26,7 @@ export const networkConfig: networkConfigInfo = {
 	bscmain: {
 		blockConfirmations: 6,
 	},
-	mumbai: {
+	amoy: {
 		blockConfirmations: 1,
 	},
 	polygon: {

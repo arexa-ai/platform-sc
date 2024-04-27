@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\ArexaPlatform\Platform\LibArexaPlatformPNL.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/ArexaPlatform/Platform/</a> LibArexaPlatformPNL.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/13</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+/**
+ * Copyright (C) 2024 AREXA
+ */
+pragma solidity ^0.8.9;
+&nbsp;
+//import "hardhat/console.sol";
+&nbsp;
+import "./LibArexaPlatformStorage.sol";
+import "./LibArexaPlatformShared.sol";
+import "../../utils/SafeERC20.sol";
+import "../../base/Diamond/LibDiamond.sol";
+import "../../base/TokenPNL/LibTokenPNL.sol";
+&nbsp;
+import "../LibArexaConst.sol";
+&nbsp;
+library LibArexaPlatformPNL {
+<span class="fstat-no" title="function not covered" >	function getPoolAndArexaIncomeBalances()</span>
+		internal
+		view
+		returns (uint256 pool_, uint256 poolPaidOut_, uint256 arexa_, uint256 arexaPaidOut_)
+	{
+<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+		pool_ = arexa.poolBalance;
+		poolPaidOut_ = arexa.poolPaidOutBalance;
+		arexa_ = arexa.arexaBalance;
+		arexaPaidOut_ = arexa.arexaPaidOutBalance;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function payoutArexaIncome(address _account, uint256 _amount) internal {</span>
+<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+<span class="cstat-no" title="statement not covered" >		require((arexa.arexaPaidOutBalance + _amount) &lt;= arexa.arexaBalance, "Not enough amount to pay out!")</span>;
+&nbsp;
+		arexa.arexaPaidOutBalance = arexa.arexaPaidOutBalance + _amount;
+&nbsp;
+		// arexa.payingERC20Token.approve(LibDiamond.getDiamondAddress(), _amount);
+		// SafeERC20.safeTransferFrom(arexa.payingERC20Token, LibDiamond.getDiamondAddress(), _account, _amount);
+<span class="cstat-no" title="statement not covered" >		SafeERC20.safeTransfer(arexa.payingERC20Token, _account, _amount)</span>;
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function payoutPoolDivident(address _collectingAccount, address _toAccount, uint256 _amount) internal {</span>
+<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		LibTokenPNL.refreshPayoutDivident(</span>
+			address(LibArexaPlatformShared.getPayingToken()),
+			LibArexaConst.AREXA_TOKEN_ID,
+			_collectingAccount,
+			int256(_amount)
+		);
+&nbsp;
+		arexa.poolPaidOutBalance = arexa.poolPaidOutBalance + _amount;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		SafeERC20.safeTransfer(arexa.payingERC20Token, _toAccount, _amount)</span>;
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
