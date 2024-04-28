@@ -17,4 +17,5 @@ export type All = {
 	max: number;
 	role: string;
 	adminRole: string;
+	discount: number;
 };

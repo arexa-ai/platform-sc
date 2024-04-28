@@ -4,20 +4,6 @@ import { All } from "../../utils/input.types";
 import { getAREXASmartContracts, getUSDTSmartContracts } from "../../utils/utils";
 import { call } from "../../utils/helper.call";
 
-/**
-DONE npx hardhat arexa token:arexa:approve
-npx hardhat arexa token:arexa:approveAll
-
-DONE npx hardhat arexa token:arexa:balance
-DONE npx hardhat arexa token:arexa:buy
-npx hardhat arexa token:arexa:calcRestriction //token transfer menniyt lehet...
-npx hardhat arexa token:arexa:checkRestriction //token transfer menniyt lehet...
-npx hardhat arexa token:arexa:calcDivident
-npx hardhat arexa token:arexa:transfer //token transfer
-npx hardhat arexa token:arexa:transferFrom
-npx hardhat arexa token:arexa:payoutDivident
- */
-
 arexaTokenScope
 	.task("4-arexa:approve", "Approve a spender to spend some amount of token from your address")
 	.addParam("signer", "Index of Signer", undefined, types.int)
@@ -64,10 +50,6 @@ arexaTokenScope
 		const result = await call(hre, contract.buyArexaToken(params.value, arexa.const.QUANTITY));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
 	});
-
-// npx hardhat arexa token:arexa:calcRestriction //token transfer menniyt lehet...
-// npx hardhat arexa token:arexa:checkRestriction //token transfer menniyt lehet...
-// npx hardhat arexa token:arexa:calcDivident
 
 arexaTokenScope
 	.task("4-arexa:calc-unrestricted", "Calculate AREXA AI token")
@@ -123,6 +105,18 @@ arexaTokenScope
 		const contract = arexa.pfmTokenFacet.connect(signer);
 		const result = await call(hre, contract.safeTransferFrom(params.from, params.to, arexa.const.AREXA_TOKEN_ID, params.value, []));
 		await hre.run("print", { message: ` TX: ${result.hash}` });
+	});
+
+arexaTokenScope
+	.task("4-arexa:calc-dividend", "Calculate the actual dividend that belongs to the user.")
+	.addParam("address", "Address, to paying out the divident", undefined, types.string)
+	.setAction(async (params: Pick<All, "address">, hre) => {
+		const arexa = await getAREXASmartContracts(hre);
+		const usdt = await getUSDTSmartContracts(hre);
+		const result = await arexa.poolPNLFacet.calcDivident(params.address);
+		await hre.run("print", {
+			message: ` address: ${params.address}, payable dividned: ${result.div(10 ** usdt.DECIMALS)}`,
+		});
 	});
 
 arexaTokenScope
