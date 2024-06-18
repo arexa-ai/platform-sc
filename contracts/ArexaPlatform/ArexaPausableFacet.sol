@@ -21,8 +21,6 @@ contract ArexaPausableFacet is IERC1155Pausable, ModifierRole, ModifierPausable 
 	bytes32 public constant PAUSABLE_AREXA_TOKEN = LibArexaConst.AREXA_TOKEN; //LibTokenConst LibBlockBenTokenConst
 	bytes32 public constant PAUSABLE_MAGIC_TOKEN = LibArexaConst.MAGIC_TOKEN; //LibTokenConst LibBlockBenTokenConst
 
-	constructor() {}
-
 	function paused(bytes32 target) external view returns (bool status_) {
 		status_ = LibTargetedPausable._paused(target);
 	}

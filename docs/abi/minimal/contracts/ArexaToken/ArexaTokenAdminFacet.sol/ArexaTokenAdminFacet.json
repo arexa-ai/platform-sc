@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32,address)",
   "error TargetedPausable__TargetedPaused()",
   "function getGeneralFee() view returns (uint16)",

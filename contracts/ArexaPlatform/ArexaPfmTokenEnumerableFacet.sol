@@ -8,8 +8,6 @@ import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
 import { IERC1155Enumerable } from "../base/ERC1155/IERC1155Enumerable.sol";
 
 contract ArexaPfmTokenEnumerableFacet is IERC1155Enumerable {
-	constructor() {}
-
 	function totalSupply(uint256 _id) external view override returns (uint256) {
 		return LibERC1155.totalSupply(_id);
 	}

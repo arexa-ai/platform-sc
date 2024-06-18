@@ -21,8 +21,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	function getArexaTokenPool(uint8 _tokenType) external view protectedCall returns (uint256 total, uint256 sold) {
 		(total, sold) = LibArexaPlatformShared.getArexaTokenPool(_tokenType);
 	}

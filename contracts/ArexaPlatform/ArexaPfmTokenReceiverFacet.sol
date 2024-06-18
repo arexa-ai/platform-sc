@@ -10,8 +10,6 @@ import { IERC1155 } from "../base/ERC1155/IERC1155.sol";
 import { IERC1155Receiver } from "../base/ERC1155/IERC1155Receiver.sol";
 
 contract ArexaPfmTokenReceiverFacet is IERC1155Receiver {
-	constructor() {}
-
 	function onERC1155Received(
 		address _operator,
 		address _from,

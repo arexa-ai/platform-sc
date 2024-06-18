@@ -14,8 +14,6 @@ import { CallProtection } from "../base/Shared/ProtectedCall.sol";
 //import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaStakingFacet is CallProtection {
-	constructor() {}
-
 	function stakeArexaToken(uint256 quantity) external protectedCall {
 		LibArexaPlatformStaking.stakeArexaToken(msg.sender, msg.sender, quantity);
 	}

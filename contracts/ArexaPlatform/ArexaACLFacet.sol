@@ -15,8 +15,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 contract ArexaACLFacet is CallProtection, ModifierRole, ModifierPausable {
 	bytes32 public constant AREXA_ADMIN_ROLE = LibArexaConst.AREXA_ADMIN_ROLE;
 
-	constructor() {}
-
 	function hasRole(bytes32 role, address account) external view virtual protectedCall returns (bool) {
 		return LibAccessControl._hasRole(role, account);
 	}

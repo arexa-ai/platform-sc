@@ -15,8 +15,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPfmTokenMetadataURIFacet is IERC1155MetadataURI, CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	function uri(uint256 _id) external view virtual override returns (string memory) {
 		return LibERC1155.getUri(_id);
 	}

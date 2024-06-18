@@ -6,6 +6,4 @@ pragma solidity ^0.8.9;
 
 import { TokenPausableFacet } from "../base/ERC20Diamond/TokenPausableFacet.sol";
 
-contract ArexaTokenPausableFacet is TokenPausableFacet {
-	constructor() TokenPausableFacet() {}
-}
+contract ArexaTokenPausableFacet is TokenPausableFacet {}

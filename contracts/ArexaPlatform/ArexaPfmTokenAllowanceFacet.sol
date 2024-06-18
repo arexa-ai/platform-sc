@@ -17,8 +17,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPfmTokenAllowanceFacet is IERC1155Allowance, CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	function isOperatorSpendingLimitEnabled(uint256 _tokenId) external view returns (bool) {
 		return LibERC1155.isOperatorSpendingLimitEnabled(_tokenId);
 	}

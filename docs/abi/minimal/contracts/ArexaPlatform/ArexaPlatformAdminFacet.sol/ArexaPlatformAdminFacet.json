@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32,address)",
   "error AddressUtils__NotContract()",
   "error LibERC1155__ArrayLengthMismatch()",

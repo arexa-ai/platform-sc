@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AddressUtils__NotContract()",
   "error LibERC1155__ArrayLengthMismatch()",
   "error LibERC1155__BalanceQueryZeroAddress()",

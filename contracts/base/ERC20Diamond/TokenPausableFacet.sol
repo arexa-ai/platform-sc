@@ -16,8 +16,6 @@ import { CallProtection } from "../Shared/ProtectedCall.sol";
 abstract contract TokenPausableFacet is CallProtection, ModifierRole, ModifierPausable {
 	bytes32 public constant PAUSABLE_FULL = LibTokenConst.FULL; //LibTokenConst LibBlockBenTokenConst
 
-	constructor() {}
-
 	function paused(bytes32 target) external view returns (bool status_) {
 		status_ = LibTargetedPausable._paused(target);
 	}

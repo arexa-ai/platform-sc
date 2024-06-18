@@ -28,8 +28,6 @@ import { ModifierPausable } from "../TargetedPausable/ModifierPausable.sol";
 abstract contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, ModifierRole, ModifierPausable {
 	using SafeMath for uint256;
 
-	constructor() {}
-
 	function _approve(
 		address _holder,
 		address _spender,

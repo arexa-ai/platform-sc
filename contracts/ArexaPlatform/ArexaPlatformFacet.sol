@@ -20,8 +20,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPlatformFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	uint256 public constant SUBSCR1_TOKEN_TYPE = LibArexaConst.SUBSCR1_TOKEN_TYPE; //Tier 1, every month
 	uint256 public constant SUBSCR2_TOKEN_TYPE = LibArexaConst.SUBSCR2_TOKEN_TYPE; //Tier 2, every month
 	uint256 public constant TRADER_TOKEN_ID = LibArexaConst.TRADER_TOKEN_ID; //Tier 3, unlimited, always mint

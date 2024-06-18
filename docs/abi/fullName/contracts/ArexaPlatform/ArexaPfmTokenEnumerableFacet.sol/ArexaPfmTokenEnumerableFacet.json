@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error EnumerableSet__IndexOutOfBounds()",
   "function accountsByToken(uint256 _id) view returns (address[])",
   "function tokensByAccount(address _account) view returns (uint256[])",

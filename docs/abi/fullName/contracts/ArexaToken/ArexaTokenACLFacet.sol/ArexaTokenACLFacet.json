@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32 role, address account)",
   "error Ownable__NotOwner()",
   "function AML_ROLE() view returns (bytes32)",

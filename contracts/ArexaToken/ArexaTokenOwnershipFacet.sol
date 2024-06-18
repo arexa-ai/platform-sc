@@ -6,6 +6,4 @@ pragma solidity ^0.8.9;
 
 import { TokenOwnershipFacet } from "../base/ERC20Diamond/TokenOwnershipFacet.sol";
 
-contract ArexaTokenOwnershipFacet is TokenOwnershipFacet {
-	constructor() TokenOwnershipFacet() {}
-}
+contract ArexaTokenOwnershipFacet is TokenOwnershipFacet {}

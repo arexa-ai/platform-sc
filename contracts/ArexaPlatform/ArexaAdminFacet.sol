@@ -20,8 +20,6 @@ import { LibArexaPlatform } from "./Platform/LibArexaPlatform.sol";
 import { LibArexaPlatformShared } from "./Platform/LibArexaPlatformShared.sol";
 
 contract ArexaAdminFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	//Platform paraméterek állítása
 	function getPayingToken() external view protectedCall returns (IERC20) {
 		return LibArexaPlatformShared.getPayingToken();

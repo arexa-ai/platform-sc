@@ -16,8 +16,6 @@ import { CallProtection } from "../base/Shared/ProtectedCall.sol";
 import { LibTokenRestriction } from "../base/TokenRestriction/LibTokenRestriction.sol";
 
 contract ArexaRestrictionFacet is CallProtection {
-	constructor() {}
-
 	function calcUnrestrictedAmount(address account, uint256 tokenId, uint256 amount) external view protectedCall returns (uint256) {
 		return LibTokenRestriction.calcUnrestrictedAmount(account, tokenId, amount);
 	}

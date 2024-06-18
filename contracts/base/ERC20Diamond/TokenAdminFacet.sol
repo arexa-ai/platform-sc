@@ -16,8 +16,6 @@ import { ModifierPausable } from "../TargetedPausable/ModifierPausable.sol";
 import { CallProtection } from "../Shared/ProtectedCall.sol";
 
 abstract contract TokenAdminFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	function getTreasuryAddress() external view protectedCall returns (address) {
 		return LibCustomERC20Extension._getTreasuryAddress();
 	}

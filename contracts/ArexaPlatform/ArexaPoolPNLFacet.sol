@@ -22,8 +22,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	function getInventory() external view protectedCall returns (bool isEnabled, int256 sumQuantity, int256 sumAmount, int256 sumPnl) {
 		(isEnabled, sumQuantity, sumAmount, sumPnl) = LibTokenPNL.getInventory(
 			address(LibArexaPlatformShared.getPayingToken()),

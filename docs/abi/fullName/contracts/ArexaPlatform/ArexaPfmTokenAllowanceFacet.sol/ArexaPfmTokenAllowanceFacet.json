@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error Ownable__NotOwner()",
   "error TargetedPausable__TargetedPaused()",
   "event Approval(address indexed owner, address indexed operator, uint256 indexed id, uint256 currenctValue, uint256 newValue)",

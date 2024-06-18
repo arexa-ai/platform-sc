@@ -16,8 +16,6 @@ contract ArexaPfmTokenFacet is IERC1155, CallProtection, ModifierPausable {
 	string public constant name = "Arexa AI Platform";
 	string public constant symbol = "AREXA";
 
-	constructor() {}
-
 	function safeTransferFrom(
 		address _from,
 		address _to,

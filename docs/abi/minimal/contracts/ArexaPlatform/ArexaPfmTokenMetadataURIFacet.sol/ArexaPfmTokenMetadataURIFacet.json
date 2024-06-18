@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error Ownable__NotOwner()",
   "error TargetedPausable__TargetedPaused()",
   "function getTokenBaseUri() view returns (string)",

@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32 role, address account)",
   "error AddressUtils__NotContract()",
   "error SafeERC20FailedOperation(address token)",

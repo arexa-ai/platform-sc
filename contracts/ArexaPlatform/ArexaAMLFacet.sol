@@ -16,8 +16,6 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaAMLFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	bytes32 public constant MAGIC100_FIRST_BUYER = LibArexaConst.MAGIC100_FIRST_BUYER; //LibTokenConst LibBlockBenTokenConst
 
 	function getAccountBlackWhiteList(bytes32 _target, address _account) external view returns (bool) {

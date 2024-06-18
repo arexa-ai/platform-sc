@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32 role, address account)",
   "error TargetedPausable__TargetedPaused()",
   "function RECIPIENT_BLACKLIST() view returns (bytes32)",

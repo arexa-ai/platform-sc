@@ -20,8 +20,6 @@ abstract contract TokenACLFacet is CallProtection, ModifierRole, ModifierPausabl
 	bytes32 public constant AML_ROLE = LibTokenConst.AML_ROLE;
 	bytes32 public constant COMPLIANCE_ROLE = LibTokenConst.COMPLIANCE_ROLE;
 
-	constructor() {}
-
 	//ide az accesscontroll kell
 	function hasRole(bytes32 role, address account) external view virtual protectedCall returns (bool) {
 		return LibAccessControl._hasRole(role, account);

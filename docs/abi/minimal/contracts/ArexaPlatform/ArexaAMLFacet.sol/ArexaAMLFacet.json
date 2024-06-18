@@ -1,5 +1,4 @@
 [
-  "constructor()",
   "error AccessDenied(bytes32,address)",
   "error TargetedPausable__TargetedPaused()",
   "function MAGIC100_FIRST_BUYER() view returns (bytes32)",

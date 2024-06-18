@@ -15,8 +15,6 @@ import { ModifierPausable } from "../TargetedPausable/ModifierPausable.sol";
 import { CallProtection } from "../Shared/ProtectedCall.sol";
 
 abstract contract TokenAMLFacet is CallProtection, ModifierRole, ModifierPausable {
-	constructor() {}
-
 	bytes32 public constant SENDER_BLACKLIST = LibTokenConst.SENDER_BL;
 	bytes32 public constant RECIPIENT_BLACKLIST = LibTokenConst.RECIPIENT_BL;
 
