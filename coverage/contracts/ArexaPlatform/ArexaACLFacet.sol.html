@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/11</span>
+        <span class='fraction'>11/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">53.57% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/28</span>
+        <span class='fraction'>15/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">9.09% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/11</span>
+        <span class='fraction'>11/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/11</span>
+        <span class='fraction'>11/11</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -123,44 +123,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
@@ -182,45 +182,45 @@ contract ArexaACLFacet is CallProtection, ModifierRole, ModifierPausable {
 &nbsp;
 	constructor() {}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function hasRole(bytes32 role, address account) external view virtual protectedCall returns (bool) {</span>
-<span class="cstat-no" title="statement not covered" >		return LibAccessControl._hasRole(role, account);</span>
+	function hasRole(bytes32 role, address account) external view virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (bool) {
+		return LibAccessControl._hasRole(role, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function grantRole(bytes32 role, address account) external virtual protectedCall onlyRoleAdmin(role) {</span>
-<span class="cstat-no" title="statement not covered" >		_grantRole(role, account)</span>;
+	function grantRole(bytes32 role, address account) external virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>onlyRoleAdmin(role) {
+		_grantRole(role, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function revokeRole(bytes32 role, address account) external virtual protectedCall onlyRoleAdmin(role) {</span>
-<span class="cstat-no" title="statement not covered" >		require(!(role == AREXA_ADMIN_ROLE &amp;&amp; account == LibAccessControl._owner()), "Role cannot revoke from owner!")</span>;
-<span class="cstat-no" title="statement not covered" >		_revokeRole(role, account)</span>;
+	function revokeRole(bytes32 role, address account) external virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>onlyRoleAdmin(role) {
+		require(!(role == AREXA_ADMIN_ROLE &amp;&amp; account == LibAccessControl._owner()), "Role cannot revoke from owner!");
+		_revokeRole(role, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function renounceRole(bytes32 role) external virtual protectedCall {</span>
-<span class="cstat-no" title="statement not covered" >		_renounceRole(role)</span>;
+	function renounceRole(bytes32 role) external virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall {
+		_renounceRole(role);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function getRoleAdmin(bytes32 role) external view virtual protectedCall returns (bytes32) {</span>
-<span class="cstat-no" title="statement not covered" >		return LibAccessControl._getRoleAdmin(role);</span>
+	function getRoleAdmin(bytes32 role) external view virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (bytes32) {
+		return LibAccessControl._getRoleAdmin(role);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function setRoleAdmin(bytes32 role, bytes32 adminRole) external protectedCall onlyOwner {</span>
-<span class="cstat-no" title="statement not covered" >		_setRoleAdmin(role, adminRole)</span>;
+	function setRoleAdmin(bytes32 role, bytes32 adminRole) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+		_setRoleAdmin(role, adminRole);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual protectedCall {</span>
-<span class="cstat-no" title="statement not covered" >		LibAccessControl._setRoleAdmin(role, adminRole)</span>;
+	function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall {
+		LibAccessControl._setRoleAdmin(role, adminRole);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function _grantRole(bytes32 role, address account) internal virtual protectedCall {</span>
-<span class="cstat-no" title="statement not covered" >		LibAccessControl._grantRole(role, account)</span>;
+	function _grantRole(bytes32 role, address account) internal virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall {
+		LibAccessControl._grantRole(role, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function _revokeRole(bytes32 role, address account) internal virtual protectedCall {</span>
-<span class="cstat-no" title="statement not covered" >		LibAccessControl._revokeRole(role, account)</span>;
+	function _revokeRole(bytes32 role, address account) internal virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall {
+		LibAccessControl._revokeRole(role, account);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function _renounceRole(bytes32 role) internal virtual protectedCall {</span>
-<span class="cstat-no" title="statement not covered" >		LibAccessControl._renounceRole(role)</span>;
+	function _renounceRole(bytes32 role) internal virtual <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall {
+		LibAccessControl._renounceRole(role);
 	}
 }
 &nbsp;</pre></td></tr>
@@ -229,7 +229,7 @@ contract ArexaACLFacet is CallProtection, ModifierRole, ModifierPausable {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 18 2024 15:56:23 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -5,6 +5,7 @@ import { expect } from "chai";
 import { Contract } from "ethers";
 import { getSelectors } from "../deploy-lib/diamond-utils";
 import { DescriptorTypeArexa, getArexaDeploymentDescriptor } from "../deploy-lib/arexa-platform-deployment/arexa-deployment-descriptor";
+import { DiamondLoupeFacet, IERC165 } from "../typechain-types";
 
 describe("ArexaDiamond", function () {
 	async function deployDiamond() {
@@ -20,7 +21,7 @@ describe("ArexaDiamond", function () {
 
 		const facets = descriptor.facets;
 
-		const diamondLoupeFacet = await ethers.getContractAt(facets.diamondLoupeFacet.artifact, diamond.address);
+		const diamondLoupeFacet = (await ethers.getContractAt(facets.diamondLoupeFacet.artifact, diamond.address)) as DiamondLoupeFacet;
 		const diamondEtherscanFacet = await ethers.getContractAt(facets.diamondEtherscanFacet.artifact, diamond.address);
 		const arexaOwnershipFacet = await ethers.getContractAt(facets.ownershipFacet.artifact, diamond.address);
 		//
@@ -62,7 +63,7 @@ describe("ArexaDiamond", function () {
 	}
 
 	describe("Deployment", function () {
-		it("Full diamond should have 8 facets -- call to facetAddresses function", async function () {
+		it("Full diamond should have 18 facets -- call to facetAddresses function", async function () {
 			const { diamondLoupeFacet } = await loadFixture(deployDiamond);
 			const addresses = [];
 			for (const address of await diamondLoupeFacet.facetAddresses()) {
@@ -123,5 +124,26 @@ describe("ArexaDiamond", function () {
 			await testFacetSelector(arexaPfmTokenMetadataURIFacet, 16);
 			await testFacetSelector(arexaPfmTokenReceiverFacet, 17);
 		});
+	});
+
+	it("All facets and facet and functionselectors have properly setup", async function () {
+		const { diamondLoupeFacet } = await loadFixture(deployDiamond);
+		const facets = await diamondLoupeFacet.facets();
+		expect(facets.length).to.equal(18);
+
+		for (let i = 0; i < facets.length; i++) {
+			const facet = facets[i];
+			for (let j = 0; j < facet.functionSelectors.length; j++) {
+				const functionSelector = facet.functionSelectors[j];
+				const facetAddress = await diamondLoupeFacet.facetAddress(functionSelector);
+				expect(facetAddress).to.equal(facet.facetAddress);
+			}
+		}
+	});
+
+	it("Arexa diamond support interface", async function () {
+		const { diamondLoupeFacet } = await loadFixture(deployDiamond);
+		const supportsInterface = await diamondLoupeFacet.supportsInterface("0x01ffc9a7"); //IERC165
+		expect(supportsInterface).to.be.equal(true);
 	});
 });

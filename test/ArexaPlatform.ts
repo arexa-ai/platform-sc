@@ -46,12 +46,6 @@ import {
 } from "../deploy-lib/arexa-token-deployment/arexa-token-deployment-descriptor";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
-//arexa; address ; 2682n, 100n
-async function calcDivident(arexa: any, usdt: any, address: string, expected: bigint, numerator: bigint): Promise<void> {
-	const divident = await arexa.poolPNLFacet.calcDivident(address);
-	expect(divident).to.be.equal((expected * BigInt(10 ** usdt.DECIMALS)) / numerator);
-}
-
 export async function deployDiamond() {
 	await deployments.fixture(["hArexaPlatformDiamond"]);
 

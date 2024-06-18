@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/10</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">68.75% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/16</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -112,13 +112,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">104×</span>
-<span class="cline-any cline-yes">104×</span>
+<span class="cline-any cline-yes">122×</span>
+<span class="cline-any cline-yes">122×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,21 +128,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">43×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">43×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">43×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38×</span>
-<span class="cline-any cline-yes">38×</span>
-<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
@@ -167,9 +167,9 @@ library LibArexaPlatformShared {
 		return arexa.payingERC20Token;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function getArexaERC20Token() internal view returns (IERC20) {</span>
-<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
-<span class="cstat-no" title="statement not covered" >		return arexa.arexaERC20Token;</span>
+	function getArexaERC20Token() internal view returns (IERC20) {
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
+		return arexa.arexaERC20Token;
 	}
 &nbsp;
 	function getArexaTokenPool(uint8 _tokenPool) internal view returns (uint256 total_, uint256 sold_) {
@@ -178,8 +178,8 @@ library LibArexaPlatformShared {
 		sold_ = arexa.arexaTokenPool[_tokenPool].sold;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function getArexaIncomeParameter(uint256 _tokenId) internal view returns (uint32 pool_, uint32 arexa_) {</span>
-<span class="cstat-no" title="statement not covered" >		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();</span>
+	function getArexaIncomeParameter(uint256 _tokenId) internal view returns (uint32 pool_, uint32 arexa_) {
+		ArexaPlatformStorage storage arexa = LibArexaPlatformStorage.layout();
 		pool_ = arexa.arexaIncomeParameter[_tokenId].pool;
 		arexa_ = arexa.arexaIncomeParameter[_tokenId].arexa;
 	}
@@ -202,7 +202,7 @@ library LibArexaPlatformShared {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 27 2024 17:27:27 GMT+0200 (közép-európai nyári idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 18 2024 15:56:23 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

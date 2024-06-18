@@ -139,13 +139,19 @@ describe("ArexaPlatform - T4 - AREXA AI", function () {
 			let user1ArexaTokenBalance = await arexaTokenFacetUser1.balanceOf(user1.address, arexa.const.AREXA_TOKEN_ID);
 			expect(user1ArexaTokenBalance).to.be.equal(100000);
 
-			let inv = await arexa.poolPNLFacet.getInventory();
-			let invItem = await arexa.poolPNLFacet.getInventoryItem(user1.address);
+			const inv = await arexa.poolPNLFacet.getInventory();
+			const invItem = await arexa.poolPNLFacet.getInventoryItem(user1.address);
 			expect(inv.sumQuantity).to.be.equal(100_000_000n);
-			expect(inv.sumAmount).to.be.equal(9000_000_000n);
+			expect(inv.sumAmount).to.be.equal(9_000_000_000n);
 			expect(invItem.quantity).to.be.equal(100_000n);
 			expect(invItem.deltaPnl).to.be.equal(-9_000_000n);
 			expect(invItem.payedPnl).to.be.equal(0n);
+
+			const balances = await arexa.poolPNLFacet.getPoolAndArexaIncomeBalances();
+			expect(balances.pool).to.be.equal(9_000_000_000n);
+			expect(balances.poolPaidOut).to.be.equal(0n);
+			expect(balances.arexa).to.be.equal(1_000_000_000n);
+			expect(balances.arexaPaidOut).to.be.equal(0n);
 
 			let divident = await arexa.poolPNLFacet.calcDivident(user1.address);
 			expect(divident).to.be.equal(0);
