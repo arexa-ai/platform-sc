@@ -19,6 +19,6 @@
   "function buySubscriptionAdmin(address toAccount, uint256 tokenId, uint32 quantity, uint16 discountPercent)",
   "function buyTraderTokenAdmin(address toAccount, uint128 value, uint8 valueType, uint16 discountPercent)",
   "function createSubscription(uint256 tokenType, uint16 year, uint8 month, uint256 quantity, uint256 min, uint256 max) returns (uint256 tokenId)",
-  "function getArexaTokenPool(uint8 _tokenType) view returns (uint256 total, uint256 sold)",
+  "function getArexaTokenPool(uint8 tokenType) view returns (uint256 total, uint256 sold)",
   "function payArexaTokenFromPool(uint8 poolType, address account, uint32 quantity)"
 ]

@@ -125,7 +125,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<[string]>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
@@ -137,7 +137,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -148,7 +148,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<ContractTransaction>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
   };
@@ -156,7 +156,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
   getTokenBaseUri(overrides?: CallOverrides): Promise<string>;
 
   getTokenUri(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
@@ -168,7 +168,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setTokenURI(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     newuri: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -179,7 +179,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
   ): Promise<ContractTransaction>;
 
   uri(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
@@ -187,7 +187,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<string>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
 
@@ -199,7 +199,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<void>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -210,7 +210,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<void>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
   };
@@ -221,7 +221,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<BigNumber>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -233,7 +233,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<BigNumber>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -244,7 +244,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<BigNumber>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
@@ -253,7 +253,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -265,7 +265,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
@@ -276,7 +276,7 @@ export interface ArexaPfmTokenMetadataURIFacet extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };

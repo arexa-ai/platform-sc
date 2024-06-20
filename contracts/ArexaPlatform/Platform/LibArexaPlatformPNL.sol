@@ -4,8 +4,6 @@
  */
 pragma solidity ^0.8.9;
 
-//import "hardhat/console.sol";
-
 import "./LibArexaPlatformStorage.sol";
 import "./LibArexaPlatformShared.sol";
 import "../../utils/SafeERC20.sol";

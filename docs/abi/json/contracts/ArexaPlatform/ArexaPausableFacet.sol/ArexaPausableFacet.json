@@ -212,7 +212,7 @@
     "outputs": [
       {
         "internalType": "bool",
-        "name": "status_",
+        "name": "",
         "type": "bool"
       }
     ],

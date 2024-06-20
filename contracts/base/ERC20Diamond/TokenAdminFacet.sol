@@ -5,7 +5,6 @@
 pragma solidity ^0.8.9;
 
 import { LibAccessControl } from "../AccessControl/LibAccessControl.sol";
-//import { LibBlackWhiteList } from "../base/BlackWhiteList/LibBlackWhiteList.sol";
 import { LibTargetedPausable } from "../TargetedPausable/LibTargetedPausable.sol";
 
 import { LibCustomERC20Extension } from "../ERC20Token/LibCustomERC20Extension.sol";
@@ -17,60 +16,58 @@ import { CallProtection } from "../Shared/ProtectedCall.sol";
 
 abstract contract TokenAdminFacet is CallProtection, ModifierRole, ModifierPausable {
 	function getTreasuryAddress() external view protectedCall returns (address) {
-		return LibCustomERC20Extension._getTreasuryAddress();
+		return LibCustomERC20Extension.getTreasuryAddress();
 	}
 
 	function setTreasuryAddress(
-		address _treasuryAddress
+		address treasuryAddress
 	) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setTreasuryAddress(_treasuryAddress);
+		LibCustomERC20Extension.setTreasuryAddress(treasuryAddress);
 	}
 
 	function getURL() external view protectedCall returns (string memory) {
-		return LibCustomERC20Extension._getURL();
+		return LibCustomERC20Extension.getURL();
 	}
 
-	function setURL(
-		string calldata _url
-	) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setURL(_url);
+	function setURL(string calldata url) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
+		LibCustomERC20Extension.setURL(url);
 	}
 
 	function getGeneralFeeAddress() external view protectedCall returns (address) {
-		return LibCustomERC20Extension._getGeneralFeeAddress();
+		return LibCustomERC20Extension.getGeneralFeeAddress();
 	}
 
 	function setGeneralFeeAddress(
-		address _generalFeeAddress
+		address generalFeeAddress
 	) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setGeneralFeeAddress(_generalFeeAddress);
+		LibCustomERC20Extension.setGeneralFeeAddress(generalFeeAddress);
 	}
 
 	function getGeneralFee() external view protectedCall returns (uint16) {
-		return LibCustomERC20Extension._getGeneralFee();
+		return LibCustomERC20Extension.getGeneralFee();
 	}
 
 	function setGeneralFee(
-		uint16 _generalFee
+		uint16 generalFee
 	) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setGeneralFee(_generalFee);
+		LibCustomERC20Extension.setGeneralFee(generalFee);
 	}
 
 	function getPoolFee() external view protectedCall returns (uint16) {
-		return LibCustomERC20Extension._getPoolFee();
+		return LibCustomERC20Extension.getPoolFee();
 	}
 
-	function setPoolFee(uint16 _PoolFee) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setPoolFee(_PoolFee);
+	function setPoolFee(uint16 poolFee) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
+		LibCustomERC20Extension.setPoolFee(poolFee);
 	}
 
 	function getPoolFeeAddress() external view protectedCall returns (address) {
-		return LibCustomERC20Extension._getPoolFeeAddress();
+		return LibCustomERC20Extension.getPoolFeeAddress();
 	}
 
 	function setPoolFeeAddress(
-		address _PoolFeeAddress
+		address poolFeeAddress
 	) external protectedCall whenNotPaused(LibTokenConst.FULL) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibCustomERC20Extension._setPoolFeeAddress(_PoolFeeAddress);
+		LibCustomERC20Extension.setPoolFeeAddress(poolFeeAddress);
 	}
 }

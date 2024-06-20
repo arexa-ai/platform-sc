@@ -1,0 +1,36 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LibBlackWhiteList",
+  "sourceName": "contracts/base/BlackWhiteList/LibBlackWhiteList.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "_target",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "_lockValue",
+          "type": "bool"
+        }
+      ],
+      "name": "AccountBlackWhiteList",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212204824adf023354bff70bc4afefa17c2087f5ed581508382c0689a90d882ccd35e64736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212204824adf023354bff70bc4afefa17c2087f5ed581508382c0689a90d882ccd35e64736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

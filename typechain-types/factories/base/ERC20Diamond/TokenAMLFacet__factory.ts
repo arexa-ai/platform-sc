@@ -61,12 +61,12 @@ const _abi = [
     inputs: [
       {
         internalType: "bytes32",
-        name: "_target",
+        name: "target",
         type: "bytes32",
       },
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
     ],
@@ -85,7 +85,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
     ],
@@ -104,7 +104,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
     ],
@@ -123,17 +123,17 @@ const _abi = [
     inputs: [
       {
         internalType: "bytes32",
-        name: "_target",
+        name: "target",
         type: "bytes32",
       },
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
       {
         internalType: "bool",
-        name: "_lockValue",
+        name: "lockValue",
         type: "bool",
       },
     ],
@@ -146,12 +146,12 @@ const _abi = [
     inputs: [
       {
         internalType: "address[]",
-        name: "_addresses",
+        name: "addresses",
         type: "address[]",
       },
       {
         internalType: "bool",
-        name: "_lockValue",
+        name: "lockValue",
         type: "bool",
       },
     ],
@@ -164,12 +164,12 @@ const _abi = [
     inputs: [
       {
         internalType: "address[]",
-        name: "_addresses",
+        name: "addresses",
         type: "address[]",
       },
       {
         internalType: "bool",
-        name: "_lockValue",
+        name: "lockValue",
         type: "bool",
       },
     ],
@@ -182,12 +182,12 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
       {
         internalType: "bool",
-        name: "_lockValue",
+        name: "lockValue",
         type: "bool",
       },
     ],
@@ -200,12 +200,12 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
       {
         internalType: "bool",
-        name: "_lockValue",
+        name: "lockValue",
         type: "bool",
       },
     ],
@@ -218,7 +218,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_account",
+        name: "account",
         type: "address",
       },
     ],

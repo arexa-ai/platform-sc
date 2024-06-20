@@ -9,7 +9,6 @@ import { LibAccessControl } from "../AccessControl/LibAccessControl.sol";
 
 import { LibTokenConst } from "../ERC20Token/LibTokenConst.sol";
 
-//import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
 import { ModifierPausable } from "../TargetedPausable/ModifierPausable.sol";
 import { CallProtection } from "../Shared/ProtectedCall.sol";
 

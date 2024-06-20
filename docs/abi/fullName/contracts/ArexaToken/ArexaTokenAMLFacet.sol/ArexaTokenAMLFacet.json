@@ -3,13 +3,13 @@
   "error TargetedPausable__TargetedPaused()",
   "function RECIPIENT_BLACKLIST() view returns (bytes32)",
   "function SENDER_BLACKLIST() view returns (bytes32)",
-  "function getAccountBlackWhiteList(bytes32 _target, address _account) view returns (bool)",
-  "function getDestinationAccountBL(address _account) view returns (bool)",
-  "function getSourceAccountBL(address _account) view returns (bool)",
-  "function setAccountBlackWhiteList(bytes32 _target, address _account, bool _lockValue)",
-  "function setBatchDestinationAccountBL(address[] _addresses, bool _lockValue)",
-  "function setBatchSourceAccountBL(address[] _addresses, bool _lockValue)",
-  "function setDestinationAccountBL(address _account, bool _lockValue)",
-  "function setSourceAccountBL(address _account, bool _lockValue)",
-  "function withdrawUserTokenByCompliance(address _account)"
+  "function getAccountBlackWhiteList(bytes32 target, address account) view returns (bool)",
+  "function getDestinationAccountBL(address account) view returns (bool)",
+  "function getSourceAccountBL(address account) view returns (bool)",
+  "function setAccountBlackWhiteList(bytes32 target, address account, bool lockValue)",
+  "function setBatchDestinationAccountBL(address[] addresses, bool lockValue)",
+  "function setBatchSourceAccountBL(address[] addresses, bool lockValue)",
+  "function setDestinationAccountBL(address account, bool lockValue)",
+  "function setSourceAccountBL(address account, bool lockValue)",
+  "function withdrawUserTokenByCompliance(address account)"
 ]

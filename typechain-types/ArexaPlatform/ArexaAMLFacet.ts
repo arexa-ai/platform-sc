@@ -129,32 +129,32 @@ export interface ArexaAMLFacet extends BaseContract {
     MAGIC100_FIRST_BUYER(overrides?: CallOverrides): Promise<[string]>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -162,32 +162,32 @@ export interface ArexaAMLFacet extends BaseContract {
   MAGIC100_FIRST_BUYER(overrides?: CallOverrides): Promise<string>;
 
   getAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   getMagic100FirstBuyerWL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   setAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setBatchMagic100FirstBuyerWL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setMagic100FirstBuyerWL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -195,32 +195,32 @@ export interface ArexaAMLFacet extends BaseContract {
     MAGIC100_FIRST_BUYER(overrides?: CallOverrides): Promise<string>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -231,32 +231,32 @@ export interface ArexaAMLFacet extends BaseContract {
     MAGIC100_FIRST_BUYER(overrides?: CallOverrides): Promise<BigNumber>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -267,32 +267,32 @@ export interface ArexaAMLFacet extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

@@ -4,8 +4,6 @@
  */
 pragma solidity ^0.8.9;
 
-//import "hardhat/console.sol";
-
 import "./LibTokenPNLStorage.sol";
 
 library LibTokenPNL {
@@ -33,20 +31,6 @@ library LibTokenPNL {
 
 		inventory.sumAmount += _amount;
 		inventory.sumPnl += _amount; //Here is the MAGIC!
-
-		// console.log("ChangeTotalValue");
-		// console.log("_tokenId", _tokenId);
-		// if (inventory.sumAmount >= 0) {
-		// 	console.log("inventory.sumAmount", uint256(inventory.sumAmount));
-		// } else {
-		// 	console.log("inventory.sumAmount -", uint256(-1 * inventory.sumAmount));
-		// }
-
-		// if (inventory.sumPnl >= 0) {
-		// 	console.log("inventory.sumPnl", uint256(inventory.sumPnl));
-		// } else {
-		// 	console.log("inventory.sumPnl -", uint256(-1 * inventory.sumPnl));
-		// }
 	}
 
 	function getInventory(
@@ -75,55 +59,15 @@ library LibTokenPNL {
 		require(inventory.sumQuantity + _quantity >= 0, "Pool token quanity can't be less then zero!");
 		require(inventoryItem.quantity + _quantity >= 0, "User token quanity can't be less then zero!");
 
-		// console.log("_refreshDividentInternal");
-		// console.log("account", _account);
-
-		// if (inventory.sumQuantity >= 0) {
-		// 	console.log("inventory.sumQuantity", uint256(inventory.sumQuantity));
-		// } else {
-		// 	console.log("inventory.sumQuantity -", uint256(-1 * inventory.sumQuantity));
-		// }
-		// if (inventory.sumPnl >= 0) {
-		// 	console.log("inventory.sumPnl", uint256(inventory.sumPnl));
-		// } else {
-		// 	console.log("inventory.sumPnl -", uint256(-1 * inventory.sumPnl));
-		// }
-
 		int256 addressPnlDelta = 0;
 		if (inventory.sumQuantity != 0) {
 			addressPnlDelta = (inventory.sumPnl * _quantity) / inventory.sumQuantity;
 		}
-		// if (addressPnlDelta >= 0) {
-		// 	console.log("addressPnlDelta", uint256(addressPnlDelta));
-		// } else {
-		// 	console.log("addressPnlDelta -", uint256(-1 * addressPnlDelta));
-		// }
 
 		inventory.sumQuantity = inventory.sumQuantity + _quantity;
 		inventory.sumPnl = inventory.sumPnl + addressPnlDelta;
 		inventoryItem.quantity = inventoryItem.quantity + _quantity;
 		inventoryItem.deltaPnl = inventoryItem.deltaPnl - addressPnlDelta;
-
-		// if (inventory.sumQuantity >= 0) {
-		// 	console.log("NEW inventory.sumQuantity", uint256(inventory.sumQuantity));
-		// } else {
-		// 	console.log("NEW inventory.sumQuantity -", uint256(-1 * inventory.sumQuantity));
-		// }
-		// if (inventory.sumPnl >= 0) {
-		// 	console.log("NEW inventory.sumPnl", uint256(inventory.sumPnl));
-		// } else {
-		// 	console.log("NEW inventory.sumPnl -", uint256(-1 * inventory.sumPnl));
-		// }
-		// if (inventoryItem.quantity >= 0) {
-		// 	console.log("NEW inventoryItem.quantity", uint256(inventoryItem.quantity));
-		// } else {
-		// 	console.log("NEW inventoryItem.quantity -", uint256(-1 * inventoryItem.quantity));
-		// }
-		// if (inventoryItem.deltaPnl >= 0) {
-		// 	console.log("NEW inventoryItem.deltaPnl", uint256(inventoryItem.deltaPnl));
-		// } else {
-		// 	console.log("NEW inventoryItem.deltaPnl -", uint256(-1 * inventoryItem.deltaPnl));
-		// }
 	}
 
 	function refreshDivident(address _contract, uint256 _tokenId, address _fromAccount, address _toAccount, uint256 _quantity) internal {
@@ -162,38 +106,6 @@ library LibTokenPNL {
 		//the divident is equal with the actual value minus the summa pnlDelta
 		//note: the pnlDelta already have the negative sign!!!
 		int256 actDivident = actValue + inventoryItem.deltaPnl - inventoryItem.payedPnl;
-
-		// console.log("calcDivident");
-		// if (inventory.sumPnl >= 0) {
-		// 	console.log("inventory.sumPnl", uint256(inventory.sumPnl));
-		// } else {
-		// 	console.log("inventory.sumPnl -", uint256(-1 * inventory.sumPnl));
-		// }
-		// if (inventoryItem.quantity >= 0) {
-		// 	console.log("inventoryItem.quantity", uint256(inventoryItem.quantity));
-		// } else {
-		// 	console.log("inventoryItem.quantity -", uint256(-1 * inventoryItem.quantity));
-		// }
-		// if (inventory.sumQuantity >= 0) {
-		// 	console.log("inventory.sumQuantity", uint256(inventory.sumQuantity));
-		// } else {
-		// 	console.log("inventory.sumQuantity -", uint256(-1 * inventory.sumQuantity));
-		// }
-		// if (inventoryItem.deltaPnl >= 0) {
-		// 	console.log("inventoryItem.deltaPnl", uint256(inventoryItem.deltaPnl));
-		// } else {
-		// 	console.log("inventoryItem.deltaPnl -", uint256(-1 * inventoryItem.deltaPnl));
-		// }
-		// if (inventoryItem.payedPnl >= 0) {
-		// 	console.log("inventoryItem.payedPnl", uint256(inventoryItem.payedPnl));
-		// } else {
-		// 	console.log("inventoryItem.payedPnl -", uint256(-1 * inventoryItem.payedPnl));
-		// }
-		// if (actDivident >= 0) {
-		// 	console.log("actDivident", uint256(actDivident));
-		// } else {
-		// 	console.log("actDivident -", uint256(-1 * actDivident));
-		// }
 
 		return actDivident;
 	}

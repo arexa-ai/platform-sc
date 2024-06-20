@@ -102,64 +102,64 @@ export interface ArexaPfmTokenEnumerableFacet extends BaseContract {
 
   functions: {
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string[]]>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
   };
 
   accountsByToken(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string[]>;
 
   tokensByAccount(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
   totalHolders(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   totalSupply(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   callStatic: {
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string[]>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
@@ -168,44 +168,44 @@ export interface ArexaPfmTokenEnumerableFacet extends BaseContract {
 
   estimateGas: {
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };

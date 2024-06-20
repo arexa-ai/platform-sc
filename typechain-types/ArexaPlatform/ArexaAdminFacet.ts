@@ -97,7 +97,7 @@ export interface ArexaAdminFacet extends BaseContract {
     getPayingToken(overrides?: CallOverrides): Promise<[string]>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -107,7 +107,7 @@ export interface ArexaAdminFacet extends BaseContract {
   getPayingToken(overrides?: CallOverrides): Promise<string>;
 
   setPayingToken(
-    _token: PromiseOrValue<string>,
+    token: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -117,7 +117,7 @@ export interface ArexaAdminFacet extends BaseContract {
     getPayingToken(overrides?: CallOverrides): Promise<string>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -130,7 +130,7 @@ export interface ArexaAdminFacet extends BaseContract {
     getPayingToken(overrides?: CallOverrides): Promise<BigNumber>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -143,7 +143,7 @@ export interface ArexaAdminFacet extends BaseContract {
     getPayingToken(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

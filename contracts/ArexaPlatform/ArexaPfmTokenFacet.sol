@@ -17,38 +17,42 @@ contract ArexaPfmTokenFacet is IERC1155, CallProtection, ModifierPausable {
 	string public constant symbol = "AREXA";
 
 	function safeTransferFrom(
-		address _from,
-		address _to,
-		uint256 _id,
-		uint256 _value,
-		bytes calldata _data
+		address from,
+		address to,
+		uint256 id,
+		uint256 value,
+		bytes calldata data
 	) external override protectedCall whenNotPaused(LibArexaConst.FULL) {
-		LibERC1155.safeTransfer(msg.sender, _from, _to, _id, _value, _data);
+		LibERC1155.safeTransfer(msg.sender, from, to, id, value, data);
 	}
 
 	function safeBatchTransferFrom(
-		address _from,
-		address _to,
-		uint256[] calldata _ids,
-		uint256[] calldata _values,
-		bytes calldata _data
+		address from,
+		address to,
+		uint256[] calldata ids,
+		uint256[] calldata values,
+		bytes calldata data
 	) external override protectedCall whenNotPaused(LibArexaConst.FULL) {
-		LibERC1155.safeTransferBatch(msg.sender, _from, _to, _ids, _values, _data);
+		LibERC1155.safeTransferBatch(msg.sender, from, to, ids, values, data);
 	}
 
-	function balanceOf(address _owner, uint256 _id) external view override returns (uint256) {
-		return LibERC1155.balanceOf(_owner, _id);
+	//When creating the dummy contract, it is a name collision
+	function balanceOf(address owner_, uint256 id) external view override protectedCall returns (uint256) {
+		return LibERC1155.balanceOf(owner_, id);
 	}
 
-	function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view override returns (uint256[] memory) {
-		return LibERC1155.balanceOfBatch(_owners, _ids);
+	function balanceOfBatch(
+		address[] calldata owners,
+		uint256[] calldata ids
+	) external view override protectedCall returns (uint256[] memory) {
+		return LibERC1155.balanceOfBatch(owners, ids);
 	}
 
-	function setApprovalForAll(address _operator, bool _approved) external override protectedCall whenNotPaused(LibArexaConst.FULL) {
-		LibERC1155.setApprovalForAll(msg.sender, _operator, _approved);
+	function setApprovalForAll(address operator, bool approved) external override protectedCall whenNotPaused(LibArexaConst.FULL) {
+		LibERC1155.setApprovalForAll(msg.sender, operator, approved);
 	}
 
-	function isApprovedForAll(address _owner, address _operator) external view override returns (bool) {
-		return LibERC1155.isApprovedForAll(_owner, _operator);
+	function isApprovedForAll(address owner_, address operator) external view override protectedCall returns (bool) {
+		return LibERC1155.isApprovedForAll(owner_, operator);
 	}
 }

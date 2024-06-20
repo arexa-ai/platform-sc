@@ -82,39 +82,39 @@ contract TokenDiamondDummyImplementation {
 
    function getURL() external view returns (string memory) {}
 
-   function setGeneralFee(uint16  _generalFee) external {}
+   function setGeneralFee(uint16  generalFee) external {}
 
-   function setGeneralFeeAddress(address  _generalFeeAddress) external {}
+   function setGeneralFeeAddress(address  generalFeeAddress) external {}
 
-   function setPoolFee(uint16  _PoolFee) external {}
+   function setPoolFee(uint16  poolFee) external {}
 
-   function setPoolFeeAddress(address  _PoolFeeAddress) external {}
+   function setPoolFeeAddress(address  poolFeeAddress) external {}
 
-   function setTreasuryAddress(address  _treasuryAddress) external {}
+   function setTreasuryAddress(address  treasuryAddress) external {}
 
-   function setURL(string memory _url) external {}
+   function setURL(string memory url) external {}
 
    function RECIPIENT_BLACKLIST() external view returns (bytes32 ) {}
 
    function SENDER_BLACKLIST() external view returns (bytes32 ) {}
 
-   function getAccountBlackWhiteList(bytes32  _target, address  _account) external view returns (bool ) {}
+   function getAccountBlackWhiteList(bytes32  target, address  account) external view returns (bool ) {}
 
-   function getDestinationAccountBL(address  _account) external view returns (bool ) {}
+   function getDestinationAccountBL(address  account) external view returns (bool ) {}
 
-   function getSourceAccountBL(address  _account) external view returns (bool ) {}
+   function getSourceAccountBL(address  account) external view returns (bool ) {}
 
-   function setAccountBlackWhiteList(bytes32  _target, address  _account, bool  _lockValue) external {}
+   function setAccountBlackWhiteList(bytes32  target, address  account, bool  lockValue) external {}
 
-   function setBatchDestinationAccountBL(address[] memory _addresses, bool  _lockValue) external {}
+   function setBatchDestinationAccountBL(address[] memory addresses, bool  lockValue) external {}
 
-   function setBatchSourceAccountBL(address[] memory _addresses, bool  _lockValue) external {}
+   function setBatchSourceAccountBL(address[] memory addresses, bool  lockValue) external {}
 
-   function setDestinationAccountBL(address  _account, bool  _lockValue) external {}
+   function setDestinationAccountBL(address  account, bool  lockValue) external {}
 
-   function setSourceAccountBL(address  _account, bool  _lockValue) external {}
+   function setSourceAccountBL(address  account, bool  lockValue) external {}
 
-   function withdrawUserTokenByCompliance(address  _account) external {}
+   function withdrawUserTokenByCompliance(address  account) external {}
 
    function allowance(address  holder, address  spender) external view returns (uint256  allowance_) {}
 

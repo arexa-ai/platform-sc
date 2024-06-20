@@ -181,32 +181,32 @@ export interface TokenAdminFacet extends BaseContract {
     getURL(overrides?: CallOverrides): Promise<[string]>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -224,32 +224,32 @@ export interface TokenAdminFacet extends BaseContract {
   getURL(overrides?: CallOverrides): Promise<string>;
 
   setGeneralFee(
-    _generalFee: PromiseOrValue<BigNumberish>,
+    generalFee: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setGeneralFeeAddress(
-    _generalFeeAddress: PromiseOrValue<string>,
+    generalFeeAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setPoolFee(
-    _PoolFee: PromiseOrValue<BigNumberish>,
+    poolFee: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setPoolFeeAddress(
-    _PoolFeeAddress: PromiseOrValue<string>,
+    poolFeeAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setTreasuryAddress(
-    _treasuryAddress: PromiseOrValue<string>,
+    treasuryAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setURL(
-    _url: PromiseOrValue<string>,
+    url: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -267,32 +267,32 @@ export interface TokenAdminFacet extends BaseContract {
     getURL(overrides?: CallOverrides): Promise<string>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -313,32 +313,32 @@ export interface TokenAdminFacet extends BaseContract {
     getURL(overrides?: CallOverrides): Promise<BigNumber>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -361,32 +361,32 @@ export interface TokenAdminFacet extends BaseContract {
     getURL(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

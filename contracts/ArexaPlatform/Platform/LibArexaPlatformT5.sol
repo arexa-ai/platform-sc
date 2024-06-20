@@ -4,20 +4,13 @@
  */
 pragma solidity ^0.8.9;
 
-//import "hardhat/console.sol";
-
 import "./LibArexaPlatformStorage.sol";
-// import "../../utils/Math.sol";
 import "../../utils/SafeERC20.sol";
 import "../../base/Diamond/LibDiamond.sol";
 import "../../base/ERC1155/base/LibERC1155.sol";
-// import "../../base/TokenRestriction/LibTokenRestriction.sol";
-// import "../../base/TokenPNL/LibTokenPNL.sol";
-// import "../../base/TokenDynamicPricing/LibTokenDynamicPricing.sol";
 
 import "../LibArexaConst.sol";
 
-//import { IERC20 } from "../../base/ERC20/IERC20.sol";
 import { IERC20Metadata } from "../../base/ERC20/metadata/IERC20Metadata.sol";
 import "../../base/BridgeCentralized/IBridgeableToken.sol";
 

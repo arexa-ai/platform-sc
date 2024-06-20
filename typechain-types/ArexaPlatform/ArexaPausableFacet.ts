@@ -267,7 +267,7 @@ export interface ArexaPausableFacet extends BaseContract {
     paused(
       target: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
-    ): Promise<[boolean] & { status_: boolean }>;
+    ): Promise<[boolean]>;
 
     unpause(
       target: PromiseOrValue<BytesLike>,

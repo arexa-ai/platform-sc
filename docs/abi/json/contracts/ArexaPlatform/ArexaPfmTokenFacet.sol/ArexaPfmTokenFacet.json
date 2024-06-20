@@ -171,12 +171,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner_",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_id",
+        "name": "id",
         "type": "uint256"
       }
     ],
@@ -195,12 +195,12 @@
     "inputs": [
       {
         "internalType": "address[]",
-        "name": "_owners",
+        "name": "owners",
         "type": "address[]"
       },
       {
         "internalType": "uint256[]",
-        "name": "_ids",
+        "name": "ids",
         "type": "uint256[]"
       }
     ],
@@ -219,12 +219,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner_",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_operator",
+        "name": "operator",
         "type": "address"
       }
     ],
@@ -256,27 +256,27 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_from",
+        "name": "from",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_to",
+        "name": "to",
         "type": "address"
       },
       {
         "internalType": "uint256[]",
-        "name": "_ids",
+        "name": "ids",
         "type": "uint256[]"
       },
       {
         "internalType": "uint256[]",
-        "name": "_values",
+        "name": "values",
         "type": "uint256[]"
       },
       {
         "internalType": "bytes",
-        "name": "_data",
+        "name": "data",
         "type": "bytes"
       }
     ],
@@ -289,27 +289,27 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_from",
+        "name": "from",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_to",
+        "name": "to",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_id",
+        "name": "id",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "_value",
+        "name": "value",
         "type": "uint256"
       },
       {
         "internalType": "bytes",
-        "name": "_data",
+        "name": "data",
         "type": "bytes"
       }
     ],
@@ -322,12 +322,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_operator",
+        "name": "operator",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "_approved",
+        "name": "approved",
         "type": "bool"
       }
     ],

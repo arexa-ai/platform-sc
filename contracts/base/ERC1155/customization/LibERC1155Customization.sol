@@ -27,7 +27,7 @@ library LibERC1155Customization {
 	 * @param _amounts quantities of tokens to transfer
 	 *  param _data data payload
 	 */
-	function _beforeTokenTransfer(
+	function beforeTokenTransfer(
 		address, //_operator,
 		address _fromAccount,
 		address, //_toAccount,
@@ -57,7 +57,7 @@ library LibERC1155Customization {
 	 * @param _amounts quantities of tokens to transfer
 	 * _data data payload
 	 */
-	function _afterTokenTransfer(
+	function afterTokenTransfer(
 		address, //_operator
 		address _fromAccount,
 		address _toAccount,

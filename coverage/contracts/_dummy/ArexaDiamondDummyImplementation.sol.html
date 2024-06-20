@@ -561,7 +561,7 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function owner() external view returns (address ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function transferOwnership(address  _newOwner) external {}</span>
+<span class="fstat-no" title="function not covered" >   function transferOwnership(address  newOwner) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function PAUSABLE_AREXA_TOKEN() external view returns (bytes32 ) {}</span>
 &nbsp;
@@ -581,7 +581,7 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function pauseToken(uint256  tokenId) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function paused(bytes32  target) external view returns (bool  status_) {}</span>
+<span class="fstat-no" title="function not covered" >   function paused(bytes32  target) external view returns (bool ) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function unpause(bytes32  target) external {}</span>
 &nbsp;
@@ -607,19 +607,19 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function getPayingToken() external view returns (address ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setPayingToken(address  _token) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setPayingToken(address  token) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function MAGIC100_FIRST_BUYER() external view returns (bytes32 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getAccountBlackWhiteList(bytes32  _target, address  _account) external view returns (bool ) {}</span>
+<span class="fstat-no" title="function not covered" >   function getAccountBlackWhiteList(bytes32  target, address  account) external view returns (bool ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getMagic100FirstBuyerWL(address  _account) external view returns (bool ) {}</span>
+<span class="fstat-no" title="function not covered" >   function getMagic100FirstBuyerWL(address  account) external view returns (bool ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setAccountBlackWhiteList(bytes32  _target, address  _account, bool  _lockValue) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setAccountBlackWhiteList(bytes32  target, address  account, bool  lockValue) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setBatchMagic100FirstBuyerWL(address[] memory _addresses, bool  _lockValue) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setBatchMagic100FirstBuyerWL(address[] memory addresses, bool  lockValue) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setMagic100FirstBuyerWL(address  _account, bool  _lockValue) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setMagic100FirstBuyerWL(address  account, bool  lockValue) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function AMOUNT_VALUE_TYPE() external view returns (uint8 ) {}</span>
 &nbsp;
@@ -675,7 +675,7 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function createSubscription(uint256  tokenType, uint16  year, uint8  month, uint256  quantity, uint256  min, uint256  max) external returns (uint256  tokenId) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getArexaTokenPool(uint8  _tokenType) external view returns (uint256  total, uint256  sold) {}</span>
+<span class="fstat-no" title="function not covered" >   function getArexaTokenPool(uint8  tokenType) external view returns (uint256  total, uint256  sold) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function payArexaTokenFromPool(uint8  poolType, address  account, uint32  quantity) external {}</span>
 &nbsp;
@@ -705,57 +705,57 @@ contract ArexaDiamondDummyImplementation {
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function stakeArexaToken(uint256  quantity) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function withdrawArexaToken(address  fromAccount, address  toAccount, uint256  _quantity) external {}</span>
+<span class="fstat-no" title="function not covered" >   function withdrawArexaToken(address  fromAccount, address  toAccount, uint256  quantity) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function balanceOf(address  _owner, uint256  _id) external view returns (uint256 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function balanceOf(address  owner_, uint256  id) external view returns (uint256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function balanceOfBatch(address[] memory _owners, uint256[] memory _ids) external view returns (uint256[] memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function balanceOfBatch(address[] memory owners, uint256[] memory ids) external view returns (uint256[] memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function isApprovedForAll(address  _owner, address  _operator) external view returns (bool ) {}</span>
+<span class="fstat-no" title="function not covered" >   function isApprovedForAll(address  owner_, address  operator) external view returns (bool ) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function name() external view returns (string memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function safeBatchTransferFrom(address  _from, address  _to, uint256[] memory _ids, uint256[] memory _values, bytes memory _data) external {}</span>
+<span class="fstat-no" title="function not covered" >   function safeBatchTransferFrom(address  from, address  to, uint256[] memory ids, uint256[] memory values, bytes memory data) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function safeTransferFrom(address  _from, address  _to, uint256  _id, uint256  _value, bytes memory _data) external {}</span>
+<span class="fstat-no" title="function not covered" >   function safeTransferFrom(address  from, address  to, uint256  id, uint256  value, bytes memory data) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setApprovalForAll(address  _operator, bool  _approved) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setApprovalForAll(address  operator, bool  approved) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function symbol() external view returns (string memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function allowance(address  _owner, address  _operator, uint256  _id) external view returns (uint256 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function allowance(address  owner_, address  operator, uint256  id) external view returns (uint256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function approve(address  _operator, uint256  _id, uint256  _currentValue, uint256  _newValue) external {}</span>
+<span class="fstat-no" title="function not covered" >   function approve(address  operator, uint256  id, uint256  currentValue, uint256  newValue) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function isOperatorSpendingLimitEnabled(uint256  _tokenId) external view returns (bool ) {}</span>
+<span class="fstat-no" title="function not covered" >   function isOperatorSpendingLimitEnabled(uint256  tokenId) external view returns (bool ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setOperatorSpendingLimitEnabled(uint256  _tokenId, bool  _enabled) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setOperatorSpendingLimitEnabled(uint256  tokenId, bool  enabled) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function accountsByToken(uint256  _id) external view returns (address[] memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function accountsByToken(uint256  id) external view returns (address[] memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function tokensByAccount(address  _account) external view returns (uint256[] memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function tokensByAccount(address  account) external view returns (uint256[] memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function totalHolders(uint256  _id) external view returns (uint256 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function totalHolders(uint256  id) external view returns (uint256 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function totalSupply(uint256  _id) external view returns (uint256 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function totalSupply(uint256  id) external view returns (uint256 ) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function getTokenBaseUri() external view returns (string memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function getTokenUri(uint256  _id) external view returns (string memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function getTokenUri(uint256  id) external view returns (string memory) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function getUri() external view returns (string memory) {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function setTokenBaseURI(string memory newuri) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function setTokenURI(uint256  _id, string memory newuri) external {}</span>
+<span class="fstat-no" title="function not covered" >   function setTokenURI(uint256  id, string memory newuri) external {}</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >   function setURI(string memory newuri) external {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function uri(uint256  _id) external view returns (string memory) {}</span>
+<span class="fstat-no" title="function not covered" >   function uri(uint256  id) external view returns (string memory) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function onERC1155BatchReceived(address  _operator, address  _from, uint256[] memory _ids, uint256[] memory _values, bytes memory _data) external returns (bytes4 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function onERC1155BatchReceived(address  operator, address  from, uint256[] memory ids, uint256[] memory values, bytes memory data) external returns (bytes4 ) {}</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >   function onERC1155Received(address  _operator, address  _from, uint256  _id, uint256  _value, bytes memory _data) external returns (bytes4 ) {}</span>
+<span class="fstat-no" title="function not covered" >   function onERC1155Received(address  operator, address  from, uint256  id, uint256  value, bytes memory data) external returns (bytes4 ) {}</span>
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -763,7 +763,7 @@ contract ArexaDiamondDummyImplementation {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 18 2024 16:07:39 GMT+0200 (közép-európai nyári idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 20 2024 09:26:47 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

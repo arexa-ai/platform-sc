@@ -44,7 +44,6 @@ contract ArexaTokenDiamondInit is CallProtection {
 		LibERC20Metadata._setSymbol(symbol);
 		LibERC20Metadata._setDecimals(decimals);
 
-		//LibAccessControl._owner();
 		LibAccessControl._setRoleAdmin(LibTokenConst.TOKEN_ADMIN_ROLE, LibTokenConst.TOKEN_ADMIN_ROLE);
 		LibAccessControl._setRoleAdmin(LibTokenConst.TREASURY_ROLE, LibTokenConst.TOKEN_ADMIN_ROLE);
 		LibAccessControl._setRoleAdmin(LibTokenConst.AML_ROLE, LibTokenConst.TOKEN_ADMIN_ROLE);

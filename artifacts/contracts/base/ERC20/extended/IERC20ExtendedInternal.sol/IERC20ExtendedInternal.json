@@ -1,0 +1,21 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IERC20ExtendedInternal",
+  "sourceName": "contracts/base/ERC20/extended/IERC20ExtendedInternal.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ERC20Extended__ExcessiveAllowance",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ERC20Extended__InsufficientAllowance",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -17,14 +17,14 @@ abstract contract TokenPausableFacet is CallProtection, ModifierRole, ModifierPa
 	bytes32 public constant PAUSABLE_FULL = LibTokenConst.FULL; //LibTokenConst LibBlockBenTokenConst
 
 	function paused(bytes32 target) external view returns (bool status_) {
-		status_ = LibTargetedPausable._paused(target);
+		status_ = LibTargetedPausable.paused(target);
 	}
 
 	function pause(bytes32 target) external whenNotPaused(target) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibTargetedPausable._pause(target, msg.sender);
+		LibTargetedPausable.pause(target, msg.sender);
 	}
 
 	function unpause(bytes32 target) external whenPaused(target) onlyRole(LibTokenConst.TOKEN_ADMIN_ROLE) {
-		LibTargetedPausable._unpause(target, msg.sender);
+		LibTargetedPausable.unpause(target, msg.sender);
 	}
 }

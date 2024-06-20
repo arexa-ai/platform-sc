@@ -242,7 +242,7 @@ export interface ArexaPlatformAdminFacet extends BaseContract {
     ): Promise<ContractTransaction>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -309,7 +309,7 @@ export interface ArexaPlatformAdminFacet extends BaseContract {
   ): Promise<ContractTransaction>;
 
   getArexaTokenPool(
-    _tokenType: PromiseOrValue<BigNumberish>,
+    tokenType: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -376,7 +376,7 @@ export interface ArexaPlatformAdminFacet extends BaseContract {
     ): Promise<BigNumber>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -446,7 +446,7 @@ export interface ArexaPlatformAdminFacet extends BaseContract {
     ): Promise<BigNumber>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -514,7 +514,7 @@ export interface ArexaPlatformAdminFacet extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 

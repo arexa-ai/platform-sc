@@ -40,7 +40,7 @@ contract ArexaDiamondDummyImplementation {
 
    function owner() external view returns (address ) {}
 
-   function transferOwnership(address  _newOwner) external {}
+   function transferOwnership(address  newOwner) external {}
 
    function PAUSABLE_AREXA_TOKEN() external view returns (bytes32 ) {}
 
@@ -60,7 +60,7 @@ contract ArexaDiamondDummyImplementation {
 
    function pauseToken(uint256  tokenId) external {}
 
-   function paused(bytes32  target) external view returns (bool  status_) {}
+   function paused(bytes32  target) external view returns (bool ) {}
 
    function unpause(bytes32  target) external {}
 
@@ -86,19 +86,19 @@ contract ArexaDiamondDummyImplementation {
 
    function getPayingToken() external view returns (address ) {}
 
-   function setPayingToken(address  _token) external {}
+   function setPayingToken(address  token) external {}
 
    function MAGIC100_FIRST_BUYER() external view returns (bytes32 ) {}
 
-   function getAccountBlackWhiteList(bytes32  _target, address  _account) external view returns (bool ) {}
+   function getAccountBlackWhiteList(bytes32  target, address  account) external view returns (bool ) {}
 
-   function getMagic100FirstBuyerWL(address  _account) external view returns (bool ) {}
+   function getMagic100FirstBuyerWL(address  account) external view returns (bool ) {}
 
-   function setAccountBlackWhiteList(bytes32  _target, address  _account, bool  _lockValue) external {}
+   function setAccountBlackWhiteList(bytes32  target, address  account, bool  lockValue) external {}
 
-   function setBatchMagic100FirstBuyerWL(address[] memory _addresses, bool  _lockValue) external {}
+   function setBatchMagic100FirstBuyerWL(address[] memory addresses, bool  lockValue) external {}
 
-   function setMagic100FirstBuyerWL(address  _account, bool  _lockValue) external {}
+   function setMagic100FirstBuyerWL(address  account, bool  lockValue) external {}
 
    function AMOUNT_VALUE_TYPE() external view returns (uint8 ) {}
 
@@ -154,7 +154,7 @@ contract ArexaDiamondDummyImplementation {
 
    function createSubscription(uint256  tokenType, uint16  year, uint8  month, uint256  quantity, uint256  min, uint256  max) external returns (uint256  tokenId) {}
 
-   function getArexaTokenPool(uint8  _tokenType) external view returns (uint256  total, uint256  sold) {}
+   function getArexaTokenPool(uint8  tokenType) external view returns (uint256  total, uint256  sold) {}
 
    function payArexaTokenFromPool(uint8  poolType, address  account, uint32  quantity) external {}
 
@@ -184,55 +184,55 @@ contract ArexaDiamondDummyImplementation {
 
    function stakeArexaToken(uint256  quantity) external {}
 
-   function withdrawArexaToken(address  fromAccount, address  toAccount, uint256  _quantity) external {}
+   function withdrawArexaToken(address  fromAccount, address  toAccount, uint256  quantity) external {}
 
-   function balanceOf(address  _owner, uint256  _id) external view returns (uint256 ) {}
+   function balanceOf(address  owner_, uint256  id) external view returns (uint256 ) {}
 
-   function balanceOfBatch(address[] memory _owners, uint256[] memory _ids) external view returns (uint256[] memory) {}
+   function balanceOfBatch(address[] memory owners, uint256[] memory ids) external view returns (uint256[] memory) {}
 
-   function isApprovedForAll(address  _owner, address  _operator) external view returns (bool ) {}
+   function isApprovedForAll(address  owner_, address  operator) external view returns (bool ) {}
 
    function name() external view returns (string memory) {}
 
-   function safeBatchTransferFrom(address  _from, address  _to, uint256[] memory _ids, uint256[] memory _values, bytes memory _data) external {}
+   function safeBatchTransferFrom(address  from, address  to, uint256[] memory ids, uint256[] memory values, bytes memory data) external {}
 
-   function safeTransferFrom(address  _from, address  _to, uint256  _id, uint256  _value, bytes memory _data) external {}
+   function safeTransferFrom(address  from, address  to, uint256  id, uint256  value, bytes memory data) external {}
 
-   function setApprovalForAll(address  _operator, bool  _approved) external {}
+   function setApprovalForAll(address  operator, bool  approved) external {}
 
    function symbol() external view returns (string memory) {}
 
-   function allowance(address  _owner, address  _operator, uint256  _id) external view returns (uint256 ) {}
+   function allowance(address  owner_, address  operator, uint256  id) external view returns (uint256 ) {}
 
-   function approve(address  _operator, uint256  _id, uint256  _currentValue, uint256  _newValue) external {}
+   function approve(address  operator, uint256  id, uint256  currentValue, uint256  newValue) external {}
 
-   function isOperatorSpendingLimitEnabled(uint256  _tokenId) external view returns (bool ) {}
+   function isOperatorSpendingLimitEnabled(uint256  tokenId) external view returns (bool ) {}
 
-   function setOperatorSpendingLimitEnabled(uint256  _tokenId, bool  _enabled) external {}
+   function setOperatorSpendingLimitEnabled(uint256  tokenId, bool  enabled) external {}
 
-   function accountsByToken(uint256  _id) external view returns (address[] memory) {}
+   function accountsByToken(uint256  id) external view returns (address[] memory) {}
 
-   function tokensByAccount(address  _account) external view returns (uint256[] memory) {}
+   function tokensByAccount(address  account) external view returns (uint256[] memory) {}
 
-   function totalHolders(uint256  _id) external view returns (uint256 ) {}
+   function totalHolders(uint256  id) external view returns (uint256 ) {}
 
-   function totalSupply(uint256  _id) external view returns (uint256 ) {}
+   function totalSupply(uint256  id) external view returns (uint256 ) {}
 
    function getTokenBaseUri() external view returns (string memory) {}
 
-   function getTokenUri(uint256  _id) external view returns (string memory) {}
+   function getTokenUri(uint256  id) external view returns (string memory) {}
 
    function getUri() external view returns (string memory) {}
 
    function setTokenBaseURI(string memory newuri) external {}
 
-   function setTokenURI(uint256  _id, string memory newuri) external {}
+   function setTokenURI(uint256  id, string memory newuri) external {}
 
    function setURI(string memory newuri) external {}
 
-   function uri(uint256  _id) external view returns (string memory) {}
+   function uri(uint256  id) external view returns (string memory) {}
 
-   function onERC1155BatchReceived(address  _operator, address  _from, uint256[] memory _ids, uint256[] memory _values, bytes memory _data) external returns (bytes4 ) {}
+   function onERC1155BatchReceived(address  operator, address  from, uint256[] memory ids, uint256[] memory values, bytes memory data) external returns (bytes4 ) {}
 
-   function onERC1155Received(address  _operator, address  _from, uint256  _id, uint256  _value, bytes memory _data) external returns (bytes4 ) {}
+   function onERC1155Received(address  operator, address  from, uint256  id, uint256  value, bytes memory data) external returns (bytes4 ) {}
 }

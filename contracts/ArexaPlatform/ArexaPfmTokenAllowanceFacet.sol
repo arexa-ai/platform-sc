@@ -17,24 +17,24 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPfmTokenAllowanceFacet is IERC1155Allowance, CallProtection, ModifierRole, ModifierPausable {
-	function isOperatorSpendingLimitEnabled(uint256 _tokenId) external view returns (bool) {
-		return LibERC1155.isOperatorSpendingLimitEnabled(_tokenId);
+	function isOperatorSpendingLimitEnabled(uint256 tokenId) external view returns (bool) {
+		return LibERC1155.isOperatorSpendingLimitEnabled(tokenId);
 	}
 
-	function setOperatorSpendingLimitEnabled(uint256 _tokenId, bool _enabled) external protectedCall onlyOwner {
-		LibERC1155.setOperatorSpendingLimitEnabled(_tokenId, _enabled);
+	function setOperatorSpendingLimitEnabled(uint256 tokenId, bool enabled) external protectedCall onlyOwner {
+		LibERC1155.setOperatorSpendingLimitEnabled(tokenId, enabled);
 	}
 
 	function approve(
-		address _operator,
-		uint256 _id,
-		uint256 _currentValue,
-		uint256 _newValue
+		address operator,
+		uint256 id,
+		uint256 currentValue,
+		uint256 newValue
 	) external virtual override protectedCall whenNotPaused(LibArexaConst.FULL) {
-		LibERC1155.approve(msg.sender, _operator, _id, _currentValue, _newValue);
+		LibERC1155.approve(msg.sender, operator, id, currentValue, newValue);
 	}
 
-	function allowance(address _owner, address _operator, uint256 _id) external view override returns (uint256) {
-		return LibERC1155.allowance(_owner, _operator, _id);
+	function allowance(address owner_, address operator, uint256 id) external view override protectedCall returns (uint256) {
+		return LibERC1155.allowance(owner_, operator, id);
 	}
 }

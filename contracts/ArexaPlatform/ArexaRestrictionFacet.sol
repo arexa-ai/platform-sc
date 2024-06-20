@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENCED
 /**
- * Copyright (C) 2023 AREXA
+ * Copyright (C) 2024 AREXA
  */
 pragma solidity ^0.8.9;
 
@@ -9,10 +9,6 @@ import { LibBlackWhiteList } from "../base/BlackWhiteList/LibBlackWhiteList.sol"
 import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
 
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
-// import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
-// import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol";
-
-//import { LibArexaConst } from "./LibArexaConst.sol";
 import { LibTokenRestriction } from "../base/TokenRestriction/LibTokenRestriction.sol";
 
 contract ArexaRestrictionFacet is CallProtection {

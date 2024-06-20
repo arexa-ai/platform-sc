@@ -8,5 +8,5 @@
   "error LibERC1155__TransferExceedsBalance()",
   "error LibERC1155__TransferToZeroAddress()",
   "function stakeArexaToken(uint256 quantity)",
-  "function withdrawArexaToken(address fromAccount, address toAccount, uint256 _quantity)"
+  "function withdrawArexaToken(address fromAccount, address toAccount, uint256 quantity)"
 ]

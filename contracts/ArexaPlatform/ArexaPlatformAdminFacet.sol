@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENCED
 /**
- * Copyright (C) 2023 AREXA
+ * Copyright (C) 2024 AREXA
  */
 pragma solidity ^0.8.9;
 
@@ -16,13 +16,14 @@ import { LibArexaPlatformT5 } from "./Platform/LibArexaPlatformT5.sol";
 import { ArexaTokenPool } from "./Platform/LibArexaPlatformStorage.sol";
 
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
+import { ReentryProtection } from "../base/Shared/ReentryProtection.sol";
 import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
 import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol";
 import { LibArexaConst } from "./LibArexaConst.sol";
 
-contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausable {
-	function getArexaTokenPool(uint8 _tokenType) external view protectedCall returns (uint256 total, uint256 sold) {
-		(total, sold) = LibArexaPlatformShared.getArexaTokenPool(_tokenType);
+contract ArexaPlatformAdminFacet is CallProtection, ReentryProtection, ModifierRole, ModifierPausable {
+	function getArexaTokenPool(uint8 tokenType) external view protectedCall returns (uint256 total, uint256 sold) {
+		(total, sold) = LibArexaPlatformShared.getArexaTokenPool(tokenType);
 	}
 
 	function createSubscription(
@@ -45,7 +46,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint8 poolType,
 		address account,
 		uint32 quantity
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier4
 		//AREXA_TOKEN
 		//Price: priceless ;)
@@ -65,7 +66,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint256 tokenId,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier1 Oracle or Tier2 Edge
 		//Price: variable USDT/piece, based on algorithm
 		//Quantity: 1 per account
@@ -78,7 +79,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		address toAccount,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier1 Oracle
 		//SUBSCR1_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
@@ -93,7 +94,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		address toAccount,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier2 Edge
 		//SUBSCR2_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
@@ -109,7 +110,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint128 value,
 		uint8 valueType,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier3 Singularity
 		//TRADER_TOKEN
 		//Price: 1.0 USDT/piece
@@ -123,7 +124,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint128 value,
 		uint8 valueType,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier4
 		//AREXA_TOKEN
 		//Price: 0.1 USDT/piece
@@ -135,7 +136,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 	function buyMagic100TokenAdmin(
 		address toAccount,
 		uint16 discountPercent //1 means 0,01%, 100 means 1%, 10000 means 100%, 1564 means 15,64% discount
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier5
 		//MAGIC_TOKEN_ID
 		//Price: 100.0 USDT/piece

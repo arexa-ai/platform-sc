@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/24</span>
+        <span class='fraction'>0/38</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -99,7 +99,12 @@
 54
 55
 56
-57</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,22 +121,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +138,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,11 +176,12 @@ import { IERC1155Pausable } from "../base/ERC1155/IERC1155Pausable.sol";
 &nbsp;
 import { LibAccessControl } from "../base/AccessControl/LibAccessControl.sol";
 import { LibTargetedPausable } from "../base/TargetedPausable/LibTargetedPausable.sol";
+import { CallProtection } from "../base/Shared/ProtectedCall.sol";
 import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol";
 import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
 import { LibArexaConst } from "./LibArexaConst.sol";
 &nbsp;
-contract ArexaPausableFacet is IERC1155Pausable, ModifierRole, ModifierPausable {
+contract ArexaPausableFacet is IERC1155Pausable, CallProtection, ModifierRole, ModifierPausable {
 	bytes32 public constant PAUSABLE_FULL = LibArexaConst.FULL; //LibTokenConst LibBlockBenTokenConst
 	bytes32 public constant PAUSABLE_SUBSCR1_TOKEN = LibArexaConst.SUBSCR1_TOKEN; //LibTokenConst LibBlockBenTokenConst
 	bytes32 public constant PAUSABLE_SUBSCR2_TOKEN = LibArexaConst.SUBSCR2_TOKEN; //LibTokenConst LibBlockBenTokenConst
@@ -178,16 +189,16 @@ contract ArexaPausableFacet is IERC1155Pausable, ModifierRole, ModifierPausable 
 	bytes32 public constant PAUSABLE_AREXA_TOKEN = LibArexaConst.AREXA_TOKEN; //LibTokenConst LibBlockBenTokenConst
 	bytes32 public constant PAUSABLE_MAGIC_TOKEN = LibArexaConst.MAGIC_TOKEN; //LibTokenConst LibBlockBenTokenConst
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function paused(bytes32 target) external view returns (bool status_) {</span>
-		status_ = LibTargetedPausable._paused(target);
+<span class="fstat-no" title="function not covered" >	function paused(bytes32 target) external view protectedCall returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >		return LibTargetedPausable.paused(target);</span>
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function pause(bytes32 target) external whenNotPaused(target) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
-<span class="cstat-no" title="statement not covered" >		LibTargetedPausable._pause(target, msg.sender)</span>;
+<span class="fstat-no" title="function not covered" >	function pause(bytes32 target) external protectedCall whenNotPaused(target) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >		LibTargetedPausable.pause(target, msg.sender)</span>;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function unpause(bytes32 target) external whenPaused(target) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
-<span class="cstat-no" title="statement not covered" >		LibTargetedPausable._unpause(target, msg.sender)</span>;
+<span class="fstat-no" title="function not covered" >	function unpause(bytes32 target) external protectedCall whenPaused(target) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >		LibTargetedPausable.unpause(target, msg.sender)</span>;
 	}
 &nbsp;
 	/**
@@ -195,19 +206,23 @@ contract ArexaPausableFacet is IERC1155Pausable, ModifierRole, ModifierPausable 
 	 * WARNING! pause and unpause controls the token selling functions, but not the transfers
 	 *
 	 */
-<span class="fstat-no" title="function not covered" >	function pauseAllToken() external override whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="fstat-no" title="function not covered" >	function pauseAllToken() external override protectedCall whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
 <span class="cstat-no" title="statement not covered" >		LibERC1155.pauseAllToken(msg.sender)</span>;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function unpauseAllToken() external override whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="fstat-no" title="function not covered" >	function unpauseAllToken() external override protectedCall whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
 <span class="cstat-no" title="statement not covered" >		LibERC1155.unpauseAllToken(msg.sender)</span>;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function pauseToken(uint256 tokenId) external override whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="fstat-no" title="function not covered" >	function pauseToken(</span>
+		uint256 tokenId
+	) external override protectedCall whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {
 <span class="cstat-no" title="statement not covered" >		LibERC1155.pauseToken(msg.sender, tokenId)</span>;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function unpauseToken(uint256 tokenId) external override whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {</span>
+<span class="fstat-no" title="function not covered" >	function unpauseToken(</span>
+		uint256 tokenId
+	) external override protectedCall whenNotPaused(LibArexaConst.FULL) onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) {
 <span class="cstat-no" title="statement not covered" >		LibERC1155.unpauseToken(msg.sender, tokenId)</span>;
 	}
 }
@@ -217,7 +232,7 @@ contract ArexaPausableFacet is IERC1155Pausable, ModifierRole, ModifierPausable 
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 18 2024 16:07:39 GMT+0200 (közép-európai nyári idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 20 2024 09:26:47 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

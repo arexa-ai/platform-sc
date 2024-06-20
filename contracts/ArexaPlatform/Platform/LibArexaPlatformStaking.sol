@@ -4,8 +4,6 @@
  */
 pragma solidity ^0.8.9;
 
-//import "hardhat/console.sol";
-
 import "./LibArexaPlatformStorage.sol";
 import "../../base/Diamond/LibDiamond.sol";
 import "../../base/ERC1155/base/LibERC1155.sol";

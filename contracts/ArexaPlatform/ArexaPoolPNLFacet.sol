@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENCED
 /**
- * Copyright (C) 2023 AREXA
+ * Copyright (C) 2024 AREXA
  */
 pragma solidity ^0.8.9;
 
@@ -13,15 +13,15 @@ import { LibArexaPlatformPNL } from "./Platform/LibArexaPlatformPNL.sol";
 import { LibArexaPlatformShared } from "./Platform/LibArexaPlatformShared.sol";
 import { LibTokenPNL } from "../base/TokenPNL/LibTokenPNL.sol";
 import { InventoryItem } from "../base/TokenPNL/LibTokenPNLStorage.sol";
-//import { LibERC1155 } from "../base/ERC1155/base/LibERC1155.sol";
 
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
+import { ReentryProtection } from "../base/Shared/ReentryProtection.sol";
 import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
 import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol";
 
 import { LibArexaConst } from "./LibArexaConst.sol";
 
-contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
+contract ArexaPoolPNLFacet is CallProtection, ReentryProtection, ModifierRole, ModifierPausable {
 	function getInventory() external view protectedCall returns (bool isEnabled, int256 sumQuantity, int256 sumAmount, int256 sumPnl) {
 		(isEnabled, sumQuantity, sumAmount, sumPnl) = LibTokenPNL.getInventory(
 			address(LibArexaPlatformShared.getPayingToken()),
@@ -81,18 +81,18 @@ contract ArexaPoolPNLFacet is CallProtection, ModifierRole, ModifierPausable {
 	function payoutArexaIncome(
 		address toAccount,
 		uint256 value
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		LibArexaPlatformPNL.payoutArexaIncome(toAccount, value);
 	}
 
 	function payoutArexaDivident(
 		address toAccount,
 		uint256 value
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		LibArexaPlatformPNL.payoutPoolDivident(LibDiamond.getDiamondAddress(), toAccount, value);
 	}
 
-	function payoutDivident(uint256 value) external protectedCall whenNotPaused(LibArexaConst.FULL) {
+	function payoutDivident(uint256 value) external protectedCall noReentry whenNotPaused(LibArexaConst.FULL) {
 		LibArexaPlatformPNL.payoutPoolDivident(msg.sender, msg.sender, value);
 	}
 }

@@ -129,82 +129,82 @@ export interface ArexaPfmTokenAllowanceFacet extends BaseContract {
 
   functions: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
 
   allowance(
-    _owner: PromiseOrValue<string>,
-    _operator: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
+    owner_: PromiseOrValue<string>,
+    operator: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   approve(
-    _operator: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _currentValue: PromiseOrValue<BigNumberish>,
-    _newValue: PromiseOrValue<BigNumberish>,
+    operator: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    currentValue: PromiseOrValue<BigNumberish>,
+    newValue: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   isOperatorSpendingLimitEnabled(
-    _tokenId: PromiseOrValue<BigNumberish>,
+    tokenId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   setOperatorSpendingLimitEnabled(
-    _tokenId: PromiseOrValue<BigNumberish>,
-    _enabled: PromiseOrValue<boolean>,
+    tokenId: PromiseOrValue<BigNumberish>,
+    enabled: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -228,56 +228,56 @@ export interface ArexaPfmTokenAllowanceFacet extends BaseContract {
 
   estimateGas: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

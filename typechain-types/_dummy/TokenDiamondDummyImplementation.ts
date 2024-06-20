@@ -697,13 +697,13 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     >;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
@@ -721,7 +721,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<[string]>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
@@ -781,27 +781,27 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -811,22 +811,22 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -837,18 +837,18 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -887,7 +887,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -966,13 +966,13 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<TokenDiamondDummyImplementation.Tuple1236461StructOutput[]>;
 
   getAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   getDestinationAccountBL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -990,7 +990,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<string>;
 
   getSourceAccountBL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -1050,27 +1050,27 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setBatchDestinationAccountBL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setBatchSourceAccountBL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setDestinationAccountBL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1080,22 +1080,22 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setGeneralFee(
-    _generalFee: PromiseOrValue<BigNumberish>,
+    generalFee: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setGeneralFeeAddress(
-    _generalFeeAddress: PromiseOrValue<string>,
+    generalFeeAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setPoolFee(
-    _PoolFee: PromiseOrValue<BigNumberish>,
+    poolFee: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setPoolFeeAddress(
-    _PoolFeeAddress: PromiseOrValue<string>,
+    poolFeeAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1106,18 +1106,18 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setSourceAccountBL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setTreasuryAddress(
-    _treasuryAddress: PromiseOrValue<string>,
+    treasuryAddress: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setURL(
-    _url: PromiseOrValue<string>,
+    url: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1154,7 +1154,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   withdrawUserTokenByCompliance(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1233,13 +1233,13 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<TokenDiamondDummyImplementation.Tuple1236461StructOutput[]>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -1257,7 +1257,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<string>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -1317,27 +1317,27 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1347,22 +1347,22 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1373,18 +1373,18 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1421,7 +1421,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -1501,13 +1501,13 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     facets(overrides?: CallOverrides): Promise<BigNumber>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -1525,7 +1525,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -1585,27 +1585,27 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -1615,22 +1615,22 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -1641,18 +1641,18 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -1689,7 +1689,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -1769,13 +1769,13 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     facets(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -1795,7 +1795,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -1857,27 +1857,27 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -1887,22 +1887,22 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setGeneralFee(
-      _generalFee: PromiseOrValue<BigNumberish>,
+      generalFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setGeneralFeeAddress(
-      _generalFeeAddress: PromiseOrValue<string>,
+      generalFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setPoolFee(
-      _PoolFee: PromiseOrValue<BigNumberish>,
+      poolFee: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setPoolFeeAddress(
-      _PoolFeeAddress: PromiseOrValue<string>,
+      poolFeeAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -1913,18 +1913,18 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setTreasuryAddress(
-      _treasuryAddress: PromiseOrValue<string>,
+      treasuryAddress: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setURL(
-      _url: PromiseOrValue<string>,
+      url: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -1961,7 +1961,7 @@ export interface TokenDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

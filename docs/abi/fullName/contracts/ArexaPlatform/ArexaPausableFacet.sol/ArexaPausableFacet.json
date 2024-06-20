@@ -15,7 +15,7 @@
   "function pause(bytes32 target)",
   "function pauseAllToken()",
   "function pauseToken(uint256 tokenId)",
-  "function paused(bytes32 target) view returns (bool status_)",
+  "function paused(bytes32 target) view returns (bool)",
   "function unpause(bytes32 target)",
   "function unpauseAllToken()",
   "function unpauseToken(uint256 tokenId)"

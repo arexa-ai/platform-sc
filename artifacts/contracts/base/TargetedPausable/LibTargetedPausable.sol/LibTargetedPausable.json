@@ -1,0 +1,59 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LibTargetedPausable",
+  "sourceName": "contracts/base/TargetedPausable/LibTargetedPausable.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "TargetedPausable__NotTargetedPaused",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "TargetedPausable__TargetedPaused",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "target",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "TargetedPaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "target",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "TargetedUnpaused",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220c2954caf9af1bc520cd0c3e4dd10c5c1c8a4bef462213c1a88f96427a7a88efe64736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220c2954caf9af1bc520cd0c3e4dd10c5c1c8a4bef462213c1a88f96427a7a88efe64736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

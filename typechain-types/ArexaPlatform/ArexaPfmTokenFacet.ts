@@ -203,46 +203,46 @@ export interface ArexaPfmTokenFacet extends BaseContract {
 
   functions: {
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     name(overrides?: CallOverrides): Promise<[string]>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -250,46 +250,46 @@ export interface ArexaPfmTokenFacet extends BaseContract {
   };
 
   balanceOf(
-    _owner: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
+    owner_: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   balanceOfBatch(
-    _owners: PromiseOrValue<string>[],
-    _ids: PromiseOrValue<BigNumberish>[],
+    owners: PromiseOrValue<string>[],
+    ids: PromiseOrValue<BigNumberish>[],
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
   isApprovedForAll(
-    _owner: PromiseOrValue<string>,
-    _operator: PromiseOrValue<string>,
+    owner_: PromiseOrValue<string>,
+    operator: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   name(overrides?: CallOverrides): Promise<string>;
 
   safeBatchTransferFrom(
-    _from: PromiseOrValue<string>,
-    _to: PromiseOrValue<string>,
-    _ids: PromiseOrValue<BigNumberish>[],
-    _values: PromiseOrValue<BigNumberish>[],
-    _data: PromiseOrValue<BytesLike>,
+    from: PromiseOrValue<string>,
+    to: PromiseOrValue<string>,
+    ids: PromiseOrValue<BigNumberish>[],
+    values: PromiseOrValue<BigNumberish>[],
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   safeTransferFrom(
-    _from: PromiseOrValue<string>,
-    _to: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _value: PromiseOrValue<BigNumberish>,
-    _data: PromiseOrValue<BytesLike>,
+    from: PromiseOrValue<string>,
+    to: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    value: PromiseOrValue<BigNumberish>,
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setApprovalForAll(
-    _operator: PromiseOrValue<string>,
-    _approved: PromiseOrValue<boolean>,
+    operator: PromiseOrValue<string>,
+    approved: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -297,46 +297,46 @@ export interface ArexaPfmTokenFacet extends BaseContract {
 
   callStatic: {
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     name(overrides?: CallOverrides): Promise<string>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -397,46 +397,46 @@ export interface ArexaPfmTokenFacet extends BaseContract {
 
   estimateGas: {
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -445,46 +445,46 @@ export interface ArexaPfmTokenFacet extends BaseContract {
 
   populateTransaction: {
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 

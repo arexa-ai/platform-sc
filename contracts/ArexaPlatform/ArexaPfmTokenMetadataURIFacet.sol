@@ -15,11 +15,11 @@ import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol"
 import { LibArexaConst } from "./LibArexaConst.sol";
 
 contract ArexaPfmTokenMetadataURIFacet is IERC1155MetadataURI, CallProtection, ModifierRole, ModifierPausable {
-	function uri(uint256 _id) external view virtual override returns (string memory) {
-		return LibERC1155.getUri(_id);
+	function uri(uint256 id) external view virtual override protectedCall returns (string memory) {
+		return LibERC1155.getUri(id);
 	}
 
-	function getUri() external view returns (string memory) {
+	function getUri() external view protectedCall returns (string memory) {
 		return LibERC1155.getUri();
 	}
 
@@ -27,7 +27,7 @@ contract ArexaPfmTokenMetadataURIFacet is IERC1155MetadataURI, CallProtection, M
 		LibERC1155.setURI(newuri);
 	}
 
-	function getTokenBaseUri() external view returns (string memory) {
+	function getTokenBaseUri() external view protectedCall returns (string memory) {
 		return LibERC1155.getTokenBaseUri();
 	}
 
@@ -35,14 +35,14 @@ contract ArexaPfmTokenMetadataURIFacet is IERC1155MetadataURI, CallProtection, M
 		LibERC1155.setTokenBaseURI(newuri);
 	}
 
-	function getTokenUri(uint256 _id) external view returns (string memory) {
-		return LibERC1155.getTokenUri(_id);
+	function getTokenUri(uint256 id) external view protectedCall returns (string memory) {
+		return LibERC1155.getTokenUri(id);
 	}
 
 	function setTokenURI(
-		uint256 _id,
+		uint256 id,
 		string memory newuri
-	) external virtual protectedCall onlyOwner whenNotPaused(LibArexaConst.FULL) whenNotPaused(keccak256(abi.encodePacked(_id))) {
-		LibERC1155.setTokenURI(_id, newuri);
+	) external virtual protectedCall onlyOwner whenNotPaused(LibArexaConst.FULL) whenNotPaused(keccak256(abi.encodePacked(id))) {
+		LibERC1155.setTokenURI(id, newuri);
 	}
 }

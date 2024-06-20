@@ -6,10 +6,8 @@ import "hardhat-contract-sizer";
 import "hardhat-gas-reporter";
 import "hardhat-abi-exporter";
 import "hardhat-tracer";
-//import "hardhat-diamond-abi";
 import "./tasks";
 import { namedAccounts } from "./deploy-lib/namedAccounts";
-//"hardhat-diamond-abi": "^3.0.1",
 
 import { config as dotEnvConfig } from "dotenv";
 dotEnvConfig();

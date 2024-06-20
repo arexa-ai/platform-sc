@@ -1225,34 +1225,34 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     TRADER_TOKEN_ID(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string[]]>;
 
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
@@ -1404,8 +1404,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     >;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
@@ -1417,7 +1417,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -1449,7 +1449,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     >;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
@@ -1474,7 +1474,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<[string]>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
@@ -1495,33 +1495,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     implementation(overrides?: CallOverrides): Promise<[string]>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     name(overrides?: CallOverrides): Promise<[string]>;
 
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1544,7 +1544,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     paused(
       target: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
-    ): Promise<[boolean] & { status_: boolean }>;
+    ): Promise<[boolean]>;
 
     payArexaTokenFromPool(
       poolType: PromiseOrValue<BigNumberish>,
@@ -1582,33 +1582,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1620,8 +1620,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1631,19 +1631,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1659,7 +1659,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -1682,22 +1682,22 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     symbol(overrides?: CallOverrides): Promise<[string]>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
     transferOwnership(
-      _newOwner: PromiseOrValue<string>,
+      newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -1716,14 +1716,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ContractTransaction>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -1769,34 +1769,34 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   TRADER_TOKEN_ID(overrides?: CallOverrides): Promise<BigNumber>;
 
   accountsByToken(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string[]>;
 
   allowance(
-    _owner: PromiseOrValue<string>,
-    _operator: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
+    owner_: PromiseOrValue<string>,
+    operator: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   approve(
-    _operator: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _currentValue: PromiseOrValue<BigNumberish>,
-    _newValue: PromiseOrValue<BigNumberish>,
+    operator: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    currentValue: PromiseOrValue<BigNumberish>,
+    newValue: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   balanceOf(
-    _owner: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
+    owner_: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   balanceOfBatch(
-    _owners: PromiseOrValue<string>[],
-    _ids: PromiseOrValue<BigNumberish>[],
+    owners: PromiseOrValue<string>[],
+    ids: PromiseOrValue<BigNumberish>[],
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
@@ -1942,8 +1942,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ArexaDiamondDummyImplementation.Tuple1236461StructOutput[]>;
 
   getAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -1955,7 +1955,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<[number, number] & { pool: number; arexa: number }>;
 
   getArexaTokenPool(
-    _tokenType: PromiseOrValue<BigNumberish>,
+    tokenType: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -1987,7 +1987,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   >;
 
   getMagic100FirstBuyerWL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
@@ -2012,7 +2012,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   getTokenBaseUri(overrides?: CallOverrides): Promise<string>;
 
   getTokenUri(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
@@ -2033,33 +2033,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   implementation(overrides?: CallOverrides): Promise<string>;
 
   isApprovedForAll(
-    _owner: PromiseOrValue<string>,
-    _operator: PromiseOrValue<string>,
+    owner_: PromiseOrValue<string>,
+    operator: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   isOperatorSpendingLimitEnabled(
-    _tokenId: PromiseOrValue<BigNumberish>,
+    tokenId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   name(overrides?: CallOverrides): Promise<string>;
 
   onERC1155BatchReceived(
-    _operator: PromiseOrValue<string>,
-    _from: PromiseOrValue<string>,
-    _ids: PromiseOrValue<BigNumberish>[],
-    _values: PromiseOrValue<BigNumberish>[],
-    _data: PromiseOrValue<BytesLike>,
+    operator: PromiseOrValue<string>,
+    from: PromiseOrValue<string>,
+    ids: PromiseOrValue<BigNumberish>[],
+    values: PromiseOrValue<BigNumberish>[],
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   onERC1155Received(
-    _operator: PromiseOrValue<string>,
-    _from: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _value: PromiseOrValue<BigNumberish>,
-    _data: PromiseOrValue<BytesLike>,
+    operator: PromiseOrValue<string>,
+    from: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    value: PromiseOrValue<BigNumberish>,
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2120,33 +2120,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   safeBatchTransferFrom(
-    _from: PromiseOrValue<string>,
-    _to: PromiseOrValue<string>,
-    _ids: PromiseOrValue<BigNumberish>[],
-    _values: PromiseOrValue<BigNumberish>[],
-    _data: PromiseOrValue<BytesLike>,
+    from: PromiseOrValue<string>,
+    to: PromiseOrValue<string>,
+    ids: PromiseOrValue<BigNumberish>[],
+    values: PromiseOrValue<BigNumberish>[],
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   safeTransferFrom(
-    _from: PromiseOrValue<string>,
-    _to: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _value: PromiseOrValue<BigNumberish>,
-    _data: PromiseOrValue<BytesLike>,
+    from: PromiseOrValue<string>,
+    to: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    value: PromiseOrValue<BigNumberish>,
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setApprovalForAll(
-    _operator: PromiseOrValue<string>,
-    _approved: PromiseOrValue<boolean>,
+    operator: PromiseOrValue<string>,
+    approved: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2158,8 +2158,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setBatchMagic100FirstBuyerWL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2169,19 +2169,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setMagic100FirstBuyerWL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setOperatorSpendingLimitEnabled(
-    _tokenId: PromiseOrValue<BigNumberish>,
-    _enabled: PromiseOrValue<boolean>,
+    tokenId: PromiseOrValue<BigNumberish>,
+    enabled: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setPayingToken(
-    _token: PromiseOrValue<string>,
+    token: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2197,7 +2197,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   setTokenURI(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     newuri: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -2220,22 +2220,22 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   symbol(overrides?: CallOverrides): Promise<string>;
 
   tokensByAccount(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
   totalHolders(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   totalSupply(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
   transferOwnership(
-    _newOwner: PromiseOrValue<string>,
+    newOwner: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2254,14 +2254,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
   ): Promise<ContractTransaction>;
 
   uri(
-    _id: PromiseOrValue<BigNumberish>,
+    id: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
   withdrawArexaToken(
     fromAccount: PromiseOrValue<string>,
     toAccount: PromiseOrValue<string>,
-    _quantity: PromiseOrValue<BigNumberish>,
+    quantity: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -2307,34 +2307,34 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     TRADER_TOKEN_ID(overrides?: CallOverrides): Promise<BigNumber>;
 
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string[]>;
 
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
@@ -2478,8 +2478,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<ArexaDiamondDummyImplementation.Tuple1236461StructOutput[]>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -2491,7 +2491,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<[number, number] & { pool: number; arexa: number }>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { total: BigNumber; sold: BigNumber }>;
 
@@ -2523,7 +2523,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     >;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
@@ -2548,7 +2548,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<string>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
 
@@ -2569,33 +2569,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     implementation(overrides?: CallOverrides): Promise<string>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     name(overrides?: CallOverrides): Promise<string>;
 
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
@@ -2654,33 +2654,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2692,8 +2692,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2703,19 +2703,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2731,7 +2731,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -2754,22 +2754,22 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     symbol(overrides?: CallOverrides): Promise<string>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     transferOwnership(
-      _newOwner: PromiseOrValue<string>,
+      newOwner: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -2786,14 +2786,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<void>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
 
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -2842,34 +2842,34 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     TRADER_TOKEN_ID(overrides?: CallOverrides): Promise<BigNumber>;
 
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -3013,8 +3013,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     facets(overrides?: CallOverrides): Promise<BigNumber>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -3026,7 +3026,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -3043,7 +3043,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -3061,7 +3061,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<BigNumber>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -3082,33 +3082,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     implementation(overrides?: CallOverrides): Promise<BigNumber>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -3169,33 +3169,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -3207,8 +3207,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -3218,19 +3218,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -3246,7 +3246,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -3269,22 +3269,22 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     symbol(overrides?: CallOverrides): Promise<BigNumber>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     transferOwnership(
-      _newOwner: PromiseOrValue<string>,
+      newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -3303,14 +3303,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<BigNumber>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -3385,34 +3385,34 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     TRADER_TOKEN_ID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     accountsByToken(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     allowance(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     approve(
-      _operator: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _currentValue: PromiseOrValue<BigNumberish>,
-      _newValue: PromiseOrValue<BigNumberish>,
+      operator: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      currentValue: PromiseOrValue<BigNumberish>,
+      newValue: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     balanceOf(
-      _owner: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
+      owner_: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     balanceOfBatch(
-      _owners: PromiseOrValue<string>[],
-      _ids: PromiseOrValue<BigNumberish>[],
+      owners: PromiseOrValue<string>[],
+      ids: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -3556,8 +3556,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     facets(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -3571,7 +3571,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getArexaTokenPool(
-      _tokenType: PromiseOrValue<BigNumberish>,
+      tokenType: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -3588,7 +3588,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -3606,7 +3606,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     getTokenBaseUri(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getTokenUri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
@@ -3627,33 +3627,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     implementation(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     isApprovedForAll(
-      _owner: PromiseOrValue<string>,
-      _operator: PromiseOrValue<string>,
+      owner_: PromiseOrValue<string>,
+      operator: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     isOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
+      tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3714,33 +3714,33 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     safeBatchTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     safeTransferFrom(
-      _from: PromiseOrValue<string>,
-      _to: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      from: PromiseOrValue<string>,
+      to: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setApprovalForAll(
-      _operator: PromiseOrValue<string>,
-      _approved: PromiseOrValue<boolean>,
+      operator: PromiseOrValue<string>,
+      approved: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3752,8 +3752,8 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setBatchMagic100FirstBuyerWL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3763,19 +3763,19 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setMagic100FirstBuyerWL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setOperatorSpendingLimitEnabled(
-      _tokenId: PromiseOrValue<BigNumberish>,
-      _enabled: PromiseOrValue<boolean>,
+      tokenId: PromiseOrValue<BigNumberish>,
+      enabled: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setPayingToken(
-      _token: PromiseOrValue<string>,
+      token: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3791,7 +3791,7 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     setTokenURI(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       newuri: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
@@ -3814,22 +3814,22 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     symbol(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     tokensByAccount(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     totalHolders(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     totalSupply(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     transferOwnership(
-      _newOwner: PromiseOrValue<string>,
+      newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
@@ -3848,14 +3848,14 @@ export interface ArexaDiamondDummyImplementation extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     uri(
-      _id: PromiseOrValue<BigNumberish>,
+      id: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

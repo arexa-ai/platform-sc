@@ -2,10 +2,10 @@
   "error Ownable__NotOwner()",
   "error TargetedPausable__TargetedPaused()",
   "function getTokenBaseUri() view returns (string)",
-  "function getTokenUri(uint256 _id) view returns (string)",
+  "function getTokenUri(uint256 id) view returns (string)",
   "function getUri() view returns (string)",
   "function setTokenBaseURI(string newuri)",
-  "function setTokenURI(uint256 _id, string newuri)",
+  "function setTokenURI(uint256 id, string newuri)",
   "function setURI(string newuri)",
-  "function uri(uint256 _id) view returns (string)"
+  "function uri(uint256 id) view returns (string)"
 ]

@@ -1,4 +1,4 @@
 [
-  "function onERC1155BatchReceived(address _operator, address _from, uint256[] _ids, uint256[] _values, bytes _data) returns (bytes4)",
-  "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes _data) returns (bytes4)"
+  "function onERC1155BatchReceived(address operator, address from, uint256[] ids, uint256[] values, bytes data) returns (bytes4)",
+  "function onERC1155Received(address operator, address from, uint256 id, uint256 value, bytes data) returns (bytes4)"
 ]

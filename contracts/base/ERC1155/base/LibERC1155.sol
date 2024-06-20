@@ -635,18 +635,18 @@ library LibERC1155 {
 	 * IERC1155Pausable
 	 *
 	 ************************************************************************************************************/
-	function _whenNotPaused(ERC1155Storage storage e1155s) internal view {
+	function whenNotPaused(ERC1155Storage storage e1155s) internal view {
 		require(!e1155s.paused, "All token is paused!");
 	}
 
 	function _whenTokenNotPaused(ERC1155Storage storage e1155s, uint256 _tokenId) internal view {
-		_whenNotPaused(e1155s);
+		whenNotPaused(e1155s);
 		require(!e1155s.pausedToken[_tokenId], "Token is paused!");
 	}
 
 	function whenNotPaused() internal view {
 		ERC1155Storage storage e1155s = LibERC1155Storage.layout();
-		_whenNotPaused(e1155s);
+		whenNotPaused(e1155s);
 	}
 
 	function whenTokenNotPaused(uint256 _tokenId) internal view {
@@ -813,7 +813,7 @@ library LibERC1155 {
 				}
 			}
 		}
-		LibERC1155Customization._beforeTokenTransfer(_operator, _fromAccount, _toAccount, _tokenIds, _amounts, _data);
+		LibERC1155Customization.beforeTokenTransfer(_operator, _fromAccount, _toAccount, _tokenIds, _amounts, _data);
 	}
 
 	/**
@@ -841,6 +841,6 @@ library LibERC1155 {
 		uint256[] memory _amounts,
 		bytes memory _data
 	) internal {
-		LibERC1155Customization._afterTokenTransfer(_operator, _fromAccount, _toAccount, _tokenIds, _amounts, _data);
+		LibERC1155Customization.afterTokenTransfer(_operator, _fromAccount, _toAccount, _tokenIds, _amounts, _data);
 	}
 }

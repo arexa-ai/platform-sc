@@ -181,54 +181,54 @@ export interface TokenAMLFacet extends BaseContract {
     SENDER_BLACKLIST(overrides?: CallOverrides): Promise<[string]>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -238,54 +238,54 @@ export interface TokenAMLFacet extends BaseContract {
   SENDER_BLACKLIST(overrides?: CallOverrides): Promise<string>;
 
   getAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   getDestinationAccountBL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   getSourceAccountBL(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
   setAccountBlackWhiteList(
-    _target: PromiseOrValue<BytesLike>,
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    target: PromiseOrValue<BytesLike>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setBatchDestinationAccountBL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setBatchSourceAccountBL(
-    _addresses: PromiseOrValue<string>[],
-    _lockValue: PromiseOrValue<boolean>,
+    addresses: PromiseOrValue<string>[],
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setDestinationAccountBL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setSourceAccountBL(
-    _account: PromiseOrValue<string>,
-    _lockValue: PromiseOrValue<boolean>,
+    account: PromiseOrValue<string>,
+    lockValue: PromiseOrValue<boolean>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   withdrawUserTokenByCompliance(
-    _account: PromiseOrValue<string>,
+    account: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -295,54 +295,54 @@ export interface TokenAMLFacet extends BaseContract {
     SENDER_BLACKLIST(overrides?: CallOverrides): Promise<string>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: CallOverrides
     ): Promise<void>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -355,54 +355,54 @@ export interface TokenAMLFacet extends BaseContract {
     SENDER_BLACKLIST(overrides?: CallOverrides): Promise<BigNumber>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -415,54 +415,54 @@ export interface TokenAMLFacet extends BaseContract {
     SENDER_BLACKLIST(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getDestinationAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getSourceAccountBL(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     setAccountBlackWhiteList(
-      _target: PromiseOrValue<BytesLike>,
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      target: PromiseOrValue<BytesLike>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setBatchDestinationAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setBatchSourceAccountBL(
-      _addresses: PromiseOrValue<string>[],
-      _lockValue: PromiseOrValue<boolean>,
+      addresses: PromiseOrValue<string>[],
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setDestinationAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setSourceAccountBL(
-      _account: PromiseOrValue<string>,
-      _lockValue: PromiseOrValue<boolean>,
+      account: PromiseOrValue<string>,
+      lockValue: PromiseOrValue<boolean>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     withdrawUserTokenByCompliance(
-      _account: PromiseOrValue<string>,
+      account: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

@@ -113,7 +113,7 @@ const _abi = [
     inputs: [
       {
         internalType: "uint16",
-        name: "_generalFee",
+        name: "generalFee",
         type: "uint16",
       },
     ],
@@ -126,7 +126,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_generalFeeAddress",
+        name: "generalFeeAddress",
         type: "address",
       },
     ],
@@ -139,7 +139,7 @@ const _abi = [
     inputs: [
       {
         internalType: "uint16",
-        name: "_PoolFee",
+        name: "poolFee",
         type: "uint16",
       },
     ],
@@ -152,7 +152,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_PoolFeeAddress",
+        name: "poolFeeAddress",
         type: "address",
       },
     ],
@@ -165,7 +165,7 @@ const _abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_treasuryAddress",
+        name: "treasuryAddress",
         type: "address",
       },
     ],
@@ -178,7 +178,7 @@ const _abi = [
     inputs: [
       {
         internalType: "string",
-        name: "_url",
+        name: "url",
         type: "string",
       },
     ],

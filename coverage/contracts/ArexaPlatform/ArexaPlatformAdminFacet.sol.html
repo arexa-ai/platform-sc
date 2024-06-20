@@ -25,9 +25,9 @@
         <span class='fraction'>5/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">29.73% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>20/60</span>
+        <span class='fraction'>22/74</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">44.44% </span>
@@ -189,7 +189,9 @@
 144
 145
 146
-147</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+147
+148</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -337,7 +339,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: UNLICENCED
 /**
- * Copyright (C) 2023 AREXA
+ * Copyright (C) 2024 AREXA
  */
 pragma solidity ^0.8.9;
 &nbsp;
@@ -353,13 +355,14 @@ import { LibArexaPlatformT5 } from "./Platform/LibArexaPlatformT5.sol";
 import { ArexaTokenPool } from "./Platform/LibArexaPlatformStorage.sol";
 &nbsp;
 import { CallProtection } from "../base/Shared/ProtectedCall.sol";
+import { ReentryProtection } from "../base/Shared/ReentryProtection.sol";
 import { ModifierRole } from "../base/AccessControl/ModifierRole.sol";
 import { ModifierPausable } from "../base/TargetedPausable/ModifierPausable.sol";
 import { LibArexaConst } from "./LibArexaConst.sol";
 &nbsp;
-contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausable {
-	function getArexaTokenPool(uint8 _tokenType) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (uint256 total, uint256 sold) {
-		(total, sold) = LibArexaPlatformShared.getArexaTokenPool(_tokenType);
+contract ArexaPlatformAdminFacet is CallProtection, ReentryProtection, ModifierRole, ModifierPausable {
+	function getArexaTokenPool(uint8 tokenType) external view <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall returns (uint256 total, uint256 sold) {
+		(total, sold) = LibArexaPlatformShared.getArexaTokenPool(tokenType);
 	}
 &nbsp;
 	function createSubscription(
@@ -382,7 +385,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint8 poolType,
 		address account,
 		uint32 quantity
-	) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
+	) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>noReentry <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
 		//Tier4
 		//AREXA_TOKEN
 		//Price: priceless ;)
@@ -402,7 +405,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint256 tokenId,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier1 Oracle or Tier2 Edge
 		//Price: variable USDT/piece, based on algorithm
 		//Quantity: 1 per account
@@ -415,7 +418,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		address toAccount,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier1 Oracle
 		//SUBSCR1_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
@@ -430,7 +433,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		address toAccount,
 		uint32 quantity,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier2 Edge
 		//SUBSCR2_TOKEN_TYPE
 		//Price: variable USDT/piece, based on algorithm
@@ -446,7 +449,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint128 value,
 		uint8 valueType,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier3 Singularity
 		//TRADER_TOKEN
 		//Price: 1.0 USDT/piece
@@ -460,7 +463,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 		uint128 value,
 		uint8 valueType,
 		uint16 discountPercent
-	) external protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
+	) external protectedCall noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) whenNotPaused(LibArexaConst.FULL) {
 		//Tier4
 		//AREXA_TOKEN
 		//Price: 0.1 USDT/piece
@@ -472,7 +475,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 	function buyMagic100TokenAdmin(
 		address toAccount,
 		uint16 discountPercent //1 means 0,01%, 100 means 1%, 10000 means 100%, 1564 means 15,64% discount
-	) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
+	) external <span class="missing-if-branch" title="else path not taken" >E</span>protectedCall <span class="missing-if-branch" title="else path not taken" >E</span>noReentry onlyRole(LibArexaConst.AREXA_ADMIN_ROLE) <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused(LibArexaConst.FULL) {
 		//Tier5
 		//MAGIC_TOKEN_ID
 		//Price: 100.0 USDT/piece
@@ -487,7 +490,7 @@ contract ArexaPlatformAdminFacet is CallProtection, ModifierRole, ModifierPausab
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 18 2024 16:07:39 GMT+0200 (közép-európai nyári idő)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 20 2024 09:26:47 GMT+0200 (közép-európai nyári idő)
 </div>
 </div>
 <script src="../../prettify.js"></script>

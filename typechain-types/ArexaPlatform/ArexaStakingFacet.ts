@@ -93,7 +93,7 @@ export interface ArexaStakingFacet extends BaseContract {
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
@@ -106,7 +106,7 @@ export interface ArexaStakingFacet extends BaseContract {
   withdrawArexaToken(
     fromAccount: PromiseOrValue<string>,
     toAccount: PromiseOrValue<string>,
-    _quantity: PromiseOrValue<BigNumberish>,
+    quantity: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -119,7 +119,7 @@ export interface ArexaStakingFacet extends BaseContract {
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -135,7 +135,7 @@ export interface ArexaStakingFacet extends BaseContract {
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
@@ -149,7 +149,7 @@ export interface ArexaStakingFacet extends BaseContract {
     withdrawArexaToken(
       fromAccount: PromiseOrValue<string>,
       toAccount: PromiseOrValue<string>,
-      _quantity: PromiseOrValue<BigNumberish>,
+      quantity: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

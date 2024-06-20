@@ -3,5 +3,5 @@
   "error TargetedPausable__TargetedPaused()",
   "function getArexaERC20Token() view returns (address)",
   "function getPayingToken() view returns (address)",
-  "function setPayingToken(address _token)"
+  "function setPayingToken(address token)"
 ]

@@ -94,58 +94,58 @@ export interface ArexaPfmTokenReceiverFacet extends BaseContract {
 
   functions: {
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
 
   onERC1155BatchReceived(
-    _operator: PromiseOrValue<string>,
-    _from: PromiseOrValue<string>,
-    _ids: PromiseOrValue<BigNumberish>[],
-    _values: PromiseOrValue<BigNumberish>[],
-    _data: PromiseOrValue<BytesLike>,
+    operator: PromiseOrValue<string>,
+    from: PromiseOrValue<string>,
+    ids: PromiseOrValue<BigNumberish>[],
+    values: PromiseOrValue<BigNumberish>[],
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   onERC1155Received(
-    _operator: PromiseOrValue<string>,
-    _from: PromiseOrValue<string>,
-    _id: PromiseOrValue<BigNumberish>,
-    _value: PromiseOrValue<BigNumberish>,
-    _data: PromiseOrValue<BytesLike>,
+    operator: PromiseOrValue<string>,
+    from: PromiseOrValue<string>,
+    id: PromiseOrValue<BigNumberish>,
+    value: PromiseOrValue<BigNumberish>,
+    data: PromiseOrValue<BytesLike>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>;
   };
@@ -154,40 +154,40 @@ export interface ArexaPfmTokenReceiverFacet extends BaseContract {
 
   estimateGas: {
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     onERC1155BatchReceived(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _ids: PromiseOrValue<BigNumberish>[],
-      _values: PromiseOrValue<BigNumberish>[],
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     onERC1155Received(
-      _operator: PromiseOrValue<string>,
-      _from: PromiseOrValue<string>,
-      _id: PromiseOrValue<BigNumberish>,
-      _value: PromiseOrValue<BigNumberish>,
-      _data: PromiseOrValue<BytesLike>,
+      operator: PromiseOrValue<string>,
+      from: PromiseOrValue<string>,
+      id: PromiseOrValue<BigNumberish>,
+      value: PromiseOrValue<BigNumberish>,
+      data: PromiseOrValue<BytesLike>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };

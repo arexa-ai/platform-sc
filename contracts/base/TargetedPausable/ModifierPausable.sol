@@ -9,12 +9,12 @@ import { LibTargetedPausable } from "./LibTargetedPausable.sol";
 abstract contract ModifierPausable {
 	//
 	modifier whenNotPaused(bytes32 target) {
-		LibTargetedPausable._whenNotPaused(target);
+		LibTargetedPausable.whenNotPaused(target);
 		_;
 	}
 
 	modifier whenPaused(bytes32 target) {
-		LibTargetedPausable._whenPaused(target);
+		LibTargetedPausable.whenPaused(target);
 		_;
 	}
 }

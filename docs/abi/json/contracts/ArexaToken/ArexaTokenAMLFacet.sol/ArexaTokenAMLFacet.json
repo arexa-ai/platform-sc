@@ -50,12 +50,12 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "_target",
+        "name": "target",
         "type": "bytes32"
       },
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       }
     ],
@@ -74,7 +74,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       }
     ],
@@ -93,7 +93,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       }
     ],
@@ -112,17 +112,17 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "_target",
+        "name": "target",
         "type": "bytes32"
       },
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "_lockValue",
+        "name": "lockValue",
         "type": "bool"
       }
     ],
@@ -135,12 +135,12 @@
     "inputs": [
       {
         "internalType": "address[]",
-        "name": "_addresses",
+        "name": "addresses",
         "type": "address[]"
       },
       {
         "internalType": "bool",
-        "name": "_lockValue",
+        "name": "lockValue",
         "type": "bool"
       }
     ],
@@ -153,12 +153,12 @@
     "inputs": [
       {
         "internalType": "address[]",
-        "name": "_addresses",
+        "name": "addresses",
         "type": "address[]"
       },
       {
         "internalType": "bool",
-        "name": "_lockValue",
+        "name": "lockValue",
         "type": "bool"
       }
     ],
@@ -171,12 +171,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "_lockValue",
+        "name": "lockValue",
         "type": "bool"
       }
     ],
@@ -189,12 +189,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "_lockValue",
+        "name": "lockValue",
         "type": "bool"
       }
     ],
@@ -207,7 +207,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       }
     ],

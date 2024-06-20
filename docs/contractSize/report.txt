@@ -5,33 +5,33 @@
  ·······································································································|································|·································
  |  contracts/ArexaPlatform/ArexaACLFacet.sol:ArexaACLFacet                                             ·                      4.825 ()  ·                      4.856 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaAdminFacet.sol:ArexaAdminFacet                                         ·                      2.135 ()  ·                      2.166 ()  │
+ |  contracts/ArexaPlatform/ArexaAdminFacet.sol:ArexaAdminFacet                                         ·                      2.249 ()  ·                      2.280 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaAMLFacet.sol:ArexaAMLFacet                                             ·                      2.852 ()  ·                      2.883 ()  │
+ |  contracts/ArexaPlatform/ArexaAMLFacet.sol:ArexaAMLFacet                                             ·                      3.627 ()  ·                      3.658 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaOwnershipFacet.sol:ArexaOwnershipFacet                                 ·                      2.087 ()  ·                      2.118 ()  │
+ |  contracts/ArexaPlatform/ArexaOwnershipFacet.sol:ArexaOwnershipFacet                                 ·                      2.422 ()  ·                      2.453 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPausableFacet.sol:ArexaPausableFacet                                   ·                      4.173 ()  ·                      4.204 ()  │
+ |  contracts/ArexaPlatform/ArexaPausableFacet.sol:ArexaPausableFacet                                   ·                      5.177 ()  ·                      5.208 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenAllowanceFacet.sol:ArexaPfmTokenAllowanceFacet                 ·                      2.699 ()  ·                      2.730 ()  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenAllowanceFacet.sol:ArexaPfmTokenAllowanceFacet                 ·                      2.813 ()  ·                      2.845 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenEnumerableFacet.sol:ArexaPfmTokenEnumerableFacet               ·                      2.059 ()  ·                      2.090 ()  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenEnumerableFacet.sol:ArexaPfmTokenEnumerableFacet               ·                      2.736 ()  ·                      2.768 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenFacet.sol:ArexaPfmTokenFacet                                   ·                     14.963 ()  ·                     14.994 ()  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenFacet.sol:ArexaPfmTokenFacet                                   ·                     15.306 ()  ·                     15.337 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenMetadataURIFacet.sol:ArexaPfmTokenMetadataURIFacet             ·                      4.365 ()  ·                      4.396 ()  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenMetadataURIFacet.sol:ArexaPfmTokenMetadataURIFacet             ·                      4.822 ()  ·                      4.854 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPfmTokenReceiverFacet.sol:ArexaPfmTokenReceiverFacet                   ·                      2.906 ()  ·                      2.938 ()  │
+ |  contracts/ArexaPlatform/ArexaPfmTokenReceiverFacet.sol:ArexaPfmTokenReceiverFacet                   ·                      3.355 ()  ·                      3.387 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPlatformAdminFacet.sol:ArexaPlatformAdminFacet                         ·                     21.915 ()  ·                     21.947 ()  │
+ |  contracts/ArexaPlatform/ArexaPlatformAdminFacet.sol:ArexaPlatformAdminFacet                         ·                     22.915 ()  ·                     22.947 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPlatformFacet.sol:ArexaPlatformFacet                                   ·                     19.450 ()  ·                     19.481 ()  │
+ |  contracts/ArexaPlatform/ArexaPlatformFacet.sol:ArexaPlatformFacet                                   ·                     20.404 ()  ·                     20.436 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaPoolPNLFacet.sol:ArexaPoolPNLFacet                                     ·                      7.739 ()  ·                      7.771 ()  │
+ |  contracts/ArexaPlatform/ArexaPoolPNLFacet.sol:ArexaPoolPNLFacet                                     ·                      8.345 ()  ·                      8.376 ()  │
  ·······································································································|································|·································
  |  contracts/ArexaPlatform/ArexaRestrictionFacet.sol:ArexaRestrictionFacet                             ·                      2.906 ()  ·                      2.938 ()  │
  ·······································································································|································|·································
- |  contracts/ArexaPlatform/ArexaStakingFacet.sol:ArexaStakingFacet                                     ·                     10.677 ()  ·                     10.708 ()  │
+ |  contracts/ArexaPlatform/ArexaStakingFacet.sol:ArexaStakingFacet                                     ·                     11.050 ()  ·                     11.081 ()  │
  ·······································································································|································|·································
  |  contracts/ArexaPlatform/LibArexaConst.sol:LibArexaConst                                             ·                      1.537 ()  ·                      1.618 ()  │
  ·······································································································|································|·································

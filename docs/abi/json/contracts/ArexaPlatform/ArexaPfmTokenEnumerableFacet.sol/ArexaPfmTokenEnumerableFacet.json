@@ -8,7 +8,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_id",
+        "name": "id",
         "type": "uint256"
       }
     ],
@@ -27,7 +27,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_account",
+        "name": "account",
         "type": "address"
       }
     ],
@@ -46,7 +46,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_id",
+        "name": "id",
         "type": "uint256"
       }
     ],
@@ -65,7 +65,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_id",
+        "name": "id",
         "type": "uint256"
       }
     ],

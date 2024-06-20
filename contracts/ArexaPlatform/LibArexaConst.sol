@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENCED
 /**
- * Copyright (C) 2023 AREXA
+ * Copyright (C) 2024 AREXA
  */
 pragma solidity ^0.8.9;
 

@@ -77,8 +77,8 @@ abstract contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, Modifi
 	 */
 	function _transfer(address _sender, address _recipient, uint256 _amount) internal override returns (bool) {
 		if (
-			(LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.SENDER_FREE_FEE_WL, _sender)) ||
-			(LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.RECIPIENT_FREE_FEE_WL, _recipient))
+			(LibBlackWhiteList.getAccountBlackWhiteList(LibTokenConst.SENDER_FREE_FEE_WL, _sender)) ||
+			(LibBlackWhiteList.getAccountBlackWhiteList(LibTokenConst.RECIPIENT_FREE_FEE_WL, _recipient))
 		) {
 			return super._transfer(_sender, _recipient, _amount);
 		} else {
@@ -88,8 +88,8 @@ abstract contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, Modifi
 			 * and after that the calculation must add 5 and divide 10 at the end.
 			 */
 			uint256 decimalCorrection = 10000;
-			uint256 generalFeePercent256 = LibCustomERC20Extension._getGeneralFee();
-			uint256 bsoFeePercent256 = LibCustomERC20Extension._getPoolFee();
+			uint256 generalFeePercent256 = LibCustomERC20Extension.getGeneralFee();
+			uint256 bsoFeePercent256 = LibCustomERC20Extension.getPoolFee();
 			uint256 totalFeePercent = generalFeePercent256.add(bsoFeePercent256);
 
 			uint256 totalFeeAmount = _amount.mul(totalFeePercent).div(decimalCorrection).add(5).div(10);
@@ -102,12 +102,12 @@ abstract contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, Modifi
 			require(result, "Transfer error");
 
 			if (amountGeneral > 0) {
-				result = super._transfer(_sender, LibCustomERC20Extension._getGeneralFeeAddress(), amountGeneral);
+				result = super._transfer(_sender, LibCustomERC20Extension.getGeneralFeeAddress(), amountGeneral);
 				require(result, "General fee transfer error");
 			}
 
 			if (amountBso > 0) {
-				result = super._transfer(_sender, LibCustomERC20Extension._getPoolFeeAddress(), amountBso);
+				result = super._transfer(_sender, LibCustomERC20Extension.getPoolFeeAddress(), amountBso);
 				require(result, "Pool fee transfer error");
 			}
 		}
@@ -115,8 +115,8 @@ abstract contract uSmartERC20 is ERC20Base, ERC20Extended, ERC20Metadata, Modifi
 	}
 
 	function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual override whenNotPaused(LibTokenConst.FULL) {
-		require(!LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.SENDER_BL, from), "Blacklist: sender");
-		require(!LibBlackWhiteList._getAccountBlackWhiteList(LibTokenConst.RECIPIENT_BL, to), "Blacklist: recipient");
+		require(!LibBlackWhiteList.getAccountBlackWhiteList(LibTokenConst.SENDER_BL, from), "Blacklist: sender");
+		require(!LibBlackWhiteList.getAccountBlackWhiteList(LibTokenConst.RECIPIENT_BL, to), "Blacklist: recipient");
 		super._beforeTokenTransfer(from, to, amount);
 	}
 }
