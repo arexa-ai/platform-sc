@@ -93,7 +93,15 @@ export async function deployDiamondNative(
 
 	// deploy Diamond
 	//const deployItemDiamond = TokenDeploymentDescriptors[descriptorType].diamond;
-	const diamond = await deployItem(network, deployments, deployer, deployItemDiamond, [diamondOwner, diamondCutFacet.address]);
+	const diamond = await deployments.getOrNull(deployItemDiamond.name);
+	if (diamond) {
+		log(
+			` "${deployItemDiamond.name}" (tx: ${diamond.transactionHash}) at (${diamond.address} (${diamond.receipt?.gasUsed} gas) (new: false)`,
+		);
+	} else {
+		throw new Error("nem létezik Diamond!");
+	}
+	//diamond = await deployItem(network, deployments, deployer, deployItemDiamond, [diamondOwner, diamondCutFacet.address]);
 	const diamondOwnerSigner = await ethers.getSigner(diamondOwner);
 	const diamondCutContract = await ethers.getContractAt("IDiamondCut", diamond.address, diamondOwnerSigner);
 	diamondFacetContracts.push(diamondCutContract);
@@ -120,7 +128,7 @@ export async function deployDiamondNative(
 				...facets.map((item) => ({ facetAddress: item.facetAddress, functionSelectors: item.functionSelectors })),
 			);
 		} catch (error) {
-			log(`diamondLoupeContract is deployed but not cut into the diamond!`);
+			log(`WARNING! diamondLoupeContract is deployed but not cut into the diamond!`);
 			origFactesSelectors.push({ facetAddress: diamondCutFacet.address, functionSelectors: getSelectors(diamondCutFacetContract) });
 		}
 	} else {
@@ -206,12 +214,12 @@ export async function deployDiamondNative(
 		let initAddress = zeroAddress;
 		let functionCall = ethers.utils.formatBytes32String("");
 		const tx = await diamondCutContract.diamondCut(toCut, initAddress, functionCall);
-		log(` '${descriptorType}' DiamondCut tx hash:`, tx.hash);
+		log(` "${descriptorType}" DiamondCut tx hash:`, tx.hash);
 		const receipt = await tx.wait(networkConfig[network.name].blockConfirmations || 1);
 		if (!receipt.status) {
 			throw Error(`'${descriptorType}' Diamond cut failed: ${tx.hash}`);
 		}
-		log(` '${descriptorType}' DiamondCut tx completed (${receipt.gasUsed} gas)`);
+		log(` "${descriptorType}" DiamondCut tx completed (${receipt.gasUsed} gas)`);
 	}
 
 	//call initMethod
@@ -220,18 +228,18 @@ export async function deployDiamondNative(
 		const initAddress = deployedInitContract.address;
 		const functionCall = deployedInitContract.interface.encodeFunctionData(deployItemInit.functionName, deployItemInit.params);
 		const tx = await diamondCutContract.diamondCut([], initAddress, functionCall);
-		log(` '${descriptorType}' INIT DiamondCut tx hash:`, tx.hash);
+		log(` "${descriptorType}" INIT DiamondCut tx hash:`, tx.hash);
 		const receipt = await tx.wait(networkConfig[network.name].blockConfirmations || 1);
 		if (!receipt.status) {
 			throw Error(`'${descriptorType}' INIT Diamond cut failed: ${tx.hash}`);
 		}
-		log(` '${descriptorType}' INIT DiamondCut tx completed (${receipt.gasUsed} gas)`);
+		log(` "${descriptorType}" INIT DiamondCut tx completed (${receipt.gasUsed} gas)`);
 	} catch (err) {
 		const error = err as any;
-		log(` '${descriptorType}' INIT Diamond cut failed: ${error.reason}`);
+		log(` "${descriptorType}" INIT Diamond cut failed: ${error.reason}`);
 	}
 
-	log(` '${descriptorType}' Diamond add Etherscan compatibility`);
+	log(` "${descriptorType}" Diamond add Etherscan compatibility`);
 	//const implContractName = `${deployItemDiamond.name}DummyImplementation`;
 
 	//generálni a dummyContractot
@@ -265,13 +273,13 @@ export async function deployDiamondNative(
 			if (!receipt.status) {
 				throw Error(`'${descriptorType}' ETHERSCAN dummy implementation tx failed: ${tx.hash}`);
 			}
-			log(` '${descriptorType}' ETHERSCAN dummy implementation tx completed (${receipt.gasUsed} gas)`);
+			log(` "${descriptorType}" ETHERSCAN dummy implementation tx completed (${receipt.gasUsed} gas)`);
 		} catch (err) {
 			const error = err as any;
-			log(` '${descriptorType}' ETHERSCAN dummy implementation tx failed: ${error.reason}`);
+			log(` "${descriptorType}" ETHERSCAN dummy implementation tx failed: ${error.reason}`);
 		}
 	} else {
-		log(` '${descriptorType}' ETHERSCAN dummy implementation tx already done`);
+		log(` "${descriptorType}" ETHERSCAN dummy implementation tx already done`);
 	}
 
 	//const deployedInit = await deployments.get(deployItemInit.name);
