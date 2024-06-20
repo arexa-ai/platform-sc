@@ -1,6 +1,6 @@
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.9;
 
 /**
  * This is a generated dummy diamond implementation for compatibility with

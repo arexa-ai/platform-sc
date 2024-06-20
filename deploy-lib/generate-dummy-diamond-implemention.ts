@@ -56,7 +56,7 @@ const getContractString = ({
 	structs,
 }: GetContractStringParams) => `
 // SPDX-License-Identifier: ${spdxIdentifier || "MIT"}
-pragma solidity ${solidityVersion || "^0.8.17"};
+pragma solidity ${solidityVersion || "^0.8.9"};
 
 ${generateComment(diamondAddress, network)}
 
