@@ -1,7 +1,7 @@
 import { types } from "hardhat/config";
 import { arexaAdminScope } from "../arexa.scope";
 import { All } from "../../utils/input.types";
-import { getAREXASmartContracts } from "../../utils/utils";
+import { getAREXASmartContracts, getUSDTSmartContracts } from "../../utils/utils";
 import { call } from "../../utils/helper.call";
 
 arexaAdminScope
@@ -13,6 +13,8 @@ arexaAdminScope
 	.addParam("max", "Maximum price of one subscription token (0 means no limit)", undefined, types.float)
 	.setAction(async (params: Pick<All, "year" | "month" | "quantity" | "min" | "max">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
+		const usdt = await getUSDTSmartContracts(hre);
+
 		const contract = arexa.platformAdminFacet.connect(arexa.signers[2]);
 		const result = await call(
 			hre,
@@ -21,8 +23,8 @@ arexaAdminScope
 				params.year,
 				params.month,
 				params.quantity,
-				params.min,
-				params.max,
+				params.min * 10 ** usdt.DECIMALS,
+				params.max * 10 ** usdt.DECIMALS,
 			),
 		);
 		await hre.run("print", { message: ` TX: ${result.hash}` });
@@ -37,6 +39,8 @@ arexaAdminScope
 	.addParam("max", "Maximum price of one subscription token (0 means no limit)", undefined, types.float)
 	.setAction(async (params: Pick<All, "year" | "month" | "quantity" | "min" | "max">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
+		const usdt = await getUSDTSmartContracts(hre);
+
 		const contract = arexa.platformAdminFacet.connect(arexa.signers[2]);
 		const result = await call(
 			hre,
@@ -45,8 +49,8 @@ arexaAdminScope
 				params.year,
 				params.month,
 				params.quantity,
-				params.min,
-				params.max,
+				params.min * 10 ** usdt.DECIMALS,
+				params.max * 10 ** usdt.DECIMALS,
 			),
 		);
 		await hre.run("print", { message: ` TX: ${result.hash}` });
@@ -68,7 +72,7 @@ arexaAdminScope
 	.task("token:buy:1-oracle", "Buy ORACLE token by Admin")
 	.addParam("signer", "Index of Signer", 2, types.int)
 	.addParam("address", "Address who will receive the token", undefined, types.string)
-	.addParam("value", "Amount to pay out", undefined, types.float)
+	.addParam("value", "Quantity, how much ORACLE token to buy", undefined, types.float)
 	.addParam("discount", "How much dicount percentage. 10000 means 100%, 1 means 0.01%", undefined, types.int)
 	.setAction(async (params: Pick<All, "signer" | "address" | "value" | "discount">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);
@@ -81,7 +85,7 @@ arexaAdminScope
 	.task("token:buy:2-edge", "Buy EDGE token by Admin")
 	.addParam("signer", "Index of Signer", 2, types.int)
 	.addParam("address", "Address who will receive the token", undefined, types.string)
-	.addParam("value", "Amount to pay out", undefined, types.float)
+	.addParam("value", "Quantity, how much EDGE token to buy", undefined, types.float)
 	.addParam("discount", "How much dicount percentage. 10000 means 100%, 1 means 0.01%", undefined, types.int)
 	.setAction(async (params: Pick<All, "signer" | "address" | "value" | "discount">, hre) => {
 		const arexa = await getAREXASmartContracts(hre);

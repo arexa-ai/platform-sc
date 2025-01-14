@@ -41,6 +41,8 @@ const POLYGON_AMOY_RPC_URL = `https://polygon-amoy.infura.io/v3/${INFURA_API_KEY
 const BSC_MAINNET_RPC_URL = "https://bsc-dataseed.binance.org/";
 const BSC_TESTNET_RPC_URL = "https://data-seed-prebsc-1-s1.binance.org:8545";
 
+const skipDeploy = process.env.SKIP_DEPLOY == "true";
+
 const REPORT_GAS = true;
 
 const config: HardhatUserConfig = {
@@ -64,6 +66,7 @@ const config: HardhatUserConfig = {
 	defaultNetwork: "hardhat",
 	networks: {
 		hardhat: {
+			deploy: skipDeploy ? [] : ["deploy"],
 			hardfork: "merge",
 			// If you want to do some forking set `enabled` to true
 			forking: {

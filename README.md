@@ -18,11 +18,20 @@ Implemented ERC20 with ERC2535
 # Links
 
 **Website:**: [https://arexa.io](https://arexa.io)
-**Whitepaper:** [https://arexa.io/whitepaper.pdf](https://arexa.io/whitepaper.pdf)
+
+**Whitepaper:** [https://data.arexa.io/whitepaper.pdf](https://data.arexa.io/whitepaper.pdf)
+
+**Pitchdeck:** [https://data.arexa.io/other/pitchdeck.pdf](https://data.arexa.io/other/pitchdeck.pdf)
+
+**One pager:** [https://data.arexa.io/other/onepager.pdf](https://data.arexa.io/other/onepager.pdf)
+
 **Youtube:** [https://www.youtube.com/@ArexaAI](https://www.youtube.com/@ArexaAI)
+
 **Telegram:** [https://t.me/arexa_ai/1](https://t.me/arexa_ai/1)
+
 **OpenSea:** [https://opensea.io/collection/arexa-ai](https://opensea.io/collection/arexa-ai)
-**GitHub:** [https://github.com/arexa-ai](https://github.com/arexa-ai)
+
+**GitHub:** [https://github.com/arexa-ai/platform-sc](https://github.com/arexa-ai/platform-sc)
 
 # CLI commands
 

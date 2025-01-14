@@ -93,15 +93,17 @@ export async function deployDiamondNative(
 
 	// deploy Diamond
 	//const deployItemDiamond = TokenDeploymentDescriptors[descriptorType].diamond;
-	const diamond = await deployments.getOrNull(deployItemDiamond.name);
+	let diamond = await deployments.getOrNull(deployItemDiamond.name);
 	if (diamond) {
 		log(
 			` "${deployItemDiamond.name}" (tx: ${diamond.transactionHash}) at (${diamond.address} (${diamond.receipt?.gasUsed} gas) (new: false)`,
 		);
 	} else {
-		throw new Error("nem létezik Diamond!");
+		if (network.name === "mainnet") {
+			throw new Error("MAINNET-en nem létezik Diamond!");
+		}
+		diamond = await deployItem(network, deployments, deployer, deployItemDiamond, [diamondOwner, diamondCutFacet.address]);
 	}
-	//diamond = await deployItem(network, deployments, deployer, deployItemDiamond, [diamondOwner, diamondCutFacet.address]);
 	const diamondOwnerSigner = await ethers.getSigner(diamondOwner);
 	const diamondCutContract = await ethers.getContractAt("IDiamondCut", diamond.address, diamondOwnerSigner);
 	diamondFacetContracts.push(diamondCutContract);
